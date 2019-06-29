@@ -13,5 +13,5 @@ MAILTO=root
 # |  |  |  |  |
 # *  *  *  *  * user-name  command to be executed
 
-* */3 * * * root /home/ini/sh/autoUpdate.sh
+1 */3 * * * root /home/ini/sh/autoUpdate.sh
 0 7 * * * root /usr/bin/certbot renew --quiet && /bin/systemctl restart nginx
