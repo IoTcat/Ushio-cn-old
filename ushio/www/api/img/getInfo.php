@@ -2,10 +2,13 @@
 
 include '../functions.php';
 
+$arr_os = array();
 $arr = array();
 
-$str = system('obs ls obs://yimian-image/blog');
+exec('obs ls obs://yimian-image/blog', $arr_os);
 
-preg_match_all('/wiot/i', $str, $arr);
+$str = implode ($arr_os);
+
+preg_match_all('/w*.jpg/', $str, $arr);
 
 print_r($arr);
