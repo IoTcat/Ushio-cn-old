@@ -258,3 +258,14 @@ function getImg($path, $time = 300){
 
     return str_replace('yimian-image.obs.cn-east-2.myhuaweicloud.com:443','image.yimian.xyz',trim(exec("obs sign obs://yimian-image/". $path ." -e=". $time)));
 }
+
+function getImgsInfo($type){
+    $arr_os = array();
+    $arr = array();
+
+    exec('obs ls obs://yimian-image/'.$type, $arr_os);
+    $str = implode ($arr_os);
+    preg_match_all('/img_(\S*?)_(\d{2,4})x(\d{2,4})_(\S*?).(jpe?g|png|gif|svg)\b/', $str, $arr);
+
+    return $arr;
+}
