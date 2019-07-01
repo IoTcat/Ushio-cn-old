@@ -30,26 +30,29 @@ sqlCnt.connect();
 var o = {
   code: 500,
   msg: "Unknown error!!",
-  data: {},
+  data: [],
 }
 
 
-
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/get', function(req, res, next) {
   //res.render('index', { title: 'Express' });
   
+  if(req.query.type != undefined) req.query.type = req.query.type.toLowerCase();
 
+  if(req.query.type == 'station' || req.query.type == 'node'|| req.query.type == 'watersys'){
 
-  if(req.query.type == 'station'){
-
-    if(req.query.num == undefined){
+    if(req.query.num == undefined && (req.query.timestart == undefined || req.query.timeend == undefined)){
       req.query.num = 1;
     }
-    getLastData('station', req.query.num, o, res);
-    if(!req.query.num || req.query.num == 1){
 
+
+    if(req.query.num != undefined){
+      getLastData(req.query.type, req.query.num, o, res, req.query.sid);
+      return;
     }
+    
+    getDataByDatetime(req.query.type, req.query.timestart, req.query.timeend, o, res, req.query.sid)
     return;
   }
 
@@ -59,12 +62,115 @@ router.get('/', function(req, res, next) {
     return;
   }
 
+  res.send(o);
 });
 
 
-function getLastData(table, num, o, res){
-  var sql = "SELECT * FROM " + table + " order by timestamp DESC limit " + num;
+
+/* GET home page. */
+router.get('/set', function(req, res, next) {
+  //res.render('index', { title: 'Express' });
+  delete o.data;
+  if(req.query.type == undefined && req.query.status == 1 || req.query.status == 0){
+    if(req.query.sid == 0 || req.query.sid == 1){
+      mqtt_client.publish('ctl/node'+req.query.sid +'/waterSwitch', req.query.status.toString(), function(e){
+        if(!e) {
+          o.code = 200;
+          o.msg = "Command published successfully!!";
+        }else{
+          o.code = 402;
+          o.msg = e;
+        } 
+        res.send(o);
+        ctlLog(o.code, 'node'+req.query.sid+'/waterSwitch', req.query.status.toString(), o.msg);
+      });
+      return;
+    }
+    if(req.query.pid == 0 || req.query.pid == 1){
+      mqtt_client.publish('ctl/waterSys/pump'+req.query.pid, req.query.status.toString(), function(e){
+        if(!e) {
+          o.code = 200;
+          o.msg = "Command published successfully!!";
+        }else{
+          o.code = 402;
+          o.msg = e;
+        } 
+        res.send(o);
+        ctlLog(o.code, 'waterSys/pump'+req.query.pid, req.query.status.toString(), o.msg);
+      });
+      return;
+    }
+  }
+
+  if(req.query.type == 'node' || req.query.type == 'waterSys' || req.query.type == 'station'  && req.query.status != undefined && req.query.status >= 0 && req.query.status <= 255){
+
+    if(req.query.type == 'node' && !(req.query.sid >= 0 && req.query.sid <=1)){
+      o.msg = "Require legal sid!!!";
+      res.send(o);
+      reset();
+      return;
+    }else if(req.query.type == 'node'){
+      req.query.type = 'node'+req.query.sid;
+    }
+
+      mqtt_client.publish('ctl/'+req.query.type+'/status', req.query.status.toString(), function(e){
+        if(!e) {
+          o.code = 200;
+          o.msg = "Command published successfully!!";
+        }else{
+          o.code = 402;
+          o.msg = e;
+        } 
+        res.send(o);
+        ctlLog(o.code, req.query.type+'/status', req.query.status.toString(), o.msg);
+      });
+      return;
+  }
+
+
+  res.send(o);
+  reset();
+});
+
+
+
+
+/* GET home page. */
+router.get('/refresh', function(req, res, next) {
+  //res.render('index', { title: 'Express' });
+  refresh();
+  
+  if(req.query.type != undefined) req.query.type = req.query.type.toLowerCase();
+
+  if(req.query.type == 'station' || req.query.type == 'node'|| req.query.type == 'watersys'){
+
+    if(req.query.num == undefined && (req.query.timestart == undefined || req.query.timeend == undefined)){
+      req.query.num = 1;
+    }
+
+
+    if(req.query.num != undefined){
+      getLastData(req.query.type, req.query.num, o, res, req.query.sid);
+      return;
+    }
+    
+    getDataByDatetime(req.query.type, req.query.timestart, req.query.timeend, o, res, req.query.sid)
+    return;
+  }
+
+  res.send(o);
+});
+
+
+
+
+function getLastData(table, num, o, res, id){
+  var sql = "SELECT * FROM " + table + ((id!=undefined)?(" where id = " + id + " "):(" ")) + "order by timestamp DESC limit " + num;
   sqlCnt.query(sql, function(err, dbdata){
+    if(err){
+      o.code = 505;
+      o.msg = err;
+    }else{
       if(dbdata.length){
         o.data = dbdata;
         o.code = 200;
@@ -73,15 +179,20 @@ function getLastData(table, num, o, res){
         o.code = 404;
         o.msg = "Found 0 items!! Please check your params!!";
       }
+    }
       res.send(o);
       reset();
   });
 }
 
 
-function getDataByDatetime(table, datetime1, datatime2, o, res){
-  var sql = "SELECT * FROM " + table + " where timestamp between  '" + datetime1 + "'  and '" + datatime2 + "'";
+function getDataByDatetime(table, datetime1, datatime2, o, res, id){
+  var sql = "SELECT * FROM " + table + " where timestamp between  FROM_UNIXTIME(" + datetime1 + ")  and FROM_UNIXTIME(" + datatime2 + ")" + ((id!=undefined)?(" AND id = " + id):(""));
   sqlCnt.query(sql, function(err, dbdata){
+    if(err){
+      o.code = 505;
+      o.msg = err;
+    }else{
       if(dbdata.length){
         o.data = dbdata;
         o.code = 200;
@@ -90,17 +201,41 @@ function getDataByDatetime(table, datetime1, datatime2, o, res){
         o.code = 404;
         o.msg = "Found 0 items!! Please check your params!!";
       }
+    }
       res.send(o);
       reset();
   });
 }
+
+function ctlLog(status, target, cmd, msg){
+
+  var  addSql = 'INSERT INTO ctl_history(timestamp,status,target,cmd,msg) VALUES(?,?,?,?,?)';
+  var  addSqlParams = [(new Date()).toISOString().slice(0, 19).replace('T', ' '), status, target, cmd, msg];
+  sqlCnt.query(addSql,addSqlParams,function (err, result) {
+      reset();
+      if(err){
+          console.log('[INSERT ERROR] - ',err.message);
+         return;
+      }
+  });
+}
+
 
 function reset(){
     o = {
     code: 500,
     msg: "Unknown error!!",
-    data: {},
+    data: [],
   }
+}
+
+
+function refresh(){
+  var key = Math.floor(Math.random()*100);
+  rc.set('sf/sync/'+key, (new Date()).valueOf());
+  mqtt_client.publish('qos/sync', key.toString());
+  o.code = 220;
+  o.msg = "Refresh command published successfully!!";
 }
 
 module.exports = router;

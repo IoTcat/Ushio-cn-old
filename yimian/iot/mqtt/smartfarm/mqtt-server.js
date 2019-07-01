@@ -258,7 +258,7 @@ var mqtt_server = function (o_params) {
                 if(tools.obj.getNum(cache[name], null) == 1){
                     cache[name].EndTime = (new Date()).valueOf();
                     rc.hset('sf/'+name, 'EndTime', cache[name].EndTime);
-                    rc.publish('sf/chnnel/'+name, 'ok');
+                    rc.publish('sf/channel/'+name, 'ok');
                     if(o.debug) console.log(cache[name]);
                     if(o.debug && false){
                         rc.hkeys("sf/"+name, function (err, replies) {
