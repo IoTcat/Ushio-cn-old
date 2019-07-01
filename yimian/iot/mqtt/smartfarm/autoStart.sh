@@ -1,2 +1,2 @@
 #!/bin/bash
-forever /home/yimian/iot/mqtt/smartfarm/mqtt-server.js
+forever /home/yimian/iot/mqtt/smartfarm/index.js
