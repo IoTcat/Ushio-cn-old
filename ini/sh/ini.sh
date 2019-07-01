@@ -53,6 +53,11 @@ systemctl start docker
 pip install --upgrade backports.ssl_match_hostname
 pip install docker-compose
 
+# redis
+yum -y install redis
+systemctl enable redis
+systemctl start redis
+
 # bbr
 wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 chmod +x bbr.sh
