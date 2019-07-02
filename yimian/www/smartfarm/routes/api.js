@@ -6,7 +6,7 @@ var mysql = require('mysql');
 var fs = require('fs');
 
 /* mqtt start */
-var mqtt_client  = mqtt.connect('mqtt://127.0.0.1:30032');
+var mqtt_client  = mqtt.connect('mqtts://mqtt.yimian.xyz:30032');
 mqtt_client.on('connect', function () {
   //client.subscribe('qos/sync');
   console.log('Mqtt Connected!');
