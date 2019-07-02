@@ -20,7 +20,7 @@ var rc = redis.createClient();
 var sqlCnt = mysql.createConnection({
       host     : "192.168.0.90",
       user     : "smartfarm",
-      password : fs.readFileSync("/home/yimian/www/smartfarm/smartfarm.db.key").toString().replace(/\s+/g,""),
+      password : fs.readFileSync("/home/yimian/conf/dbKeys/smartfarm.db.key").toString().replace(/\s+/g,""),
       port: 3306,
       database: "smartfarm",
       dateStrings:true,
@@ -175,6 +175,10 @@ function getLastData(table, num, o, res, id){
         o.data = dbdata;
         o.code = 200;
         o.msg = "Found " + dbdata.length + " items!!";
+        for(i in o.data){
+          o.data[i].timestamp = (new Date(o.data[i].timestamp)).valueOf()/1000 + 8 * 3600;
+          o.data[i].datetime = timestampToTime(o.data[i].timestamp * 1000);
+        }
       }else{
         o.code = 404;
         o.msg = "Found 0 items!! Please check your params!!";
@@ -197,6 +201,10 @@ function getDataByDatetime(table, datetime1, datatime2, o, res, id){
         o.data = dbdata;
         o.code = 200;
         o.msg = "Found " + dbdata.length + " items!!";
+        for(i in o.data){
+          o.data[i].timestamp = (new Date(o.data[i].timestamp)).valueOf()/1000 + 8 * 3600;
+          o.data[i].datetime = timestampToTime(o.data[i].timestamp * 1000);
+        }
       }else{
         o.code = 404;
         o.msg = "Found 0 items!! Please check your params!!";
@@ -237,5 +245,17 @@ function refresh(){
   o.code = 220;
   o.msg = "Refresh command published successfully!!";
 }
+
+function timestampToTime(timestamp) {
+  var  date = new Date(timestamp);
+  var Y = date.getFullYear() + '-';
+  var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+  var D = date.getDate() + ' ';
+  var h = date.getHours() + ':';
+  var m = date.getMinutes() + ':';
+  var s = date.getSeconds();
+  return Y+M+((D.length==2)?'0':'')+D+((h.length==2)?'0':'')+h+((m.length==2)?'0':'')+m+((s<10)?'0':'')+s;
+}
+
 
 module.exports = router;

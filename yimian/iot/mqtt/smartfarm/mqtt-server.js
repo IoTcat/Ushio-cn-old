@@ -5,17 +5,20 @@
 
 var mqtt_server = function (o_params) {
     var o = {
-        MaxWaitTime: 1000,
-        port: 30032,
+        MaxWaitTime: 4000,
+        port: 30031,
+        portSSL: 30032,
+        SECURE_CERT: '/home/yimian/ssl/star.yimian.xyz.ssl/star.yimian.xyz.crt',
+        SECURE_KEY: '/home/yimian/ssl/star.yimian.xyz.ssl/star.yimian.xyz.key',
         sql: {
-            host: 'cn.db.yimian.xyz',
+            host: '192.168.0.90',
             user: 'smartfarm',
             password: null,
             port: '3306',
             database: 'smartfarm'
         },
         debug: false,
-        intervalTime: 3000,
+        intervalTime: 50000,
         CheckMinTime: 1000,
         MaxTryTimes: 3,
 
@@ -84,13 +87,20 @@ var mqtt_server = function (o_params) {
     }
 
     /* mqtt ini */
-    var mqtt_broker = new mosca.Server({port: o.port});
+    var mqtt_broker = new mosca.Server({
+        port: o.port,
+        secure: {
+            port: o.portSSL,
+            keyPath: o.SECURE_KEY,
+            certPath: o.SECURE_CERT,
+        }
+    });
 
     /* mysql ini */
     var sqlCnt = mysql.createConnection({     
       host     : o.sql.host,       
       user     : o.sql.user,              
-      password : o.sql.password || fs.readFileSync("smartfarm.db.key").toString().replace(/\s+/g,""),
+      password : o.sql.password || fs.readFileSync("/home/yimian/conf/dbKeys/smartfarm.db.key").toString().replace(/\s+/g,""),
       port: o.sql.port,                   
       database: o.sql.database 
     }); 
@@ -106,6 +116,7 @@ var mqtt_server = function (o_params) {
     /* mqtt events */
     mqtt_broker.on('ready', function(){
         console.log((new Date((new Date()).getTime())).toLocaleString()+' - mqtt broker ready at port '+o.port);
+        console.log((new Date((new Date()).getTime())).toLocaleString()+' - mqtt broker ready at SSL port '+o.portSSL);
     });
     mqtt_broker.on('published', function (packet, client) {
         switch (packet.topic) {

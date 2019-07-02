@@ -12,4 +12,4 @@
 
 touch /var/lock/subsys/local
 /home/ushio/frp/frps.sh
-/home/yimian/iot/mqtt/smartfarm/autoStart.sh
+/home/ini/sh/forever.sh

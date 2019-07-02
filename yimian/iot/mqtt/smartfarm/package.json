@@ -1,6 +1,6 @@
 {
   "name": "sf-mqtt-broker",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "mqtt broker for 2019 XJTLU surf project SmartFarm",
   "main": "mqtt-server.js",
   "dependencies": {
