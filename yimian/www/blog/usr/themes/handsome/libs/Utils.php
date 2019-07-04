@@ -83,7 +83,7 @@ class Utils {
 
     public static function getGravator($email,$host,$size){
         $options = mget();
-        $default = 'https://image.yimian.xyz/acg/head/'.mt_rand(1,130).'.png';
+        $default = 'https://api.yimian.xyz/img?type=head&salt='.rand(1,155);
         /*if (strlen($options->defaultAvator) > 0){
             $default = $options->defaultAvator;
         }*/
