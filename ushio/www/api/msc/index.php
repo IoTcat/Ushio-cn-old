@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin:*');
 
 require 'vendor/autoload.php';
 include '../functions.php';
@@ -14,8 +15,6 @@ $id = $_REQUEST['id'];
 $random = $_REQUEST['random'];
 $limit = $_REQUEST['limit'];
 
-$id = 2003373695;
-$type = "playlist";
 
 if($type == "url"){
 	if(!isset($id)){
@@ -27,6 +26,7 @@ if($type == "url"){
 		echo json_encode(array("code"=>404, "err"=>"No Found!!"));
 		die();
 	}
+	$res['url'] = str_replace("http", "https", $res['url']);
 	log_api();
 	header("Location: ".$res['url']);
 	die();
@@ -78,9 +78,13 @@ if($type == "single"){
 	$content = get_object_vars(getSongInfo($id, $API)[0]);
 	//var_dump($content);
 	$o = array("name"=>$content["name"], "artist"=>$content["artist"][0], "album"=>$content["album"], "url"=>"https://api.yimian.xyz/msc/?type=url&id=".$content["url_id"], "cover"=>"https://api.yimian.xyz/msc/?type=cover&id=".$content["pic_id"], "lrc"=>"https://api.yimian.xyz/msc/?type=lrc&id=".$content["lyric_id"]);
+	if(!$o){
+		echo json_encode(array("code"=>404, "err"=>"Cannot find any songs!!"));
+		die();
+	}
 	echo json_encode($o);
-
-
+	log_api();
+	die();
 }
 
 
@@ -96,13 +100,19 @@ if($type == "playlist"){
 		$content = get_object_vars($value);
 		array_push($o, array("name"=>$content["name"], "artist"=>$content["artist"][0], "album"=>$content["album"], "url"=>"https://api.yimian.xyz/msc/?type=url&id=".$content["url_id"], "cover"=>"https://api.yimian.xyz/msc/?type=cover&id=".$content["pic_id"], "lrc"=>"https://api.yimian.xyz/msc/?type=lrc&id=".$content["lyric_id"]));
 	}
-	
+	if(!$o){
+		echo json_encode(array("code"=>404, "err"=>"Cannot find any songs!!"));
+		die();
+	}
 	if($random) shuffle($o);
+	if($limit) $o = array_slice($o, 0, $limit);
 	echo json_encode($o);
-
-
+	log_api();
+	die();
 }
 
+
+echo json_encode(array("code"=>500, "err"=>"Cannot find such type!!"));
 
 
 
@@ -116,42 +126,7 @@ function getPlaylistInfo($id, $API){
 
 
 
-/*
-
-function getDetail($id){
-
-	$url = get_object_vars(json_decode($API->format(true)->url($id, 320)));
-	$pic = get_object_vars(json_decode($API->format(true)->pic($id)));
-}
-*/
-
-	//echo $API->format(true)->song($id);
-	//echo $API->format(true)->pic($id);
-
-
-// Use custom cookie (option)
-// $api->cookie('paste your cookie');
-
-// Get data
-//$data = $api->format(true)->search('双笙');
-
-//var_dump($data);
-
-//$data = json_decode($data);
-
-//echo json_encode($data[0]);
-
-
-// Parse link
-//$data = $api->format(true)->url(35847388);
-
-//echo $data;
-
-
-
-
-
-
 function log_api(){
+	yimian__log("log_api", array("api" => "msc", "timestamp" => date('Y-m-d H:i:s', time()), "ip" => ip2long(getIp()), "_from" => get_from(), "content" => $_SERVER["QUERY_STRING"]));
 	return;
 }

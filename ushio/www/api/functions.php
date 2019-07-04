@@ -20,9 +20,9 @@ function db__connect($servername="",$username="",$password="",$dbname="")
 		$dbname = $GLOBALS['g_db_log_dbName'];
 	}elseif($servername == "yulu"){
 
-		$servername = $GLOBALS['g_db_serverName'];
-		$username = $GLOBALS['g_db_usrName'];
-		$password = $GLOBALS['g_db_psswd'];
+		$servername = $GLOBALS['g_db_log_serverName'];
+		$username = $GLOBALS['g_db_log_usrName'];
+		$password = $GLOBALS['g_db_log_psswd'];
 		$dbname = "yulu";
 	}
 	
