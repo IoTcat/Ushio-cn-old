@@ -14,7 +14,8 @@ $id = $_REQUEST['id'];
 $random = $_REQUEST['random'];
 $limit = $_REQUEST['limit'];
 
-$id = 36308263;
+$id = 2003373695;
+$type = "playlist";
 
 if($type == "url"){
 	if(!isset($id)){
@@ -43,7 +44,7 @@ if($type == "cover"){
 		die();
 	}
 	log_api();
-	echo json_encode(array("cover"=>$res["url"]));
+	header("Location: ".$res["url"]);
 	die();
 }
 
@@ -67,18 +68,52 @@ if($type == "lrc"){
 
 
 
-/*
+
 
 if($type == "single"){
 	if(!isset($id)){
 		echo json_encode(array("code"=>500, "err"=>"You need to provide an id!!"));
 		die();
 	}
-	$url = get_object_vars(json_decode($API->format(true)->url($id, 320)));
+	$content = get_object_vars(getSongInfo($id, $API)[0]);
+	//var_dump($content);
+	$o = array("name"=>$content["name"], "artist"=>$content["artist"][0], "album"=>$content["album"], "url"=>"https://api.yimian.xyz/msc/?type=url&id=".$content["url_id"], "cover"=>"https://api.yimian.xyz/msc/?type=cover&id=".$content["pic_id"], "lrc"=>"https://api.yimian.xyz/msc/?type=lrc&id=".$content["lyric_id"]);
+	echo json_encode($o);
+
 
 }
 
-*/
+
+if($type == "playlist"){
+	if(!isset($id)){
+		echo json_encode(array("code"=>500, "err"=>"You need to provide an id!!"));
+		die();
+	}
+	$content = array();
+	$o = array();
+
+	foreach (getPlaylistInfo($id, $API) as $key => $value) {
+		$content = get_object_vars($value);
+		array_push($o, array("name"=>$content["name"], "artist"=>$content["artist"][0], "album"=>$content["album"], "url"=>"https://api.yimian.xyz/msc/?type=url&id=".$content["url_id"], "cover"=>"https://api.yimian.xyz/msc/?type=cover&id=".$content["pic_id"], "lrc"=>"https://api.yimian.xyz/msc/?type=lrc&id=".$content["lyric_id"]));
+	}
+	
+	if($random) shuffle($o);
+	echo json_encode($o);
+
+
+}
+
+
+
+
+function getSongInfo($id, $API){
+	return json_decode($API->format(true)->song($id));
+}
+
+function getPlaylistInfo($id, $API){
+	return json_decode($API->format(true)->playlist($id));
+}
+
 
 
 /*
