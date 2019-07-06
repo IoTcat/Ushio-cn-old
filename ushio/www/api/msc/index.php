@@ -77,7 +77,7 @@ if($type == "single"){
 	}
 	$content = get_object_vars(getSongInfo($id, $API)[0]);
 	//var_dump($content);
-	$o = array("name"=>$content["name"], "artist"=>$content["artist"][0], "album"=>$content["album"], "url"=>"https://api.yimian.xyz/msc/?type=url&id=".$content["url_id"], "cover"=>"https://api.yimian.xyz/msc/?type=cover&id=".$content["pic_id"], "lrc"=>"https://api.yimian.xyz/msc/?type=lrc&id=".$content["lyric_id"]);
+	$o = array("id"=>$content["id"], "name"=>$content["name"], "artist"=>$content["artist"][0], "album"=>$content["album"], "url"=>"https://api.yimian.xyz/msc/?type=url&id=".$content["url_id"], "cover"=>"https://api.yimian.xyz/msc/?type=cover&id=".$content["pic_id"], "lrc"=>"https://api.yimian.xyz/msc/?type=lrc&id=".$content["lyric_id"]);
 	if(!$o){
 		echo json_encode(array("code"=>404, "err"=>"Cannot find any songs!!"));
 		die();
@@ -98,7 +98,7 @@ if($type == "playlist"){
 
 	foreach (getPlaylistInfo($id, $API) as $key => $value) {
 		$content = get_object_vars($value);
-		array_push($o, array("name"=>$content["name"], "artist"=>$content["artist"][0], "album"=>$content["album"], "url"=>"https://api.yimian.xyz/msc/?type=url&id=".$content["url_id"], "cover"=>"https://api.yimian.xyz/msc/?type=cover&id=".$content["pic_id"], "lrc"=>"https://api.yimian.xyz/msc/?type=lrc&id=".$content["lyric_id"]));
+		array_push($o, array("id"=>$content["id"], "name"=>$content["name"], "artist"=>$content["artist"][0], "album"=>$content["album"], "url"=>"https://api.yimian.xyz/msc/?type=url&id=".$content["url_id"], "cover"=>"https://api.yimian.xyz/msc/?type=cover&id=".$content["pic_id"], "lrc"=>"https://api.yimian.xyz/msc/?type=lrc&id=".$content["lyric_id"]));
 	}
 	if(!$o){
 		echo json_encode(array("code"=>404, "err"=>"Cannot find any songs!!"));
