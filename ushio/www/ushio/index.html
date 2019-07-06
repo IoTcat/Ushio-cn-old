@@ -12,7 +12,6 @@
     <meta name="description" content="小汐の主页">
     <link rel="stylesheet" href="https://cdn.yimian.xyz/ushio-homepage/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.yimian.xyz/aplayer/aplayer.min.js"></script>
     <script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
   </head>
@@ -51,7 +50,7 @@
                     Made with
                     <span class="shaky"><i class="fa fa-heart"></i></span> by
                     <br>
-                    <a id="ushio-homepage" href="https://iotcat.me" target="_blank">iotcat</a>
+                    <a id="ushio-homepage" href="https://iotcat.me">iotcat</a>
                 </div>
             </div>
             <div class="right">
@@ -62,23 +61,23 @@
                             <i class="fa fa-home"></i>
                             <span>Blog</span>
                         </a>
-                        <a href="https://github.com/iotcat/ushio" target="_blank" rel="noopener">
+                        <a href="https://github.com/iotcat/ushio" rel="noopener">
                             <i class="fa fa-code-fork"></i>
                             <span>Git</span>
                         </a>
-                        <a id="ushio-monitor" href="https://monitor.yimian.xyz" target="_blank" rel="noopener">
+                        <a id="ushio-monitor" href="https://monitor.yimian.xyz" rel="noopener">
                             <i class="fa fa-bar-chart-o"></i>
                             <span>Monitor</span>
                         </a>
-                        <a id="ushio-cloud" href="https://cloud.yimian.xyz" target="_blank" rel="noopener">
+                        <a id="ushio-cloud" href="https://cloud.yimian.xyz" rel="noopener">
                             <i class="fa fa-cloud"></i>
                             <span>Cloud</span>
                         </a>
-                        <a id="ushio-api" href="https://api.yimian.xyz" target="_blank" rel="noopener">
+                        <a id="ushio-api" href="https://api.yimian.xyz" rel="noopener">
                             <i class="fa fa-share-alt-square"></i>
                             <span>API</span>
                         </a>
-                        <a id="ushio-shadowsocks" href="https://shadowsocks.yimian.xyz" target="_blank" rel="noopener">
+                        <a id="ushio-shadowsocks" href="https://shadowsocks.yimian.xyz" rel="noopener">
                             <i class="fa fa-paper-plane-o"></i>
                             <span>ShadowSocks</span>
                         </a>
@@ -96,7 +95,7 @@
                     <p>
                         汐酱，超萌滴信息支持系统，足迹遍布3大洲(´・ω・｀)<br/>
                         目标是满足主人呓喵酱的一切无理要求，愿望是希望主人早日<del>爆炸</del>现充 
-                        <br/>/ <a href="https://www.eee.dog/ushio.html" target="_blank">More...</a>
+                        <br/>/ <a id="ushio-ushio" href="https://www.eee.dog/ushio.html">More...</a>
                     </p>
                 </section>
                 <section id="donate">
@@ -117,35 +116,9 @@
             <div class="copyright-mobile">
                 Made with
                 <span class="shaky"><i class="fa fa-heart"></i></span> by
-                <a id="ushio-homepage2" href="https://iotcat.me" target="_blank">iotcat</a>
+                <a id="ushio-homepage2" href="https://iotcat.me">iotcat</a>
             </div>
         </footer>
-        <div class="aplayer-footer">
-            <div class="ap-f" id="ap-f"></div>
-            <script>
-                $(function(){
-                    $.ajax({
-                        url:"https://api.yimian.xyz/msc/?type=playlist&id=808097971&limit=15&random=true",
-                        success:function(e){
-                            var a = new APlayer({
-                                element:document.getElementById("ap-f"),
-                                autoplay:false,
-                                fixed:true,
-                                loop:"all",
-                                order:"list",
-                                listFolded:true,
-                                showlrc:3,
-                                theme:"#e6d0b2",
-                                listmaxheight:"200px",
-                                music:eval(e)
-                            });
-                            window.aplayers || (window.aplayers = []),
-                            window.aplayers.push(a)
-                        }
-                    })
-                })
-            </script>
-        </div>
     </main>
     <script src="https://cdn.yimian.xyz/ushio-homepage/main.js"></script>
     <script src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>

@@ -7,6 +7,49 @@ var redis = require('redis');
 /* redis start */
 var rc = new redis.createClient();
 
+router.get('/set', function(req, res, next) {
+ 
+    if(!req.query.key || !req.query.val || !req.query.fp || !req.query.t) {res.send({"code":"500"});;return;}
+    
+    rc.hset('session/'+req.query.fp, req.query.key, req.query.val);
+    rc.hset('session/'+req.query.fp, 'LastOperateTime', req.query.t);
+    res.send({code:"200"}); 
+});
+
+router.get('/del', function(req, res, next) {
+ 
+    if(!req.query.del || !req.query.fp || !req.query.t) {res.send({"code":"500"});;return;}
+    
+    rc.hdel('session/'+req.query.fp, req.query.del);
+    rc.hset('session/'+req.query.fp, 'LastOperateTime', req.query.t);
+    res.send({code:"200"}); 
+});
+
+
+router.get('/get', function(req, res, next) {
+ 
+    if(!req.query.fp) {res.send({"code":"500"});;return;}
+    var o = {};
+           rc.hkeys('session/'+req.query.fp, function(err, keys){
+           if(!err){
+
+             keys.forEach(function(key, i){
+               rc.hget('session/'+req.query.fp, key, function(err2, val){
+                 if(!err2){
+                   o[key] = val;
+                   if(i == keys.length - 1){
+                     res.send(o);
+                   }
+                 }
+               })
+             });
+           }
+         });
+
+});
+
+
+
 
 expressWs(router);
 
