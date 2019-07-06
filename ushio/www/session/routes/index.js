@@ -37,6 +37,10 @@ router
          });
         }else if(isJson(msg)){
             obj = JSON.parse(msg);
+            if(obj.del){
+               rc.hdel('session/'+fp, obj.del);
+               rc.hset('session/'+fp, 'LastOperateTime', (new Date()).valueOf());
+            }
             if(obj.key && obj.val){
                rc.hset('session/'+fp, obj.key, obj.val);
                rc.hset('session/'+fp, 'LastOperateTime', (new Date()).valueOf());
