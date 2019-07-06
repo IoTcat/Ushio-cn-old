@@ -37,13 +37,13 @@ router
          });
         }else if(isJson(msg)){
             obj = JSON.parse(msg);
-            if(obj.del){
+            if(obj.del && obj.t){
                rc.hdel('session/'+fp, obj.del);
-               rc.hset('session/'+fp, 'LastOperateTime', (new Date()).valueOf());
+               rc.hset('session/'+fp, 'LastOperateTime', obj.t);
             }
-            if(obj.key && obj.val){
+            if(obj.key && obj.val && obj.t){
                rc.hset('session/'+fp, obj.key, obj.val);
-               rc.hset('session/'+fp, 'LastOperateTime', (new Date()).valueOf());
+               rc.hset('session/'+fp, 'LastOperateTime', obj.t);
             }
         }
       })
