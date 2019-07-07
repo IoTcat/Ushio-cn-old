@@ -1,0 +1,100 @@
+<doctype html>
+  <html>
+    <head>
+      <title>呓喵酱 の API</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <!-- Web fonts -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+      <!-- Bootstrap and OneUI CSS framework -->
+      <link rel="stylesheet" href="https://cdn.yimian.xyz/bootstrap/bootstrap.min.css">
+      <link rel="stylesheet" id="css-main" href="https://cdn.yimian.xyz/bootstrap/oneui.css">
+      <link href="https://cdn.bootcss.com/mdui/0.4.2/css/mdui.min.css" rel="stylesheet">
+      <script src="https://cdn.bootcss.com/mdui/0.4.2/js/mdui.min.js"></script>
+      <script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+    </head>
+    
+    <body style="background:url(https://api.yimian.xyz/img?size=1800-2400x900-1300);background-size:cover;">
+      <!-- Live Previews -->
+      <div style="border-radius:10px">
+        <section class="content content-boxed">
+          <!-- Section Content -->
+          <div class="mdui-card mdui-hoverable" style="">
+            <!-- 卡片的媒体内容，可以包含图片、视频等媒体内容，以及标题、副标题 -->
+            <div class="mdui-card-media mdui-ripple">
+              <!--<img src="https://api.yimian.xyz/moe?i=PCBackground&k" />--></div>
+            <!-- 卡片的标题和副标题 -->
+            <div class="mdui-card-primary">
+              <img class="mdui-card-header-avatar" src="https://cdn.yimian.xyz/img/head/head4.png" />
+              <div class="mdui-card-primary-headline">&nbsp;&nbsp;呓喵酱のAPI</div>
+              <div class="mdui-card-primary-subtitle">「欢迎来到IoTcat's API~」</div></div>
+            <div class="mdui-tab mdui-color-pink-a200">
+              <a id="ushio-eeedog" href="https://www.eee.dog" class="mdui-ripple">IoTcat's 博客</a>
+              <a id="ushio-iotcat" href="https://iotcat.me" class="mdui-ripple">关于IoTcat</a></div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col-sm-4">
+              <a id="ushio-img" class="block block-link-hover2 ribbon ribbon-modern ribbon-success" href="img/intro.html">
+                <div class="ribbon-box font-w600">调用
+                  <span id="num-img"></span>次</div>
+                <div class="block-content">
+                  <div class="h4 push-5">随机图片</div>
+                  <p class="text-muted">快来探索呀··</p></div>
+              </a>
+            </div>
+            <div class="col-sm-4">
+              <a id="ushio-msc" class="block block-link-hover2 ribbon ribbon-modern ribbon-success" href="msc/intro.html">
+                <div class="ribbon-box font-w600">调用
+                  <span id="num-msc"></span>次</div>
+                <div class="block-content">
+                  <div class="h4 push-5">音乐获取</div>
+                  <p class="text-muted">把你最喜欢的歌安利给你最喜欢的人~</p></div>
+              </a>
+            </div>
+            <div class="col-sm-4">
+              <a id="ushio-words" class="block block-link-hover2 ribbon ribbon-modern ribbon-success" href="words/intro.html">
+                <div class="ribbon-box font-w600">调用
+                  <span id="num-words"></span>次</div>
+                <div class="block-content">
+                  <div class="h4 push-5">一言接口</div>
+                  <p class="text-muted">一些原创+可能原创+可能是假原创的语录 ##</p></div>
+              </a>
+            </div>
+            <div class="col-sm-4">
+              <a id="ushio-html" class="block block-link-hover2 ribbon ribbon-modern ribbon-success" href="mail/intro.html">
+                <div class="ribbon-box font-w600">调用
+                  <span id="num-mail"></span>次</div>
+                <div class="block-content">
+                  <div class="h4 push-5">邮件发送</div>
+                  <p class="text-muted">夭寿啦··呓喵酱自动发邮件啦···</p></div>
+              </a>
+            </div>
+            <div class="col-sm-4">
+              <a id="ushio-gugu" class="block block-link-hover2 ribbon ribbon-modern ribbon-success" href="gugu/intro.html">
+                <div class="ribbon-box font-w600">调用
+                  <span id="num-gugu"></span>次</div>
+                <div class="block-content">
+                  <div class="h4 push-5">咕咕机</div>
+                  <p class="text-muted">对咕咕机官方接口的简单封装,,开源~</p></div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <style type="text/css">.snow-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:100001;}</style>
+      <div class="snow-container"></div>
+    </body>
+    <script type="text/javascript">$.post('https://api.yimian.xyz/getVisitNum.php',
+      function(res) {
+        obj = JSON.parse(res);
+        $('#num-img').html(obj.img);
+        $('#num-msc').html(obj.msc);
+        $('#num-words').html(obj.words);
+        $('#num-mail').html(obj.mail);
+        $('#num-gugu').html(obj.gugu);
+      });</script>
+    <script src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+    <script src="https://cdn.yimian.xyz/xuehua/xh.js"></script>
+    <script src="https://cdn.yimian.xyz/xuehua/tx-2.js"></script>
+  
+  </html>
