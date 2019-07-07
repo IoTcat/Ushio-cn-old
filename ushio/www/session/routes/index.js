@@ -8,7 +8,7 @@ var redis = require('redis');
 var rc = new redis.createClient();
 
 router.get('/set', function(req, res, next) {
- 
+    res.header('Access-Control-Allow-Origin', '*'); 
     if(!req.query.key || !req.query.val || !req.query.fp || !req.query.t) {res.send({"code":"500"});;return;}
     
     rc.hset('session/'+req.query.fp, req.query.key, req.query.val);
@@ -17,7 +17,7 @@ router.get('/set', function(req, res, next) {
 });
 
 router.get('/del', function(req, res, next) {
- 
+    res.header('Access-Control-Allow-Origin', '*');
     if(!req.query.del || !req.query.fp || !req.query.t) {res.send({"code":"500"});;return;}
     
     rc.hdel('session/'+req.query.fp, req.query.del);
@@ -27,12 +27,14 @@ router.get('/del', function(req, res, next) {
 
 
 router.get('/get', function(req, res, next) {
- 
+    res.header('Access-Control-Allow-Origin', '*');
     if(!req.query.fp) {res.send({"code":"500"});;return;}
     var o = {};
            rc.hkeys('session/'+req.query.fp, function(err, keys){
            if(!err){
-
+	     if(!keys.length){
+                res.send(o);
+             }
              keys.forEach(function(key, i){
                rc.hget('session/'+req.query.fp, key, function(err2, val){
                  if(!err2){
