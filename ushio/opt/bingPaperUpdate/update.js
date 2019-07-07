@@ -65,7 +65,7 @@ class Ut {
       url: url,
     };
     var date = new Date();
-    let path = "/home/ushio/opt/bingPaperUpdate/wallpaper/img_" + date.format('yyyy-MM-dd') + "_1920x1080_96.jpg";
+    let path = "/home/ushio/opt/bingPaperUpdate/wallpaper/img_" + date.format('yyyy-MM-dd') + "_1920x1080_96_background_normal.jpg";
     let r1 = Ut.downImg(opts, path);
     console.log(r1);
     setTimeout(function(){

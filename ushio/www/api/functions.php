@@ -265,7 +265,7 @@ function getImgsInfo($type){
 
     exec('obs ls obs://yimian-image/'.$type, $arr_os);
     $str = implode ($arr_os);
-    preg_match_all('/img_(\S*?)_(\d{2,4})x(\d{2,4})_(\S*?).(jpe?g|png|gif|svg)\b/', $str, $arr);
+    preg_match_all('/img_(\S*?)_(\d{2,4})x(\d{2,4})_(\S*?)_(\S*?)_(\S*?).(jpe?g|png|gif|svg)\b/', $str, $arr);
 
     return $arr;
 }

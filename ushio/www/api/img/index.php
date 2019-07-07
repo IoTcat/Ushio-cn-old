@@ -9,12 +9,15 @@ $type = $_REQUEST['type'];
 $id = $_REQUEST['id'];
 $size = $_REQUEST['size'];
 $display = $_REQUEST['display'];
+$R18 = $_REQUEST['R18'];
 
-if(!isset($type) || !($type == "moe" || $type == "koino" || $type == "head" || $type == "wallpaper")) $type = "moe";
+
+if(!isset($type) || !($type == "moe" || $type == "koino" || $type == "head" || $type == "wallpaper" || $type == "blog")) $type = "moe";
 if(!isset($id)) $id = null;
 if(!isset($size)) $size = null;
 if(!isset($path)) $path = null;
 if($display != "true") $display = false; else $display = true;
+if($R18 != "true") $R18 = false; else $R18 = true;
 
 if($path){
 
@@ -46,7 +49,10 @@ if($path){
             echo json_encode(array("err"=>"Can not find any images matching Size $size in Type $type!!"));
             die();
         }
-        $path = $type. '/' .$arr[0][$arr_keys[array_rand($arr_keys)]];
+        do{
+  	    $index = array_rand($arr_keys);
+	}while($R18 != true && $arr[6][$index] != "normal");
+        $path = $type. '/' .$arr[0][$index];
         
     }elseif(!$path){
         $arr_size = explode('x',$size);
@@ -61,7 +67,12 @@ if($path){
             echo json_encode(array("err"=>"Can not find any images matching Size $size in Type $type!!"));
             die();
         }
-        $path = $type. '/' .$arr[0][$arr_keys[array_rand($arr_keys)]];
+        do{
+  	    $index = array_rand($arr_keys);
+	}while($R18 != true && $arr[6][$index] != "normal");
+        $path = $type. '/' .$arr[0][$index];
+        
+        //$path = $type. '/' .$arr[0][$arr_keys[array_rand($arr_keys)]];
 
     }
 
