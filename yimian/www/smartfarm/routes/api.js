@@ -72,7 +72,7 @@ router.get('/set', function(req, res, next) {
   //res.render('index', { title: 'Express' });
   res.header("Access-Control-Allow-Origin", "*");
   delete o.data;
-  if(req.query.type == undefined && req.query.status == 1 || req.query.status == 0){
+  if(req.query.type == undefined && (req.query.status == 1 || req.query.status == 0)){
     if(req.query.sid == 0 || req.query.sid == 1){
       mqtt_client.publish('ctl/node'+req.query.sid +'/waterSwitch', req.query.status.toString(), function(e){
         if(!e) {
