@@ -37,7 +37,7 @@ var o = {
 /* GET home page. */
 router.get('/get', function(req, res, next) {
   //res.render('index', { title: 'Express' });
-  
+ res.header("Access-Control-Allow-Origin", "*");   
   if(req.query.type != undefined) req.query.type = req.query.type.toLowerCase();
 
   if(req.query.type == 'station' || req.query.type == 'node'|| req.query.type == 'watersys'){
@@ -70,6 +70,7 @@ router.get('/get', function(req, res, next) {
 /* GET home page. */
 router.get('/set', function(req, res, next) {
   //res.render('index', { title: 'Express' });
+  res.header("Access-Control-Allow-Origin", "*");
   delete o.data;
   if(req.query.type == undefined && req.query.status == 1 || req.query.status == 0){
     if(req.query.sid == 0 || req.query.sid == 1){
@@ -138,6 +139,7 @@ router.get('/set', function(req, res, next) {
 /* GET home page. */
 router.get('/refresh', function(req, res, next) {
   //res.render('index', { title: 'Express' });
+  res.header("Access-Control-Allow-Origin", "*");
   refresh();
   
   if(req.query.type != undefined) req.query.type = req.query.type.toLowerCase();
