@@ -15,7 +15,7 @@
 	<?php endif; ?>
 	<?php if ($this->options->poweredby == 'y'): ?>
 	<p class="related"><a href="mailto:i@iotcat.me">侵删</a></p>
-	<p class="related">POWERED BY <a href="http://typecho.org/" target="_blank">TYPECHO</a> / THEME BY <a href="https://photo.siitake.cn/photograph.html" target="_blank">SIITAKE</a> / DEVELOPED BY <a href="https://iotcat.me" target="_blank">IoTcat</a></p>
+	<p class="related">POWERED BY <a id="ushio-ushio" href="https://ushio.xyz">Ushio</a> / THEME BY <a href="https://photo.siitake.cn/photograph.html" target="_blank">SIITAKE</a> / DEVELOPED BY <a id="ushio-iotcatme" href="https://iotcat.me">IoTcat</a></p>
 	<?php endif; ?>
 	<?php if ($this->options->statCount == 'y'): $stat = statCount(); ?>
 	<p class="related">本站共<?php echo $stat['pic'] ?>张图片在<?php echo $stat['post'] ?>个相册中，他们被分成<?php echo $stat['cate'] ?>个类别<!--，并有<?php //echo $stat['page'] ?>个页面和<?php// echo $stat['comm'] ?>条评论--></p>
@@ -219,7 +219,7 @@
 <?php $this->footer(); ?>
 </body>
 
-<script src="https://cdn.yimian.xyz/heartbeat/heartbeat_footer.min.js"></script>
+<script src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
 
 
 </html>

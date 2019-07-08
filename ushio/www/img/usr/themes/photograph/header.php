@@ -39,29 +39,8 @@
     		$this->header();
     	}
     ?>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135901303-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-135901303-1');
-</script>
     
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script>
-console.log('\n' + ' %c Yimian  %c https://www.yimian.xyz ' + '\n', 'color: #00FFFF; background: #030307; padding:5px 0;', 'background: #4682B4; padding:5px 0;');
-</script>
-<script>console.log('Thankfully / Proudly include Plugins:'+'\n');</script>
-
-<script src="https://cdn.yimian.xyz/cookie/cookie.js"></script>
-<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
-<script type="text/javascript">ip=returnCitySN.cip;ipCity=returnCitySN.cname;</script>
-<script src="https://cdn.yimian.xyz/fp/fp.js"></script>
-<script src="https://cdn.yimian.xyz/heartbeat/heartbeat_head.min.js"></script>
+<script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
 
 </head>
 <body>

@@ -1,6 +1,5 @@
 <?php
 
-include '../functions.php';
 /**
  * Typecho Blog Platform
  *
