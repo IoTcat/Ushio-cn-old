@@ -1,6 +1,6 @@
 <?php
 include '/home/ushio/conf/dbKeys/log.db.key.php';
-
+include '/home/ushio/www/api/config.php';
 /**database connection**/
 
 //connect to database
@@ -217,7 +217,39 @@ function get_from_domain(){
 }
 
 
+/*****curl*****/
+
+function curl__post($url = '', $param) {
+
+    if(empty($url)) {
+        return false;
+    }
+
+    $o = "";
+    foreach ($param as $k => $v) { 
+        $o .= "$k=".urlencode($v)."&" ;
+    }
+
+    $postUrl = $url;
+    $curlPost = substr($o,0,-1);
+    $ch = curl_init();//初始化curl
+    curl_setopt($ch, CURLOPT_URL,$postUrl);//抓取指定网页
+    curl_setopt($ch, CURLOPT_HEADER, 0);//设置header
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);//要求结果为字符串且输出到屏幕上
+    curl_setopt($ch, CURLOPT_POST, 1);//post提交方式
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPost);
+    $data = curl_exec($ch);//运行curl
+    curl_close($ch);
+
+    return $data;
+}
+
+
+
 /* get IP */
+function get_ip(){
+    return getIp();
+}
 function getIp()
 {
 	if (isset($_SERVER)) {
@@ -269,3 +301,224 @@ function getImgsInfo($type){
 
     return $arr;
 }
+
+
+
+/*****gugu*****/
+
+function yimian__gugu($body){
+
+	$body = iconv("UTF-8","gbk//TRANSLIT",$body);
+	$url = "http://open.memobird.cn/home/printpaper";
+	return curl__post($url, array("ak" => $GLOBALS['ggj_ak'], "userID" => $GLOBALS['ggj_userID'], "memobirdID" => $GLOBALS['ggj_memobirdID'], "printcontent" => "T:".base64_encode($body)."", "timestamp" => "".time().""));
+}
+
+
+function gugu__send($ak, $userID, $memobirdID, $body){
+
+	$body = iconv("UTF-8","gbk//TRANSLIT",$body);
+	$url = "http://open.memobird.cn/home/printpaper";
+	return curl__post($url, array("ak" => $ak, "userID" => $userID, "memobirdID" => $memobirdID, "printcontent" => "T:".base64_encode($body)."", "timestamp" => "".time().""));
+}
+
+
+
+/** function for mail **/
+
+function yimian__mail($to, $subject, $body, $from){
+
+
+    if($from == "") $from = "IoTcat 呓喵酱";
+    if($body == "") $body = "额(⊙﹏⊙) 未找到指定的邮件内容耶( •̀ ω •́ )y<br/><br/>更多信息请咨询<a href = 'https://iotcat.me'>IoTcat</a>期待你的回应啦~";
+    if($subject == "") $subject = "来自IoTcat的一声问候~";
+
+    $data = array(
+        'fromName' => $from, // 发件人名称
+        'from' => "admin@iotcat.xyz", // 发件地址
+        'to' => $to, // 收件地址
+        'replyTo' => "i@iotcat.me", // 回信地址
+        'subject' => $subject,
+        'html' => $body
+    );
+
+    // 当前请求区域
+    // 杭州
+    // API地址
+    $data['api'] = 'https://dm.aliyuncs.com/';
+    // API版本号
+    $data['version'] = '2015-11-23';
+    // 机房信息
+    $data['region'] = 'cn-hangzhou';
+
+    // AccessKeyId
+    $data['accessid'] = $GLOBALS['aym_AccessKey'];
+    // AccessKeySecret
+    $data['accesssecret'] = $GLOBALS['aym_SecretKey'];
+    // 是否成功
+    return aliyun($data);
+
+}
+
+
+
+//mail alliyun api
+function aliyun($param)
+{
+    // 重新组合为阿里云所使用的参数
+    $data = array(
+        'Action' => 'SingleSendMail', // 操作接口名
+        'AccountName' => $param['from'], // 发件地址
+        'ReplyToAddress' => "true", // 回信地址
+        'AddressType' => 1, // 地址类型
+        'ToAddress' => $param['to'], // 收件地址
+        'FromAlias' => $param['fromName'], // 发件人名称
+        'Subject' => $param['subject'], // 邮件标题
+        'HtmlBody' => $param['html'], // 邮件内容
+        'Format' => 'JSON', // 返回JSON
+        'Version' => $param['version'], // API版本号
+        'AccessKeyId' => $param['accessid'], // Access Key ID
+        'SignatureMethod' => 'HMAC-SHA1', // 签名方式
+        'Timestamp' => gmdate('Y-m-d\TH:i:s\Z'), // 请求时间
+        'SignatureVersion' => '1.0', // 签名算法版本
+        'SignatureNonce' => md5(time()), // 唯一随机数
+        'RegionId' => $param['region'] // 机房信息
+    );
+    // 请求签名
+    $data['Signature'] = sign($data, $param['accesssecret']);
+    // 初始化Curl
+    $ch = curl_init();
+    // 设置为POST请求
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+    // 请求地址
+    curl_setopt($ch, CURLOPT_URL, $param['api']);
+    // 返回数据
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    // 提交参数
+    curl_setopt($ch, CURLOPT_POSTFIELDS, getPostHttpBody($data));
+    // 关闭ssl验证
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    // 执行请求
+    $result = curl_exec($ch);
+    // 获取错误代码
+    $errno = curl_errno($ch);
+    // 获取错误信息
+    $error = curl_error($ch);
+    // 获取返回状态码
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    // 关闭请求
+    curl_close($ch);
+    // 成功标识
+    $flag = TRUE;
+    // 如果开启了Debug
+    if (1) {
+        // 记录时间
+        $log = '[Aliyun] ' . date('Y-m-d H:i:s') . ': ' . PHP_EOL;
+        // 如果失败
+        if ( $errno ) {
+            // 设置失败
+            $flag = FALSE;
+            $log .= '邮件发送失败, 错误代码：' . $errno . '，错误提示: ' . $error . PHP_EOL;
+        }
+        // 如果失败
+        if ( 400 <= $httpCode ) {
+            // 设置失败
+            $flag = FALSE;
+            // 尝试转换json
+            if ( $json = json_decode($result) ) {
+                $log .= '邮件发送失败，错误代码：' . $json->Code . '，错误提示：' . $json->Message . PHP_EOL;
+            } else {
+                $log .= '邮件发送失败, 请求返回HTTP Code：' . $httpCode . PHP_EOL;
+            }
+        }
+        // 记录返回值
+        $log .= '邮件发送返回数据：' . serialize($result) . PHP_EOL;
+        // 写入文件
+    }
+    yimian__log("log_mail",array("timestamp" => date('Y-m-d H:i:s', time()), "to_" => $param['to'], "from_" => $param['fromName'], "subject" => $param['subject'], "body" => $param['html'], "success" => (($flag)?1:0), "return_" => $log));
+    // 返回结果
+    //echo $log;
+    return $flag;
+} 
+
+
+/**
+ * 阿里云签名
+ *
+ * @static
+ * @access private
+ *
+ * @param array  $param        签名参数
+ * @param string $accesssecret 秘钥
+ *
+ * @return string
+ */
+function sign($param, $accesssecret)
+{
+    // 参数排序
+    ksort($param);
+    // 组合基础
+    $stringToSign = 'POST&' . percentEncode('/') . '&';
+    // 临时变量
+    $tmp = '';
+    // 循环参数列表
+    foreach ( $param as $k => $v ) {
+        // 组合参数
+        $tmp .= '&' . percentEncode($k) . '=' . percentEncode($v);
+    }
+    // 去除最后一个&
+    $tmp = trim($tmp, '&');
+    // 组合签名参数
+    $stringToSign = $stringToSign . percentEncode($tmp);
+    // 数据签名
+    $signature = base64_encode(hash_hmac('sha1', $stringToSign, $accesssecret . '&', TRUE));
+    // 返回签名
+    return $signature;
+}
+
+/**
+ * 阿里云签名编码转换
+ *
+ * @static
+ * @access private
+ *
+ * @param string $val 要转换的编码
+ *
+ * @return string|string[]|null
+ */
+function percentEncode($val)
+{
+    // URL编码
+    $res = urlencode($val);
+    // 加号转换为%20
+    $res = preg_replace('/\+/', '%20', $res);
+    // 星号转换为%2A
+    $res = preg_replace('/\*/', '%2A', $res);
+    // %7E转换为~
+    $res = preg_replace('/%7E/', '~', $res);
+    return $res;
+}
+
+/**
+ * 阿里云请求参数组合
+ *
+ * @static
+ * @access private
+ *
+ * @param array $param 发送参数
+ *
+ * @return bool|string
+ */
+function getPostHttpBody($param)
+{
+    // 空字符串
+    $str = "";
+    // 循环参数
+    foreach ( $param as $k => $v ) {
+        // 组合参数
+        $str .= $k . '=' . urlencode($v) . '&';
+    }
+    // 去除第一个&
+    return substr($str, 0, -1);
+}
+
