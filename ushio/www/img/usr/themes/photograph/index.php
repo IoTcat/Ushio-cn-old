@@ -11,7 +11,7 @@
 include '/home/ushio/www/api/functions.php';
 
 
-if(file_get_contents('/tmp/img_yimian_is_update') != date('Y-m-d-H')){
+if(file_get_contents('/tmp/img_yimian_is_update') != date('Y-m')){
 
 	$__db= Typecho_Db::get();
 

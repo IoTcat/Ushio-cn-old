@@ -39,7 +39,11 @@
         "<span>Pinterest</span>" +
         "</a>" +
         "</p>" +
-        '<p><input class="fancybox-share__input" type="text" value="{{url_raw}}" /></p>' +
+        '<p>   <input class="fancybox-share__input" type="text" value="{{url_raw}}" /></p>' +
+        '<p>This Page<input class="fancybox-share__input" type="text" value="{{url_url}}" /></p>' +
+        '<p>Url<input class="fancybox-share__input" type="text" value="{{url_html}}" /></p>' +
+        '<p>HTML<input class="fancybox-share__input" type="text" value="{{url_markdown}}" /></p>' +
+        '<p>Markdown</p>' +
         "</div>"
     }
   });
@@ -75,10 +79,16 @@
       url = current.opts.share.url.apply(current, [instance, current]);
     }
 
+    var share_url = current.src;
+    var share_alt = window.location.href.match(/xyz\/(\S*)?.html/)[1]+'_'+current.src.match(/img_(\S[^_]*)?_/)[1];
+
     tpl = current.opts.share.tpl
       .replace(/\{\{media\}\}/g, current.type === "image" ? encodeURIComponent(current.src) : "")
       .replace(/\{\{url\}\}/g, encodeURIComponent(url))
       .replace(/\{\{url_raw\}\}/g, escapeHtml(url))
+      .replace(/\{\{url_url\}\}/g, share_url)
+      .replace(/\{\{url_html\}\}/g, '<img src=&quot;'+share_url+'&quot; alt=&quot;'+share_alt+'&quot;>')
+      .replace(/\{\{url_markdown\}\}/g, '!['+share_alt+']('+share_url+')')
       .replace(/\{\{descr\}\}/g, instance.$caption ? encodeURIComponent(instance.$caption.text()) : "");
 
     $.fancybox.open({
