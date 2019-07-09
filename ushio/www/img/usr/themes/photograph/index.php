@@ -42,6 +42,15 @@ if(file_get_contents('/tmp/img_yimian_is_update') != date('Y-m')){
 	$__update = $__db->update('table.contents')->rows(array('text'=>$__content))->where('cid=?',3);
 	$__db->query($__update);
 
+	// imgbed
+	$__arr = getImgsInfo('imgbed');
+	$__content="<!--markdown-->";
+	foreach ($__arr[0] as $key => $value) {
+		$__content.="![".$__arr[1][$key]."](https://api.yimian.xyz/img/?path=imgbed/".$value.") ";
+	}
+	$__update = $__db->update('table.contents')->rows(array('text'=>$__content))->where('cid=?',4);
+	$__db->query($__update);
+
 
 	$__myfile = fopen("/tmp/img_yimian_is_update", "w") or die("Unable to open file!");
 	fwrite($__myfile, date('Y-m-d-H'));

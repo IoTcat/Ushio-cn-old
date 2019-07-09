@@ -2,7 +2,7 @@
 
 $o = array("code"=>"0000");
 
-$o["url"] = "https://eeeeeee";
+$o["url"] = "";
 
 
 $file = $_FILES['files'];
@@ -19,17 +19,21 @@ foreach($file['name'] as $key=>$val){
     if($typeArr[0]== "image"){
         $imgType = array("png","jpg","jpeg","gif","svg");
         if(in_array($typeArr[1], $imgType)){
-            chmod($file["tmp_name"][$key],0755);
-            $imgname = "/tmp/img_".substr(time(),0,8)."_ooxoo_95_null_normal.".$typeArr[1];
-$imgname="/tmp/kk.png";
-            echo move_uploaded_file($file["tmp_name"][$key], $imgname)){
-	//	$o["code"] = "550";
-	    
+           $imginfo = getimagesize($file["tmp_name"][$key]); 
+           $imgpath = "/home/ushio/www/imgbed/upload/imgbed/";
+           $imgname = "img_".substr(md5(time()),0,8)."_".$imginfo[0]."x".$imginfo[1]."_".$imginfo['bits']."_null_normal.".$typeArr[1];
+          if(!move_uploaded_file($file["tmp_name"][$key], $imgpath.$imgname)){
+		$o["code"] = "550";
+	  }
+           
+	  $o["url"].="https://api.yimian.xyz/img/?path=imgbed/".$imgname."\n\n";
         }
 
    }
 }
 
 
-exec('obs cp /tmp/imgbed/ obs://yimian-image/ -r -f');
 echo json_encode($o);
+
+exec('obs cp /home/ushio/www/imgbed/upload/imgbed/ obs://yimian-image/ -r -f');
+exec('rm -rf /home/ushio/www/imgbed/upload/imgbed/*');
