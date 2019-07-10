@@ -21,7 +21,7 @@ foreach($file['name'] as $key=>$val){
         if(in_array($typeArr[1], $imgType)){
            $imginfo = getimagesize($file["tmp_name"][$key]); 
            $imgpath = "/home/ushio/www/imgbed/upload/imgbed/";
-           $imgname = "img_".substr(md5(time()),0,8)."_".$imginfo[0]."x".$imginfo[1]."_".$imginfo['bits']."_null_normal.".$typeArr[1];
+           $imgname = "img_".substr(md5(time().rand()),0,8)."_".$imginfo[0]."x".$imginfo[1]."_".$imginfo['bits']."_null_normal.".$typeArr[1];
           if(!move_uploaded_file($file["tmp_name"][$key], $imgpath.$imgname)){
 		$o["code"] = "550";
 	  }

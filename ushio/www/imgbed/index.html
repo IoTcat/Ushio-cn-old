@@ -52,7 +52,7 @@
             <p class="lead">
               <a href="javascript:volid(0)" id="upload" style="background: transparent;color: #FFF;" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-cloud-upload"></span> 开始上传</a>
             </p>
-            <p>本站已托管9999张图片</p>
+            <p>本站已托管<span id="imgNum">☹</span>张图片</p>
           </div>
           <div class="mastfoot">
             <div class="inner bottom">
@@ -69,7 +69,12 @@
     <script src="https://v3.bootcss.com/assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="./js/jquery.hwLayer.js"></script>
     <script src="./js/jquery.imageuploader.js"></script>
-	<script src="./js/main.js"></script>
-	<script src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+<script type="text/javascript">
+    $.post("https://api.yimian.xyz/getImgNum.php", function(res){
+        $('#imgNum').html(JSON.parse(res).total);
+    });
+</script>
 </body>
 </html>
