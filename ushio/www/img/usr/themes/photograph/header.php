@@ -39,7 +39,7 @@
     		$this->header();
     	}
     ?>
-    
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
 <script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
 
 </head>

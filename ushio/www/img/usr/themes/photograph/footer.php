@@ -15,10 +15,10 @@
 	<?php endif; ?>
 	<?php if ($this->options->poweredby == 'y'): ?>
 	<p class="related"><a href="mailto:i@iotcat.me">侵删</a></p>
-	<p class="related">POWERED BY <a id="ushio-ushio" href="https://ushio.xyz">Ushio</a> / THEME BY <a href="https://photo.siitake.cn/photograph.html" target="_blank">SIITAKE</a> / DEVELOPED BY <a id="ushio-iotcatme" href="https://iotcat.me">IoTcat</a></p>
+	<p class="related">Powered with <i sytle="color: red;" class="glyphicon glyphicon-heart shaky"></i> By <a id="ushio-ushio" href="https://ushio.xyz">Ushio</a> | Theme By <a href="https://photo.siitake.cn/photograph.html" target="_blank">SIITAKE</a>/<a id="ushio-iotcatme" href="https://iotcat.me">IoTcat</a></p>
 	<?php endif; ?>
 	<?php if ($this->options->statCount == 'y'): $stat = statCount(); ?>
-	<p class="related">本站共<?php echo $stat['pic'] ?>张图片在<?php echo $stat['post'] ?>个相册中，他们被分成<?php echo $stat['cate'] ?>个类别<!--，并有<?php //echo $stat['page'] ?>个页面和<?php// echo $stat['comm'] ?>条评论--></p>
+	<p class="related">本站已收录张图片，感谢大家的支持~<!--在<?php //echo $stat['post'] ?>个相册中，他们被分成<?php //echo $stat['cate'] ?>个类别，并有<?php //echo $stat['page'] ?>个页面和<?php// echo $stat['comm'] ?>条评论--></p>
 	<?php endif; ?>
 	<p class="related">&copy; <a href="<?php $this->options->siteUrl(); ?>" target="_blank"><?php $this->options->title(); ?></a><?php if ($this->options->icp): ?> <a href="http://www.miitbeian.gov.cn/" target="_blank"><?php $this->options->icp() ?></a><?php endif; ?></p>
 	<?php if ($this->options->statistics): echo '<div style="display:none;">'; $this->options->statistics(); echo '</div>'; endif; ?>

@@ -294,8 +294,10 @@ function getImg($path, $time = 300){
 function getImgsInfo($type){
     $arr_os = array();
     $arr = array();
+    ini_set("pcre.backtrack_limit" , -1); ini_set("pcre.recursion_limit" , -1); ini_set("memory_limit" , "1024M");
+    exec('obs ls obs://yimian-image/'.$type.' -limit=-1', $arr_os);
+    //echo count($arr_os);    
 
-    exec('obs ls obs://yimian-image/'.$type, $arr_os);
     $str = implode ($arr_os);
     preg_match_all('/img_(\S*?)_(\d{2,4})x(\d{2,4})_(\S*?)_(\S*?)_(\S*?).(jpe?g|png|gif|svg)\b/', $str, $arr);
 
