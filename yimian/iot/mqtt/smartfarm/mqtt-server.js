@@ -120,6 +120,29 @@ var mqtt_server = function (o_params) {
     });
     mqtt_broker.on('published', function (packet, client) {
         switch (packet.topic) {
+
+            /* json */
+            case 'res/json':
+                try{
+                    var obj = JSON.parse(packet.payload.toString());
+                    if(obj.type == "station"){
+
+                        tools.cache.push('qos', '-1', 'station');
+                        tools.cache.push('status', obj.status, 'station');
+                        tools.cache.push('batteryLevel', obj.batterylevel, 'station');
+                        tools.cache.push('light', obj.light, 'station');
+                        tools.cache.push('temperature', obj.temperature, 'station');
+                        tools.cache.push('humidity', obj.humidity, 'station');
+                        tools.cache.push('rainfall', obj.rainfall, 'station');
+                        tools.cache.push('CO', obj.co, 'station');
+                        tools.cache.push('NH3', obj.nh3, 'station');
+                        tools.cache.push('airPressure', obj.airpressure, 'station');
+                    }
+                }catch(e){
+                    console.log("Not JSON at res/json");
+                }
+                break;
+
             /* node0 */
             case 'res/node0/status':
                 tools.cache.push('status', packet.payload.toString(), 'node0');
@@ -217,7 +240,6 @@ var mqtt_server = function (o_params) {
 
         cache:{
             push: function(t, s, name){
-
                 var f = tools.sql[name].push;
                 if(t != 'qos') rc.hset('sf/'+name, t, s);
                 rc.hset('sf/LastConnectTime', name, (new Date()).valueOf());
