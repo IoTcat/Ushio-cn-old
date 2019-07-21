@@ -12,6 +12,10 @@ mqtt_client.on('connect', function () {
   console.log('Mqtt Connected!');
 })
 
+mqtt_client.on('error', function(err){
+  console.log(err);
+});
+
 /* redis start */
 var rc = redis.createClient();
 
