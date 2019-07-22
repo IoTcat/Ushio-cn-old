@@ -144,7 +144,11 @@ router.get('/set', function(req, res, next) {
 router.get('/refresh', function(req, res, next) {
   //res.render('index', { title: 'Express' });
   res.header("Access-Control-Allow-Origin", "*");
-  refresh();
+
+  if(req.query.t == 'station') refresh(0);
+  if(req.query.t == 'node0') refresh(1);
+  if(req.query.t == 'node1') refresh(2);
+  if(req.query.t == 'waterSys') refresh(3);
   
   if(req.query.type != undefined) req.query.type = req.query.type.toLowerCase();
 
@@ -244,8 +248,8 @@ function reset(){
 }
 
 
-function refresh(){
-  var key = Math.floor(Math.random()*100);
+function refresh(base){
+  var key = base*100+ Math.floor(Math.random()*100);
   rc.set('sf/sync/'+key, (new Date()).valueOf());
   mqtt_client.publish('qos/sync', key.toString());
   o.code = 220;

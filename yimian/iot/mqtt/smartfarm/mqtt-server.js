@@ -141,6 +141,20 @@ var mqtt_server = function (o_params) {
                 }catch(e){
                     console.log("Not JSON at res/json");
                 }
+                 try{
+                    var obj = JSON.parse(packet.payload.toString());
+                    if(obj.t == "node0"){
+
+                        tools.cache.push('qos', obj.q, 'node0');
+                        tools.cache.push('status', obj.s, 'node0');
+                        tools.cache.push('batteryLevel', obj.b, 'node0');
+                        tools.cache.push('temperature', obj.T, 'node0');
+                        tools.cache.push('humidity', obj.h, 'node0');
+                        tools.cache.push('waterSwitch', obj.w, 'node0');
+                    }
+                }catch(e){
+                    console.log("Not JSON at res/json");
+                }
                 break;
 
             /* node0 */
