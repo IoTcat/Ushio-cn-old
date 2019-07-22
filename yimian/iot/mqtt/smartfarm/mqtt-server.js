@@ -125,18 +125,18 @@ var mqtt_server = function (o_params) {
             case 'res/json':
                 try{
                     var obj = JSON.parse(packet.payload.toString());
-                    if(obj.type == "station"){
+                    if(obj.t == "station"){
 
-                        tools.cache.push('qos', '-1', 'station');
-                        tools.cache.push('status', obj.status, 'station');
-                        tools.cache.push('batteryLevel', obj.batterylevel, 'station');
-                        tools.cache.push('light', obj.light, 'station');
-                        tools.cache.push('temperature', obj.temperature, 'station');
-                        tools.cache.push('humidity', obj.humidity, 'station');
-                        tools.cache.push('rainfall', obj.rainfall, 'station');
-                        tools.cache.push('CO', obj.co, 'station');
-                        tools.cache.push('NH3', obj.nh3, 'station');
-                        tools.cache.push('airPressure', obj.airpressure, 'station');
+                        tools.cache.push('qos', obj.q, 'station');
+                        tools.cache.push('status', obj.s, 'station');
+                        tools.cache.push('batteryLevel', obj.b, 'station');
+                        tools.cache.push('light', obj.l, 'station');
+                        tools.cache.push('temperature', obj.T, 'station');
+                        tools.cache.push('humidity', obj.h, 'station');
+                        tools.cache.push('rainfall', obj.r, 'station');
+                        tools.cache.push('CO', obj.C, 'station');
+                        tools.cache.push('NH3', obj.N, 'station');
+                        tools.cache.push('airPressure', obj.a, 'station');
                     }
                 }catch(e){
                     console.log("Not JSON at res/json");
