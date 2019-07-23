@@ -82,6 +82,9 @@ router.get('/set', function(req, res, next) {
         if(!e) {
           o.code = 200;
           o.msg = "Command published successfully!!";
+          setTimeout(()=>{
+		refresh(req.query.sid+1);
+	   }, 2000);
         }else{
           o.code = 402;
           o.msg = e;
@@ -96,6 +99,7 @@ router.get('/set', function(req, res, next) {
         if(!e) {
           o.code = 200;
           o.msg = "Command published successfully!!";
+          setTimeout(()=>{refresh(3)}, 2000);
         }else{
           o.code = 402;
           o.msg = e;

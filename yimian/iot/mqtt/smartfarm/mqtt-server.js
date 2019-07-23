@@ -404,15 +404,15 @@ var mqtt_server = function (o_params) {
             mqtt_broker.publish({ topic:'qos/sync', payload: key.toString()});
             setTimeout(function(key){
 		key += 100;
-		rc.set('sf/sync'+key, (new Date()).valueOf());
+		rc.set('sf/sync/'+key, (new Date()).valueOf());
                 mqtt_broker.publish({topic:'qos/sync', payload: key.toString()});
 		setTimeout(function(key){
 		    key += 100;
-		    rc.set('sf/sync'+key, (new Date()).valueOf());
+		    rc.set('sf/sync/'+key, (new Date()).valueOf());
                     mqtt_broker.publish({topic:'qos/sync', payload: key.toString()});
 	   	    setTimeout(function(key){
 			key += 100;
-			rc.set('sf/sync'+key, (new Date()).valueOf());
+			rc.set('sf/sync/'+key, (new Date()).valueOf());
 			mqtt_broker.publish({topic:'qos/sync', payload: key.toString()});
 
 	            }, 10000, key);
