@@ -7,9 +7,13 @@
 
 # hlsearch on (H) or off (h):
 ~H
+# Last Substitute String:
+$
+
 # Command Line History (newest to oldest):
-:q!
 :wq
+:q
+:q!
 
 # Search String History (newest to oldest):
 
@@ -20,7 +24,90 @@
 # Input Line History (newest to oldest):
 
 # Registers:
-""1	LINE	0
+"0	CHAR	0
+	$dsn = 'mysql:dbname=oauth;host=192.168.0.90';
+	$username = "oauth";
+	$password = "d78df%enWq@d6sa2";
+	
+	
+""1	CHAR	0
+	
+	     \OAuth2\Autoloader::register();
+	     //oauth操作数据库开始
+	     $storage = new \OAuth2\Storage\Pdo(array('dsn' => $dsn, 'username' => $username, 'password' => $password));
+	
+	     // Pass a storage object or array of storage objects to the OAuth2 server class
+	     $server = new \OAuth2\Server($storage);
+	
+	     // Add the "Client Credentials" grant type (it is the simplest of the grant types)
+	     $server->addGrantType(new \OAuth2\GrantType\ClientCredentials($storage));
+	
+	     // Add the "Authorization Code" grant type (this is where the oauth magic happens)
+	     $server->addGrantType(new \OAuth2\GrantType\AuthorizationCode($storage));
+	
+	     \OAuth2\Autoloader::register();
+	
+	     // $dsn is the Data Source Name for your database, for exmaple "mysql:dbname=my_oauth2_db;host=localhost"
+	     $storage = new \OAuth2\Storage\Pdo(array('dsn' => $dsn, 'username' => $username, 'password' => $password));
+	     // var_dump($storage);
+	
+	     // Pass a storage object or array of storage objects to the OAuth2 server class
+	     $server = new \OAuth2\Server($storage);
+	
+	     // Add the "Client Credentials" grant type (it is the simplest of the grant types)
+	     $server->addGrantType(new \OAuth2\GrantType\ClientCredentials($storage));
+	
+	     // Add the "Authorization Code" grant type (this is where the oauth magic happens)
+	     $server->addGrantType(new \OAuth2\GrantType\AuthorizationCode($storage));
+	
+	     $request = \OAuth2\Request::createFromGlobals();
+	     $response = new \OAuth2\Response();
+	
+	     // 校验请求是否 oauth2.0 请求以及是否 clientId 是否已经注册在数据库
+	     if (!$server->validateAuthorizeRequest($request, $response)) {
+	         $response->send();
+	             die;
+	             }
+	
+	
+	// display an authorization form
+	/*if (empty($_POST)) {
+	    exit('<form method="post">
+	              <label>你个人信息id是 2018 ,是否授权此设备?</label><br />
+	                        <input type="submit" name="authorized" value="yes">
+	                                  <input type="submit" name="authorized" value="no">
+	                                          </form>
+	       ');
+	       } else {
+	           echo 'fail ';
+	           }
+"2	LINE	0
+	" ============================================================================
+	" Netrw Directory Listing                                        (netrw v149)
+	"   /home/ushio/www/oauth/OAuth2
+	"   Sorted by      name
+	"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
+	"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
+	" ============================================================================
+	../
+	./
+	ClientAssertionType/
+	Controller/
+	Encryption/
+	GrantType/
+	OpenID/
+	ResponseType/
+	Storage/
+	TokenType/
+	Autoloader.php
+	Request.php
+	RequestInterface.php
+	Response.php
+	ResponseInterface.php
+	Scope.php
+	ScopeInterface.php
+	Server.php
+"3	LINE	0
 	var mosca = require('mosca');
 	
 	var ascoltatore = {
@@ -52,19 +139,162 @@
 	
 
 # File marks:
-'0  16  2  /etc/crontab
-'1  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
-'2  9  1  ~/iot/mqtt/smartfarm/mqtt-server.js
+'0  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
+'1  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
+'2  9  0  /home/ushio/www/oauth/getResource.php
+'3  9  0  /home/ushio/www/oauth/AligenieToken.php
+'4  1  0  /home/ushio/www/oauth/Aligenie
+'5  7  30  /home/ushio/www/oauth/getResource.php
+'6  3  0  /home/ushio/www/oauth/AligenieToken.php
+'7  13  0  /home/ushio/www/oauth/AligenieToken.php
+'8  8  0  /home/ushio/www/oauth/AligenieAuthorize.php
+'9  11  28  /home/ushio/www/oauth/AligenieToken.php
 
 # Jumplist (newest first):
+-'  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
+-'  16  12  /home/ushio/www/oauth/AligenieAuthorize.php
+-'  8  0  /home/ushio/www/oauth/AligenieAuthorize.php
+-'  9  0  /home/ushio/www/oauth/getResource.php
+-'  7  15  /home/ushio/www/oauth/getResource.php
+-'  9  0  /home/ushio/www/oauth/AligenieToken.php
+-'  3  0  /home/ushio/www/oauth/AligenieToken.php
+-'  1  0  /home/ushio/www/oauth/Aligenie
+-'  13  0  /home/ushio/www/oauth/AligenieToken.php
+-'  15  5  /home/ushio/www/oauth/AligenieAuthorize.php
+-'  11  0  /home/ushio/www/oauth/AligenieToken.php
+-'  1  0  /home/ushio/www/oauth/getResource.php
+-'  1  0  /home/ushio/www/oauth/AligenieToken.php
+-'  1  74  /home/ushio/www/oauth/AligenieAuthorize.php
+-'  1  0  /home/ushio/www/oauth/OAuth2
+-'  172  0  ~/www/homepage/index.html
+-'  1  0  ~/www/homepage/index.html
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
 -'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  172  0  ~/www/homepage/index.html
+-'  1  0  ~/www/homepage/index.html
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  0  /home/ushio/www/oauth/OAuth2
+-'  172  0  ~/www/homepage/index.html
+-'  1  0  ~/www/homepage/index.html
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  172  0  ~/www/homepage/index.html
+-'  1  0  ~/www/homepage/index.html
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  0  /home/ushio/www/oauth/OAuth2
+-'  172  0  ~/www/homepage/index.html
+-'  1  0  ~/www/homepage/index.html
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  172  0  ~/www/homepage/index.html
+-'  1  0  ~/www/homepage/index.html
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
 
 # History of marks within files (newest to oldest):
+
+> /home/ushio/www/oauth/AligenieAuthorize.php
+	"	75	0
+	^	75	0
+	.	75	0
+	+	1	5
+	+	1	5
+	+	16	23
+	+	13	48
+	+	14	22
+	+	15	33
+	+	16	1
+	+	16	1
+	+	76	0
+	+	75	0
+
+> /home/ushio/www/oauth/getResource.php
+	"	9	0
+	^	9	0
+	.	9	0
+	+	40	8
+	+	7	37
+	+	8	0
+	+	9	0
+
+> /home/ushio/www/oauth/AligenieToken.php
+	"	9	0
+	^	3	0
+	.	3	0
+	+	26	75
+	+	1	4
+	+	2	43
+	+	10	17
+	+	11	27
+	+	8	0
+	+	3	0
+
+> /home/ushio/www/oauth/Aligenie
+	"	1	0
+	^	1	0
+
+> ~/www/homepage/index.html
+	"	172	0
+	^	1	0
 
 > /etc/crontab
 	"	16	2
