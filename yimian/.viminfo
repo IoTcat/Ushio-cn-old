@@ -24,13 +24,16 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	$dsn = 'mysql:dbname=oauth;host=192.168.0.90';
-	$username = "oauth";
-	$password = "d78df%enWq@d6sa2";
-	
-	
-""1	CHAR	0
+""0	CHAR	0
+	                    if(obj.t == "node0"){
+	                        tools.cache.push('qos', obj.q, 'node0');
+	                        tools.cache.push('status', obj.s, 'node0');
+	                        tools.cache.push('batteryLevel', obj.b, 'node0');
+	                        tools.cache.push('temperature', obj.T, 'node0');
+	                        tools.cache.push('humidity', obj.h, 'node0');
+	                        tools.cache.push('waterSwitch', obj.w, 'node0');
+	                    }
+"1	CHAR	0
 	
 	     \OAuth2\Autoloader::register();
 	     //oauth操作数据库开始
@@ -139,18 +142,20 @@ $
 	
 
 # File marks:
-'0  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
-'1  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
-'2  9  0  /home/ushio/www/oauth/getResource.php
-'3  9  0  /home/ushio/www/oauth/AligenieToken.php
-'4  1  0  /home/ushio/www/oauth/Aligenie
-'5  7  30  /home/ushio/www/oauth/getResource.php
-'6  3  0  /home/ushio/www/oauth/AligenieToken.php
-'7  13  0  /home/ushio/www/oauth/AligenieToken.php
-'8  8  0  /home/ushio/www/oauth/AligenieAuthorize.php
-'9  11  28  /home/ushio/www/oauth/AligenieToken.php
+'0  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+'1  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
+'2  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
+'3  9  0  /home/ushio/www/oauth/getResource.php
+'4  9  0  /home/ushio/www/oauth/AligenieToken.php
+'5  1  0  /home/ushio/www/oauth/Aligenie
+'6  7  30  /home/ushio/www/oauth/getResource.php
+'7  3  0  /home/ushio/www/oauth/AligenieToken.php
+'8  13  0  /home/ushio/www/oauth/AligenieToken.php
+'9  8  0  /home/ushio/www/oauth/AligenieAuthorize.php
 
 # Jumplist (newest first):
+-'  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
 -'  16  12  /home/ushio/www/oauth/AligenieAuthorize.php
 -'  8  0  /home/ushio/www/oauth/AligenieAuthorize.php
@@ -170,87 +175,67 @@ $
 -'  1  0  ~/www/homepage/index.html
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  172  0  ~/www/homepage/index.html
 -'  1  0  ~/www/homepage/index.html
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  1  0  /home/ushio/www/oauth/OAuth2
 -'  172  0  ~/www/homepage/index.html
 -'  1  0  ~/www/homepage/index.html
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  172  0  ~/www/homepage/index.html
 -'  1  0  ~/www/homepage/index.html
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  1  0  /home/ushio/www/oauth/OAuth2
 -'  172  0  ~/www/homepage/index.html
 -'  1  0  ~/www/homepage/index.html
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  172  0  ~/www/homepage/index.html
 -'  1  0  ~/www/homepage/index.html
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  1  29  ~/iot/mqtt/smartfarm/mqtt-server.js
 
 # History of marks within files (newest to oldest):
+
+> ~/iot/mqtt/smartfarm/mqtt-server.js
+	"	160	0
+	^	160	0
+	.	160	0
+	+	1	0
+	+	1	4
+	+	5	1
+	+	4	14
+	+	6	0
+	+	3	11
+	+	7	40
+	+	9	1
+	+	1	29
+	+	141	41
+	+	142	0
+	+	149	37
+	+	150	60
+	+	151	63
+	+	152	69
+	+	153	68
+	+	155	68
+	+	154	65
+	+	160	0
 
 > /home/ushio/www/oauth/AligenieAuthorize.php
 	"	75	0
@@ -301,17 +286,3 @@ $
 	^	16	3
 	.	16	2
 	+	16	2
-
-> ~/iot/mqtt/smartfarm/mqtt-server.js
-	"	1	29
-	^	1	30
-	.	1	29
-	+	1	0
-	+	1	4
-	+	5	1
-	+	4	14
-	+	6	0
-	+	3	11
-	+	7	40
-	+	9	1
-	+	1	29
