@@ -17,14 +17,17 @@ $id = $_REQUEST['id'];
 $size = $_REQUEST['size'];
 $display = $_REQUEST['display'];
 $R18 = $_REQUEST['R18'];
+$range = $_REQUEST['range'];
 
 
-if(!isset($type) || !($type == "moe" || $type == "koino" || $type == "head" || $type == "wallpaper" || $type == "blog")) $type = "moe";
+if(!isset($type) || !($type == "moe" || $type == "koino" || $type == "head" || $type == "wallpaper" || $type == "blog" || $type == "imgbed")) $type = "moe";
 if(!isset($id)) $id = null;
 if(!isset($size)) $size = null;
 if(!isset($path)) $path = null;
 if($display != "true") $display = false; else $display = true;
 if($R18 != "true") $R18 = false; else $R18 = true;
+if(isset($range) && $range > 0) $range = $range; else $range = 0;
+
 
 if($path){
 
@@ -58,8 +61,8 @@ if($path){
         }
         do{
   	    $index = array_rand($arr_keys);
-	}while($R18 != true && $arr[6][$index] != "normal");
-        $path = $type. '/' .$arr[0][$index];
+	}while($R18 != true && $arr[6][$arr_keys[$index]] != "normal");
+        $path = $type. '/' .$arr[0][$arr_keys[$index]];
         
     }elseif(!$path){
         $arr_size = explode('x',$size);
@@ -76,8 +79,8 @@ if($path){
         }
         do{
   	    $index = array_rand($arr_keys);
-	}while($R18 != true && $arr[6][$index] != "normal");
-        $path = $type. '/' .$arr[0][$index];
+	}while($R18 != true && $arr[6][$arr_keys[$index]] != "normal");
+        $path = $type. '/' .$arr[0][$arr_keys[$index]];
         
         //$path = $type. '/' .$arr[0][$arr_keys[array_rand($arr_keys)]];
 
@@ -105,13 +108,13 @@ function getMatchedKeys($str, $arr){
     if(!is_array($str)){
         $o = array();
         foreach($arr as $key=>$val){
-            if($val == $str) array_push($o, $key);
+            if($val >= $str - $GLOBALS['range'] && $val <= $str + $GLOBALS['range']) array_push($o, $key);
         }
         return $o;
     }else{
         $o = array();
         foreach($arr as $key=>$val){
-            if($val >= $str[0] && $val <= $str [1]) array_push($o, $key);
+            if($val >= $str[0] - $GLOBALS['range'] && $val <= $str[1] + $GLOBALS['range']) array_push($o, $key);
         }
         return $o;
     }   

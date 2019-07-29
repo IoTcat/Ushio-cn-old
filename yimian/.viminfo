@@ -11,9 +11,9 @@
 $
 
 # Command Line History (newest to oldest):
+:q!
 :wq
 :q
-:q!
 
 # Search String History (newest to oldest):
 
@@ -142,18 +142,20 @@ $
 	
 
 # File marks:
-'0  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
-'1  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
-'2  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
-'3  9  0  /home/ushio/www/oauth/getResource.php
-'4  9  0  /home/ushio/www/oauth/AligenieToken.php
-'5  1  0  /home/ushio/www/oauth/Aligenie
-'6  7  30  /home/ushio/www/oauth/getResource.php
-'7  3  0  /home/ushio/www/oauth/AligenieToken.php
-'8  13  0  /home/ushio/www/oauth/AligenieToken.php
-'9  8  0  /home/ushio/www/oauth/AligenieAuthorize.php
+'0  74  0  /home/ushio/www/api/img/index.php
+'1  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+'2  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
+'3  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
+'4  9  0  /home/ushio/www/oauth/getResource.php
+'5  9  0  /home/ushio/www/oauth/AligenieToken.php
+'6  1  0  /home/ushio/www/oauth/Aligenie
+'7  7  30  /home/ushio/www/oauth/getResource.php
+'8  3  0  /home/ushio/www/oauth/AligenieToken.php
+'9  13  0  /home/ushio/www/oauth/AligenieToken.php
 
 # Jumplist (newest first):
+-'  74  0  /home/ushio/www/api/img/index.php
+-'  1  0  /home/ushio/www/api/img/index.php
 -'  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  1  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
@@ -210,8 +212,53 @@ $
 -'  1  0  /etc/crontab
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
+-'  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  1  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
+-'  16  12  /home/ushio/www/oauth/AligenieAuthorize.php
+-'  8  0  /home/ushio/www/oauth/AligenieAuthorize.php
+-'  9  0  /home/ushio/www/oauth/getResource.php
+-'  7  15  /home/ushio/www/oauth/getResource.php
+-'  9  0  /home/ushio/www/oauth/AligenieToken.php
+-'  3  0  /home/ushio/www/oauth/AligenieToken.php
+-'  1  0  /home/ushio/www/oauth/Aligenie
+-'  13  0  /home/ushio/www/oauth/AligenieToken.php
+-'  15  5  /home/ushio/www/oauth/AligenieAuthorize.php
+-'  11  0  /home/ushio/www/oauth/AligenieToken.php
+-'  1  0  /home/ushio/www/oauth/getResource.php
+-'  1  0  /home/ushio/www/oauth/AligenieToken.php
+-'  1  74  /home/ushio/www/oauth/AligenieAuthorize.php
+-'  1  0  /home/ushio/www/oauth/OAuth2
+-'  172  0  ~/www/homepage/index.html
+-'  1  0  ~/www/homepage/index.html
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  172  0  ~/www/homepage/index.html
+-'  1  0  ~/www/homepage/index.html
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  1  0  /home/ushio/www/oauth/OAuth2
+-'  172  0  ~/www/homepage/index.html
+-'  1  0  ~/www/homepage/index.html
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
+-'  172  0  ~/www/homepage/index.html
+-'  1  0  ~/www/homepage/index.html
+-'  16  2  /etc/crontab
+-'  1  0  /etc/crontab
 
 # History of marks within files (newest to oldest):
+
+> /home/ushio/www/api/img/index.php
+	"	74	0
+	^	1	0
 
 > ~/iot/mqtt/smartfarm/mqtt-server.js
 	"	160	0
