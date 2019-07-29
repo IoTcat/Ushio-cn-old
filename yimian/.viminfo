@@ -11,6 +11,7 @@
 $
 
 # Command Line History (newest to oldest):
+:w
 :q!
 :wq
 :q
@@ -142,19 +143,23 @@ $
 	
 
 # File marks:
-'0  74  0  /home/ushio/www/api/img/index.php
-'1  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
-'2  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
-'3  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
-'4  9  0  /home/ushio/www/oauth/getResource.php
-'5  9  0  /home/ushio/www/oauth/AligenieToken.php
-'6  1  0  /home/ushio/www/oauth/Aligenie
-'7  7  30  /home/ushio/www/oauth/getResource.php
-'8  3  0  /home/ushio/www/oauth/AligenieToken.php
-'9  13  0  /home/ushio/www/oauth/AligenieToken.php
+'0  53  49  /home/ushio/www/api/img/index.php
+'1  77  0  /home/ushio/www/api/img/index.php
+'2  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+'3  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
+'4  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
+'5  9  0  /home/ushio/www/oauth/getResource.php
+'6  9  0  /home/ushio/www/oauth/AligenieToken.php
+'7  1  0  /home/ushio/www/oauth/Aligenie
+'8  7  30  /home/ushio/www/oauth/getResource.php
+'9  3  0  /home/ushio/www/oauth/AligenieToken.php
 
 # Jumplist (newest first):
--'  74  0  /home/ushio/www/api/img/index.php
+-'  53  49  /home/ushio/www/api/img/index.php
+-'  111  37  /home/ushio/www/api/img/index.php
+-'  106  0  /home/ushio/www/api/img/index.php
+-'  117  66  /home/ushio/www/api/img/index.php
+-'  77  12  /home/ushio/www/api/img/index.php
 -'  1  0  /home/ushio/www/api/img/index.php
 -'  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  1  0  ~/iot/mqtt/smartfarm/mqtt-server.js
@@ -244,21 +249,31 @@ $
 -'  1  0  /etc/crontab
 -'  1  0  /home/ushio/www/oauth/OAuth2
 -'  172  0  ~/www/homepage/index.html
--'  1  0  ~/www/homepage/index.html
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  172  0  ~/www/homepage/index.html
--'  1  0  ~/www/homepage/index.html
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
 
 # History of marks within files (newest to oldest):
 
 > /home/ushio/www/api/img/index.php
-	"	74	0
-	^	1	0
+	"	53	49
+	^	117	50
+	.	117	49
+	+	23	137
+	+	117	46
+	+	82	49
+	+	83	53
+	+	64	49
+	+	65	53
+	+	20	9
+	+	30	0
+	+	29	33
+	+	111	60
+	+	117	66
+	+	29	47
+	+	30	12
+	+	30	15
+	+	12	0
+	+	30	0
+	+	111	80
+	+	117	49
 
 > ~/iot/mqtt/smartfarm/mqtt-server.js
 	"	160	0
