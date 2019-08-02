@@ -29,6 +29,20 @@
 	<script type="text/javascript">
 
 
+function GetRequest() { 
+	var url = location.search; //获取url中"?"符后的字串 
+	var theRequest = new Object(); 
+	if (url.indexOf("?") != -1) {
+		var str = url.substr(1); 
+		strs = str.split("&"); 
+		for(var i = 0; i < strs.length; i ++) {
+			theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
+		} 
+	} 
+	return theRequest; 
+} 
+ 
+var req = GetRequest();
 		var chart = function(id){
 
 			var o = {};
@@ -207,6 +221,7 @@
 			'minDate':'2019-6-15',/*最小日期*/ 
 			'maxDate':date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate(),/*最大日期*/ 
 			'cutDays': 1,
+			'time': req['f'],
 			'onSubmit':function(){/*确认时触发事件*/ 
 				pullData();
 			}, 
@@ -219,6 +234,7 @@
 			'minDate':'2019-6-15',/*最小日期*/ 
 			'maxDate':date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate(),/*最大日期*/ 
 			'cutDays': 0,
+			'time': req['t'],
 			'onSubmit':function(){/*确认时触发事件*/ 
 
 				pullData();
@@ -228,6 +244,7 @@
 		}); 
 		pullData();
 	</script>
+
 
 
 </body>
