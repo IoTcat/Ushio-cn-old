@@ -11,10 +11,10 @@
 $
 
 # Command Line History (newest to oldest):
+:q
 :w
 :q!
 :wq
-:q
 
 # Search String History (newest to oldest):
 
@@ -143,18 +143,20 @@ $
 	
 
 # File marks:
-'0  53  49  /home/ushio/www/api/img/index.php
-'1  77  0  /home/ushio/www/api/img/index.php
-'2  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
-'3  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
-'4  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
-'5  9  0  /home/ushio/www/oauth/getResource.php
-'6  9  0  /home/ushio/www/oauth/AligenieToken.php
-'7  1  0  /home/ushio/www/oauth/Aligenie
-'8  7  30  /home/ushio/www/oauth/getResource.php
-'9  3  0  /home/ushio/www/oauth/AligenieToken.php
+'0  70  0  ~/www/smartfarm/html/chart-station.html
+'1  53  49  /home/ushio/www/api/img/index.php
+'2  77  0  /home/ushio/www/api/img/index.php
+'3  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+'4  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
+'5  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
+'6  9  0  /home/ushio/www/oauth/getResource.php
+'7  9  0  /home/ushio/www/oauth/AligenieToken.php
+'8  1  0  /home/ushio/www/oauth/Aligenie
+'9  7  30  /home/ushio/www/oauth/getResource.php
 
 # Jumplist (newest first):
+-'  70  0  ~/www/smartfarm/html/chart-station.html
+-'  1  0  ~/www/smartfarm/html/chart-station.html
 -'  53  49  /home/ushio/www/api/img/index.php
 -'  111  37  /home/ushio/www/api/img/index.php
 -'  106  0  /home/ushio/www/api/img/index.php
@@ -249,8 +251,15 @@ $
 -'  1  0  /etc/crontab
 -'  1  0  /home/ushio/www/oauth/OAuth2
 -'  172  0  ~/www/homepage/index.html
+-'  53  49  /home/ushio/www/api/img/index.php
+-'  111  37  /home/ushio/www/api/img/index.php
+-'  106  0  /home/ushio/www/api/img/index.php
 
 # History of marks within files (newest to oldest):
+
+> ~/www/smartfarm/html/chart-station.html
+	"	70	0
+	^	1	0
 
 > /home/ushio/www/api/img/index.php
 	"	53	49
