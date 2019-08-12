@@ -143,18 +143,19 @@ $
 	
 
 # File marks:
-'0  70  0  ~/www/smartfarm/html/chart-station.html
-'1  53  49  /home/ushio/www/api/img/index.php
-'2  77  0  /home/ushio/www/api/img/index.php
-'3  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
-'4  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
-'5  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
-'6  9  0  /home/ushio/www/oauth/getResource.php
-'7  9  0  /home/ushio/www/oauth/AligenieToken.php
-'8  1  0  /home/ushio/www/oauth/Aligenie
-'9  7  30  /home/ushio/www/oauth/getResource.php
+'0  1  0  /etc/dnsmasq.d/sola.conf
+'1  70  0  ~/www/smartfarm/html/chart-station.html
+'2  53  49  /home/ushio/www/api/img/index.php
+'3  77  0  /home/ushio/www/api/img/index.php
+'4  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+'5  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
+'6  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
+'7  9  0  /home/ushio/www/oauth/getResource.php
+'8  9  0  /home/ushio/www/oauth/AligenieToken.php
+'9  1  0  /home/ushio/www/oauth/Aligenie
 
 # Jumplist (newest first):
+-'  1  0  /etc/dnsmasq.d/sola.conf
 -'  70  0  ~/www/smartfarm/html/chart-station.html
 -'  1  0  ~/www/smartfarm/html/chart-station.html
 -'  53  49  /home/ushio/www/api/img/index.php
@@ -252,10 +253,12 @@ $
 -'  1  0  /home/ushio/www/oauth/OAuth2
 -'  172  0  ~/www/homepage/index.html
 -'  53  49  /home/ushio/www/api/img/index.php
--'  111  37  /home/ushio/www/api/img/index.php
--'  106  0  /home/ushio/www/api/img/index.php
 
 # History of marks within files (newest to oldest):
+
+> /etc/dnsmasq.d/sola.conf
+	"	1	0
+	^	1	0
 
 > ~/www/smartfarm/html/chart-station.html
 	"	70	0
