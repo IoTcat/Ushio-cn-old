@@ -1,4 +1,7 @@
 #!/bin/bash
-forever start /home/yimian/iot/mqtt/smartfarm/index.js
-forever start /home/yimian/www/smartfarm/bin/www
-forever start /home/ushio/www/session/bin/www
+cd /home/yimian/iot/mqtt/smartfarm/
+forever start index.js
+cd /home/yimian/www/smartfarm/
+forever start bin/www
+cd /home/ushio/www/session/
+forever start bin/www
