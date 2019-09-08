@@ -11,10 +11,10 @@
 $
 
 # Command Line History (newest to oldest):
-:q
-:wq
-:w
 :q!
+:wq
+:q
+:w
 
 # Search String History (newest to oldest):
 
@@ -143,22 +143,23 @@ $
 	
 
 # File marks:
-'0  1  0  ~/www/smartfarm/routes/api.js
-'1  4  25  ~/www/wx/.env
-'2  1  0  /etc/dnsmasq.d/sola.conf
-'3  70  0  ~/www/smartfarm/html/chart-station.html
-'4  53  49  /home/ushio/www/api/img/index.php
-'5  77  0  /home/ushio/www/api/img/index.php
-'6  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
-'7  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
-'8  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
-'9  9  0  /home/ushio/www/oauth/getResource.php
+'0  5  36  /etc/dnsmasq.d/sola.conf
+'1  1  0  ~/www/smartfarm/routes/api.js
+'2  4  25  ~/www/wx/.env
+'3  1  0  /etc/dnsmasq.d/sola.conf
+'4  70  0  ~/www/smartfarm/html/chart-station.html
+'5  53  49  /home/ushio/www/api/img/index.php
+'6  77  0  /home/ushio/www/api/img/index.php
+'7  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
+'8  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
+'9  16  1  /home/ushio/www/oauth/AligenieAuthorize.php
 
 # Jumplist (newest first):
+-'  5  36  /etc/dnsmasq.d/sola.conf
+-'  1  0  /etc/dnsmasq.d/sola.conf
 -'  1  0  ~/www/smartfarm/routes/api.js
 -'  4  25  ~/www/wx/.env
 -'  1  0  ~/www/wx/.env
--'  1  0  /etc/dnsmasq.d/sola.conf
 -'  70  0  ~/www/smartfarm/html/chart-station.html
 -'  1  0  ~/www/smartfarm/html/chart-station.html
 -'  53  49  /home/ushio/www/api/img/index.php
@@ -251,10 +252,14 @@ $
 -'  1  0  ~/www/homepage/index.html
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
 
 # History of marks within files (newest to oldest):
+
+> /etc/dnsmasq.d/sola.conf
+	"	5	36
+	^	5	37
+	.	5	26
+	+	5	26
 
 > ~/www/smartfarm/routes/api.js
 	"	1	0
@@ -268,10 +273,6 @@ $
 	+	3	14
 	+	2	31
 	+	4	25
-
-> /etc/dnsmasq.d/sola.conf
-	"	1	0
-	^	1	0
 
 > ~/www/smartfarm/html/chart-station.html
 	"	70	0
