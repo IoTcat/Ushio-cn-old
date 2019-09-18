@@ -11,10 +11,10 @@
 $
 
 # Command Line History (newest to oldest):
-:q!
-:q
-:Q!
 :wq
+:q
+:q!
+:Q!
 :w
 
 # Search String History (newest to oldest):
@@ -146,18 +146,24 @@ $
 		
 
 # File marks:
-'0  149  0  /home/ushio/www/api/functions.php
-'1  1  0  /home/ushio/www/api/mail/index.php
-'2  1  0  /home/ushio/www/api/mail/in
-'3  5  36  /etc/dnsmasq.d/sola.conf
-'4  1  0  ~/www/smartfarm/routes/api.js
-'5  4  25  ~/www/wx/.env
-'6  1  0  /etc/dnsmasq.d/sola.conf
-'7  70  0  ~/www/smartfarm/html/chart-station.html
-'8  53  49  /home/ushio/www/api/img/index.php
-'9  77  0  /home/ushio/www/api/img/index.php
+'0  3  56  ~/www/settlement/api/index.php
+'1  78  5  ~/www/settlement/func/functions.php
+'2  1  0  ~/www/settlement/.config.php
+'3  1  0  ~/www/settlement/.gitignore
+'4  149  0  /home/ushio/www/api/functions.php
+'5  1  0  /home/ushio/www/api/mail/index.php
+'6  1  0  /home/ushio/www/api/mail/in
+'7  5  36  /etc/dnsmasq.d/sola.conf
+'8  1  0  ~/www/smartfarm/routes/api.js
+'9  4  25  ~/www/wx/.env
 
 # Jumplist (newest first):
+-'  3  56  ~/www/settlement/api/index.php
+-'  1  0  ~/www/settlement/api/index.php
+-'  78  5  ~/www/settlement/func/functions.php
+-'  1  0  ~/www/settlement/func/functions.php
+-'  1  0  ~/www/settlement/.config.php
+-'  1  0  ~/www/settlement/.gitignore
 -'  149  0  /home/ushio/www/api/functions.php
 -'  227  0  /home/ushio/www/api/functions.php
 -'  1  0  /home/ushio/www/api/functions.php
@@ -249,15 +255,31 @@ $
 -'  1  0  /home/ushio/www/oauth/AligenieToken.php
 -'  1  74  /home/ushio/www/oauth/AligenieAuthorize.php
 -'  1  0  /home/ushio/www/oauth/OAuth2
--'  172  0  ~/www/homepage/index.html
--'  1  0  ~/www/homepage/index.html
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
 
 # History of marks within files (newest to oldest):
+
+> ~/www/settlement/api/index.php
+	"	3	56
+	^	3	57
+	.	3	56
+	+	4	0
+	+	3	56
+
+> ~/www/settlement/func/functions.php
+	"	78	5
+	^	3	38
+	.	3	37
+	+	3	37
+
+> ~/www/settlement/.config.php
+	"	1	0
+	^	1	0
+
+> ~/www/settlement/.gitignore
+	"	1	0
+	^	1	1
+	.	1	0
+	+	1	0
 
 > /home/ushio/www/api/functions.php
 	"	149	0
