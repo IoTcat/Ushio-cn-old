@@ -1,11 +1,11 @@
 <?php
-include '/home/ushio/conf/dbKeys/log.db.key.php';
-include '/home/yimian/www/settlement/.config.php';
+require '/home/yimian/www/settlement/.db.key.php';
+require '/home/yimian/www/settlement/.config.php';
 /**database connection**/
 
 //connect to database
 function db__connect($servername="",$username="",$password="",$dbname="")
-{echo $GLOBALS['g_db_serverName'];
+{//echo $GLOBALS['g_db_serverName'];
 	/* reset */
 	if($servername=="") $servername=$GLOBALS['g_db_serverName'];
 	if($username=="") $username=$GLOBALS['g_db_usrName'];

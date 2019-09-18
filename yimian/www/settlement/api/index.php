@@ -3,7 +3,7 @@
 include '/home/yimian/www/settlement/func/functions.php';
 
 /* global const */
-$g_threshold = 20;
+$g_threshold = 50;
 
 /* get URL val */
 if(isset($_REQUEST['type'])) $type = $_REQUEST['type'];
@@ -43,6 +43,7 @@ if($type == "payment")
     }
 
     $tmpItem['type'] = "payment";
+    $tmpItem['id'] ++;
     $tmpItem[$usr] += $val;
     $tmpItem[$usr.'_'] += $val;
     $tmpItem['total'] = getTotal($tmpItem);
@@ -54,7 +55,7 @@ if($type == "payment")
         "usr" => $usr,
         "val" => $val,
         "img" => $img,
-        "statue" => 1
+        "status" => 1
     ));
 
     $tmpItem = checkCurrent($tmpItem);
@@ -68,18 +69,19 @@ if($type == "confirm")
         die();
     }
 
-    $current_item = db__getData($conn, "current", 'id', $id);
-
+    $current_item = db__getData($conn, "current", 'id', $id)[0];
     if($current_item['status'] == 1){
         die();
     }
 
     $tmpItem['type'] = "confirm";
+    $tmpItem['id'] ++;
     $tmpItem[$current_item['usr_from']] += $current_item['val'];
     $tmpItem[$current_item['usr_to']] -= $current_item['val'];
     $tmpItem['total'] = getTotal($tmpItem);
     $tmpItem['avg'] = getAvg($tmpItem);
-
+    unset($tmpItem[""]);
+//var_dump($tmpItem);
     db__pushData($conn, "account", $tmpItem);
     db__pushData($conn, "current", array(
         "status" => 1
@@ -88,7 +90,6 @@ if($type == "confirm")
     ));
 
 }
-
 
 echo json_encode(array(
     "code" => 200,
@@ -103,22 +104,21 @@ die();
 
 
 
-
 function checkCurrent($tmpItem){
-
     if(checkCurrentMore($tmpItem) && checkCurrentLess($tmpItem)){
         $usr_to = checkCurrentMore($tmpItem);
         $usr_from = checkCurrentLess($tmpItem);
         $tmpItem = setCurrent($tmpItem, $usr_to, $usr_from);
         $tmpItem['type'] = "current";
-        db__pushData($conn, "account", $tmpItem);
-        db__pushData($conn, "current", array(
+        //var_dump($tmpItem);
+        db__pushData($GLOBALS['conn'], "account", $tmpItem);
+        db__pushData($GLOBALS['conn'], "current", array(
             "datetime" => $GLOBALS['datetime'],
             "usr_to" => $usr_to,
             "usr_from" => $usr_from,
             "val" => $GLOBALS['g_threshold'],
             "status" => 0
-        ));    
+        )); 
     }
     return $tmpItem;
 }
@@ -127,6 +127,7 @@ function setCurrent($tmpItem, $usr_to, $usr_from){
 
     $tmpItem[$usr_to.'_'] -= $GLOBALS['g_threshold'];
     $tmpItem[$usr_from.'_'] += $GLOBALS['g_threshold'];
+    $tmpItem['id'] ++;
     return $tmpItem;
 }
 
@@ -140,7 +141,7 @@ function checkCurrentMore($tmpItem){
 function checkCurrentLess($tmpItem){
 
     foreach($GLOBALS['usrArray'] as $item){
-        if($tmpItem[$item.'_'] + $tmpItem['avg'] < $GLOBALS['g_threshold']) return $item;
+        if($tmpItem['avg'] - $tmpItem[$item.'_'] > $GLOBALS['g_threshold']) return $item;
     }
     return false;
 }
