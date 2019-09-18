@@ -14,9 +14,9 @@
 $
 
 # Command Line History (newest to oldest):
+:wq
 :q
 :w
-:wq
 :Wq
 :q!
 :Q!
@@ -34,129 +34,65 @@ $
 "0	LINE	0
 	*/
 ""1	LINE	0
-	var_dump($current_item);
+	var_dump($fin);
 "2	LINE	0
-	    $tmpItem['status'] = 1;
+	      //no data
 "3	LINE	0
-	    $tmpItem['status'] = 1;
+	if ($result->num_rows > 0) {}else{return 404;}
 "4	LINE	0
-	echo checkCurrentLess($tmpItem);
+	var_dump($current_item);
 "5	LINE	0
-	*/
+	var_dump($current_item);
 "6	LINE	0
-	/*
+	var_dump($current_item);
 "7	LINE	0
-	<?php
-	
-	$type = $_REQUEST['type'];
-	$usr = $_REQUEST['usr'];
-	$val = $_REQUEST['val'];
-	
-	
-"8	CHAR	0
-	
-	     \OAuth2\Autoloader::register();
-	     //oauth操作数据库开始
-	     $storage = new \OAuth2\Storage\Pdo(array('dsn' => $dsn, 'username' => $username, 'password' => $password));
-	
-	     // Pass a storage object or array of storage objects to the OAuth2 server class
-	     $server = new \OAuth2\Server($storage);
-	
-	     // Add the "Client Credentials" grant type (it is the simplest of the grant types)
-	     $server->addGrantType(new \OAuth2\GrantType\ClientCredentials($storage));
-	
-	     // Add the "Authorization Code" grant type (this is where the oauth magic happens)
-	     $server->addGrantType(new \OAuth2\GrantType\AuthorizationCode($storage));
-	
-	     \OAuth2\Autoloader::register();
-	
-	     // $dsn is the Data Source Name for your database, for exmaple "mysql:dbname=my_oauth2_db;host=localhost"
-	     $storage = new \OAuth2\Storage\Pdo(array('dsn' => $dsn, 'username' => $username, 'password' => $password));
-	     // var_dump($storage);
-	
-	     // Pass a storage object or array of storage objects to the OAuth2 server class
-	     $server = new \OAuth2\Server($storage);
-	
-	     // Add the "Client Credentials" grant type (it is the simplest of the grant types)
-	     $server->addGrantType(new \OAuth2\GrantType\ClientCredentials($storage));
-	
-	     // Add the "Authorization Code" grant type (this is where the oauth magic happens)
-	     $server->addGrantType(new \OAuth2\GrantType\AuthorizationCode($storage));
-	
-	     $request = \OAuth2\Request::createFromGlobals();
-	     $response = new \OAuth2\Response();
-	
-	     // 校验请求是否 oauth2.0 请求以及是否 clientId 是否已经注册在数据库
-	     if (!$server->validateAuthorizeRequest($request, $response)) {
-	         $response->send();
-	             die;
-	             }
-	
-	
-	// display an authorization form
-	/*if (empty($_POST)) {
-	    exit('<form method="post">
-	              <label>你个人信息id是 2018 ,是否授权此设备?</label><br />
-	                        <input type="submit" name="authorized" value="yes">
-	                                  <input type="submit" name="authorized" value="no">
-	                                          </form>
-	       ');
-	       } else {
-	           echo 'fail ';
-	           }
+	    $tmpItem['status'] = 1;
+"8	LINE	0
+	    $tmpItem['status'] = 1;
 "9	LINE	0
-	" ============================================================================
-	" Netrw Directory Listing                                        (netrw v149)
-	"   /home/ushio/www/oauth/OAuth2
-	"   Sorted by      name
-	"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
-	"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
-	" ============================================================================
-	../
-	./
-	ClientAssertionType/
-	Controller/
-	Encryption/
-	GrantType/
-	OpenID/
-	ResponseType/
-	Storage/
-	TokenType/
-	Autoloader.php
-	Request.php
-	RequestInterface.php
-	Response.php
-	ResponseInterface.php
-	Scope.php
-	ScopeInterface.php
-	Server.php
+	echo checkCurrentLess($tmpItem);
 "-	CHAR	0
 		
 
 # File marks:
-'0  121  4  ~/www/settlement/api/index.php
-'1  83  20  ~/www/settlement/api/index.php
-'2  6  15  ~/www/settlement/api/index.php
-'3  108  4  ~/www/settlement/api/index.php
-'4  144  49  ~/www/settlement/api/index.php
-'5  1  0  ~/www/settlement/api
-'6  96  0  ~/www/settlement/api/index.php
-'7  148  0  ~/www/settlement/api/index.php
-'8  74  13  ~/www/settlement/api/index.php
-'9  87  0  ~/www/settlement/func/functions.php
+'0  9  20  ~/www/settlement/api/getWeekData.php
+'1  25  0  ~/www/settlement/api/getWeekData.php
+'2  11  161  ~/www/settlement/api/getWeekData.php
+'3  26  12  ~/www/settlement/api/getWeekData.php
+'4  85  0  ~/www/settlement/func/functions.php
+'5  6  21  ~/www/settlement/api/getWeekData.php
+'6  29  0  ~/www/settlement/api/index.php
+'7  104  0  ~/www/settlement/api/index.php
+'8  3  40  ~/www/settlement/api/index.php
+'9  193  29  ~/www/settlement/index.html
 
 # Jumplist (newest first):
--'  121  4  ~/www/settlement/api/index.php
--'  83  4  ~/www/settlement/api/index.php
--'  6  0  ~/www/settlement/api/index.php
--'  108  4  ~/www/settlement/api/index.php
--'  144  8  ~/www/settlement/api/index.php
--'  96  4  ~/www/settlement/api/index.php
--'  1  0  ~/www/settlement/api
--'  148  0  ~/www/settlement/api/index.php
--'  74  8  ~/www/settlement/api/index.php
--'  133  0  ~/www/settlement/api/index.php
+-'  9  20  ~/www/settlement/api/getWeekData.php
+-'  25  0  ~/www/settlement/api/getWeekData.php
+-'  11  0  ~/www/settlement/api/getWeekData.php
+-'  26  0  ~/www/settlement/api/getWeekData.php
+-'  14  24  ~/www/settlement/api/getWeekData.php
+-'  6  0  ~/www/settlement/api/getWeekData.php
+-'  85  0  ~/www/settlement/func/functions.php
 -'  87  0  ~/www/settlement/func/functions.php
+-'  29  0  ~/www/settlement/api/index.php
+-'  1  0  ~/www/settlement/api/index.php
+-'  104  0  ~/www/settlement/api/index.php
+-'  1  0  ~/www/settlement/api/getWeekData.php
+-'  3  0  ~/www/settlement/api/index.php
+-'  123  7  ~/www/settlement/api/index.php
+-'  193  29  ~/www/settlement/index.html
+-'  6  1  ~/www/settlement/index.html
+-'  1  0  ~/www/settlement/index.html
+-'  85  4  ~/www/settlement/api/index.php
+-'  8  0  ~/www/settlement/api/index.php
+-'  110  4  ~/www/settlement/api/index.php
+-'  146  8  ~/www/settlement/api/index.php
+-'  98  4  ~/www/settlement/api/index.php
+-'  1  0  ~/www/settlement/api
+-'  150  0  ~/www/settlement/api/index.php
+-'  76  8  ~/www/settlement/api/index.php
+-'  135  0  ~/www/settlement/api/index.php
 -'  8  0  ~/www/settlement/func/functions.php
 -'  442  6  ~/www/settlement/func/functions.php
 -'  299  6  ~/www/settlement/func/functions.php
@@ -164,11 +100,10 @@ $
 -'  116  38  ~/www/settlement/func/functions.php
 -'  9  1  ~/www/settlement/func/functions.php
 -'  1  0  ~/www/settlement/func/functions.php
--'  3  0  ~/www/settlement/api/index.php
+-'  5  0  ~/www/settlement/api/index.php
 -'  2  9  ~/www/settlement/index.php
 -'  1  0  ~/www/settlement/index.php
 -'  78  1  ~/www/settlement/func/functions.php
--'  1  0  ~/www/settlement/api/index.php
 -'  1  0  ~/www/settlement/.config.php
 -'  1  0  ~/www/settlement/.gitignore
 -'  149  0  /home/ushio/www/api/functions.php
@@ -230,60 +165,113 @@ $
 -'  1  0  ~/www/homepage/index.html
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  1  0  /home/ushio/www/oauth/OAuth2
--'  172  0  ~/www/homepage/index.html
--'  1  0  ~/www/homepage/index.html
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  172  0  ~/www/homepage/index.html
--'  1  0  ~/www/homepage/index.html
--'  16  2  /etc/crontab
 
 # History of marks within files (newest to oldest):
 
+> ~/www/settlement/api/getWeekData.php
+	"	9	20
+	^	9	21
+	.	9	20
+	+	3	57
+	+	5	0
+	+	3	0
+	+	2	0
+	+	3	0
+	+	6	21
+	+	17	0
+	+	16	0
+	+	15	7
+	+	14	4
+	+	13	4
+	+	13	2
+	+	13	2
+	+	14	8
+	+	15	0
+	+	14	6
+	+	14	0
+	+	14	5
+	+	13	0
+	+	12	0
+	+	6	22
+	+	11	122
+	+	11	94
+	+	26	12
+	+	11	54
+	+	9	26
+	+	19	0
+	+	7	14
+	+	18	0
+	+	9	23
+	+	11	94
+	+	16	13
+	+	15	0
+	+	19	0
+	+	26	12
+	+	11	161
+	+	20	0
+	+	21	23
+	+	22	18
+	+	23	17
+	+	26	0
+	+	9	20
+
+> ~/www/settlement/func/functions.php
+	"	85	0
+	^	87	0
+	.	8	2
+	+	3	37
+	+	8	2
+
 > ~/www/settlement/api/index.php
-	"	121	4
-	^	72	63
-	.	73	0
-	+	4	0
-	+	3	56
-	+	58	14
-	+	46	21
-	+	94	1
-	+	101	1
-	+	94	0
-	+	101	0
+	"	29	0
+	^	104	0
+	.	3	37
+	+	6	0
+	+	5	56
+	+	60	14
+	+	48	21
+	+	96	1
+	+	103	1
 	+	96	0
-	+	108	20
-	+	144	49
-	+	108	0
-	+	114	9
-	+	121	13
-	+	114	8
+	+	103	0
+	+	98	0
+	+	110	20
+	+	146	49
+	+	110	0
+	+	116	9
+	+	123	13
+	+	116	8
+	+	117	9
+	+	132	18
+	+	116	9
+	+	115	24
+	+	116	8
 	+	115	9
-	+	130	18
-	+	114	9
-	+	113	24
-	+	114	8
-	+	113	9
-	+	114	36
-	+	115	36
-	+	121	12
-	+	6	15
-	+	78	15
-	+	83	0
-	+	84	0
-	+	83	26
-	+	84	1
+	+	116	36
+	+	117	36
+	+	123	12
+	+	8	15
+	+	80	15
 	+	85	0
-	+	83	0
-	+	73	21
-	+	72	62
-	+	73	0
+	+	86	0
+	+	85	26
+	+	86	1
+	+	87	0
+	+	85	0
+	+	75	21
+	+	74	62
+	+	75	0
+	+	5	0
+	+	2	0
+	+	3	37
+
+> ~/www/settlement/index.html
+	"	193	29
+	^	193	30
+	.	9	77
+	+	6	9
+	+	8	59
+	+	9	77
 
 > ~/www/settlement/log.db.key.php
 	"	3	26
@@ -291,13 +279,6 @@ $
 	.	6	24
 	+	4	22
 	+	6	24
-
-> ~/www/settlement/func/functions.php
-	"	87	0
-	^	8	3
-	.	8	2
-	+	3	37
-	+	8	2
 
 > ~/www/settlement/index.php
 	"	2	9
@@ -436,11 +417,3 @@ $
 	+	11	27
 	+	8	0
 	+	3	0
-
-> /home/ushio/www/oauth/Aligenie
-	"	1	0
-	^	1	0
-
-> ~/www/homepage/index.html
-	"	172	0
-	^	1	0

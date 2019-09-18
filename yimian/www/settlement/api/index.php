@@ -1,5 +1,7 @@
 <?php
 
+header("Access-Control-Allow-Origin: *");
+
 include '/home/yimian/www/settlement/func/functions.php';
 
 /* global const */
