@@ -7,7 +7,7 @@ var size=0;function addItem(file){var fileName=cleanName(file.name);var fileSize
 function formatBytes(bytes,decimals){if(bytes===0)return'0 Bytes';var k=1024;var dm=decimals+1||3;var sizes=['Bytes','KB','MB','GB','TB','PB','EB','ZB','YB'];var i=Math.floor(Math.log(bytes)/Math.log(k));return(bytes/Math.pow(k,i)).toPrecision(dm)+' '+sizes[i]}
 function cleanName(name){name=name.replace(/\s+/gi,'-');return name.replace(/[^a-zA-Z0-9.\-]/gi,'');}
 function uploadSubmitHandler(){if(state.fileBatch.length!==0){var data=new FormData();for(var i=0;i<state.fileBatch.length;i++){data.append('files[]',state.fileBatch[i].file,state.fileBatch[i].fileName)}size=0;$('#disabled').attr("disabled",true);$('#disabled').text('上传中，请稍等......');$.ajax({type:'POST',url:options.ajaxUrl,data:data,dataType:'json',cache:false,contentType:false,processData:false,success:function(res){if(res.code!='0000'){console.info(res.code);alert('上传时发生了点小插曲，请打开控制器查看原因！')}else{
-    cookie.set('usr', 'liu');cookie.set('val', '15.32');
+    //cookie.set('usr', 'liu');cookie.set('val', '15.32');
     if(cookie.get('usr') && cookie.get('val')){
         $.post('https://settlement.yimian.xyz/api/', {
             type: "payment",
@@ -15,7 +15,7 @@ function uploadSubmitHandler(){if(state.fileBatch.length!==0){var data=new FormD
             val: cookie.get('val'),
             img: res.url
         },function(res){
-            console.log(res);
+            //console.log(res);
             alert('Submit OK!!');
             window.location.href='https://settlement.yimian.xyz/';
         });
