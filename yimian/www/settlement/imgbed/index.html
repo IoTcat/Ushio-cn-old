@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>图床</title>
+    <title>Invoice Upload</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://v3.bootcss.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="https://v3.bootcss.com/examples/cover/cover.css" rel="stylesheet">
@@ -14,11 +14,11 @@
 	<script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
   </head>
   <body class="body">
-	<div class="uploade" id="display"><p id="hide">X关闭</p>
+	<div class="uploade" id="display"><p id="hide">X close</p>
 	  <div class="uploader__box js-uploader__box l-center-box">
 	      <form action="#" method="POST">
 	          <div class="uploader__contents">
-	              <label class="button button--secondary" for="fileinput">请选择文件</label>
+	              <label class="button button--secondary" for="fileinput">Please select a file</label>
 	              <input id="fileinput" class="uploader__file-input" type="file" multiple value="Select Files">
 	          </div>
 	          <input class="button button--big-bottom" type="submit" value="Upload Selected Files">
@@ -31,13 +31,11 @@
         <div class="cover-container">
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">呓喵酱の图床</h3>
+              <h3 class="masthead-brand">ERP - Invoice Upload</h3>
               <nav>
                 <ul class="nav masthead-nav">
 
-					<li><a id="ushio-img" href="https://img.yimian.xyz/imgbed.html"> <span class="glyphicon glyphicon-picture"></span> 探索</a></li>
-					<li><a id="ushio-blog" href="https://www.eee.dog/"> <span class="glyphicon glyphicon-home"></span> 博客</a></li>
-					<li><a id="ushio-iotcatme" href="https://iotcat.me/">关于</a></li>
+					<li>Supported by <a id="ushio-iotcatme" href="https://imgbed.yimian.xyz">呓喵酱の图床</a></li>
 
                 </ul>
               </nav>
@@ -45,14 +43,14 @@
           </div>
           <div class="inner cover">
           	<br>
-            <h1 class="cover-heading" style="font-size: 36px;padding-bottom: 15px;">上传分享您的图片</h1>
+            <h1 class="cover-heading" style="font-size: 36px;padding-bottom: 15px;">Please upload the invoice of the payment</h1>
             <br/><br>
-            <p class="lead">高速稳定的图片分享，无限制外链，托管于华为云对象存储，10MB/s，快来尝试吧~</p>
-			<p class="lead">不和谐上传删图&amp;账号，且行且珍惜。</p>
+            <p class="lead"></p>
+			<p class="lead">If you dont have a invoice, please just upload something to continue..</p>
             <p class="lead">
-              <a href="javascript:volid(0)" id="upload" style="background: transparent;color: #FFF;" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-cloud-upload"></span> 开始上传</a>
+              <a href="javascript:volid(0)" id="upload" style="background: transparent;color: #FFF;" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-cloud-upload"></span> Start Upload</a>
             </p>
-            <p>本站已托管<span id="imgNum">☹</span>张图片</p>
+            <p>This site is managing <span id="imgNum">☹</span> pictures</p>
           </div>
           <div class="mastfoot">
             <div class="inner bottom">

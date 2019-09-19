@@ -8,20 +8,21 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/echo
+~MSle0~/api.yimian
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :wq
-:q
 :w
-:Wq
+:q
 :q!
 :Q!
+:Wq
 
 # Search String History (newest to oldest):
+?/api.yimian
 ?/echo
 
 # Expression History (newest to oldest):
@@ -32,41 +33,68 @@ $
 
 # Registers:
 "0	LINE	0
-	*/
+						<li><a id="ushio-blog" href="https://www.eee.dog/"> <span class="glyphicon glyphicon-home"></span> 博客</a></li>
 ""1	LINE	0
-	var_dump($fin);
+	        echo "kkk";
 "2	LINE	0
-	      //no data
+	" ============================================================================
+	" Netrw Directory Listing                                        (netrw v149)
+	"   /home/yimian/www/settlement/imgbed/upload
+	"   Sorted by      name
+	"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
+	"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
+	" ============================================================================
+	../
+	./
+	invoice/
 "3	LINE	0
-	if ($result->num_rows > 0) {}else{return 404;}
+						<li><a id="ushio-blog" href="https://www.eee.dog/"> <span class="glyphicon glyphicon-home"></span> 博客</a></li>
 "4	LINE	0
-	var_dump($current_item);
+						<li><a id="ushio-img" href="https://img.yimian.xyz/imgbed.html"> <span class="glyphicon glyphicon-picture"></span> 探索</a></li>
 "5	LINE	0
-	var_dump($current_item);
+	var_dump($fin);
 "6	LINE	0
-	var_dump($current_item);
+	      //no data
 "7	LINE	0
-	    $tmpItem['status'] = 1;
+	if ($result->num_rows > 0) {}else{return 404;}
 "8	LINE	0
-	    $tmpItem['status'] = 1;
+	var_dump($current_item);
 "9	LINE	0
-	echo checkCurrentLess($tmpItem);
+	var_dump($current_item);
 "-	CHAR	0
 		
 
 # File marks:
-'0  9  20  ~/www/settlement/api/getWeekData.php
-'1  25  0  ~/www/settlement/api/getWeekData.php
-'2  11  161  ~/www/settlement/api/getWeekData.php
-'3  26  12  ~/www/settlement/api/getWeekData.php
-'4  85  0  ~/www/settlement/func/functions.php
-'5  6  21  ~/www/settlement/api/getWeekData.php
-'6  29  0  ~/www/settlement/api/index.php
-'7  104  0  ~/www/settlement/api/index.php
-'8  3  40  ~/www/settlement/api/index.php
-'9  193  29  ~/www/settlement/index.html
+'0  10  52  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+'1  27  16  ~/www/settlement/imgbed/upload.php
+'2  43  0  ~/www/settlement/imgbed/upload.php
+'3  1  0  ~/www/settlement/imgbed/upload
+'4  9  455  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+'5  1  0  ~/www/settlement/imgbed/js/main.js
+'6  5  40  ~/www/settlement/imgbed/js/jquery.min.js
+'7  4  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+'8  10  0  ~/www/settlement/imgbed/js/jquery.hwLayer.js
+'9  1  0  ~/www/settlement/imgbed/index.html
 
 # Jumplist (newest first):
+-'  10  52  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+-'  9  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+-'  27  16  ~/www/settlement/imgbed/upload.php
+-'  43  0  ~/www/settlement/imgbed/upload.php
+-'  1  0  ~/www/settlement/imgbed/upload
+-'  4  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+-'  1  0  ~/www/settlement/imgbed/js/main.js
+-'  5  40  ~/www/settlement/imgbed/js/jquery.min.js
+-'  1  0  ~/www/settlement/imgbed/js/jquery.min.js
+-'  10  0  ~/www/settlement/imgbed/js/jquery.hwLayer.js
+-'  1  0  ~/www/settlement/imgbed/js/jquery.hwLayer.js
+-'  1  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+-'  1  0  ~/www/settlement/imgbed/index.html
+-'  60  9  ~/www/settlement/imgbed/index.html
+-'  1  29  ~/www/settlement/imgbed/style/main.css
+-'  78  0  ~/www/settlement/imgbed/index.html
+-'  1  0  ~/www/settlement/imgbed/upload.php
+-'  1  0  ~/www/settlement/imgbed/uploadp
 -'  9  20  ~/www/settlement/api/getWeekData.php
 -'  25  0  ~/www/settlement/api/getWeekData.php
 -'  11  0  ~/www/settlement/api/getWeekData.php
@@ -147,26 +175,83 @@ $
 -'  1  0  /etc/crontab
 -'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  172  0  ~/www/homepage/index.html
--'  1  0  ~/www/homepage/index.html
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  1  0  /home/ushio/www/oauth/OAuth2
--'  172  0  ~/www/homepage/index.html
--'  1  0  ~/www/homepage/index.html
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
--'  172  0  ~/www/homepage/index.html
--'  1  0  ~/www/homepage/index.html
--'  16  2  /etc/crontab
--'  1  0  /etc/crontab
 
 # History of marks within files (newest to oldest):
+
+> ~/www/settlement/imgbed/js/jquery.imageuploader.js
+	"	10	52
+	^	10	53
+	.	10	52
+	+	4	412
+	+	9	559
+	+	22	0
+	+	11	47
+	+	12	54
+	+	13	28
+	+	14	35
+	+	15	35
+	+	17	24
+	+	18	33
+	+	19	63
+	+	16	23
+	+	10	52
+
+> ~/www/settlement/imgbed/upload.php
+	"	27	16
+	.	27	0
+	+	43	0
+	+	42	24
+	+	43	60
+	+	30	54
+	+	23	34
+	+	15	27
+	+	27	0
+
+> ~/www/settlement/imgbed/js/main.js
+	"	1	0
+	^	1	0
+	.	52	44
+	+	48	58
+	+	49	50
+	+	50	41
+	+	52	63
+	+	48	39
+	+	50	25
+	+	51	31
+	+	52	44
+
+> ~/www/settlement/imgbed/js/jquery.min.js
+	"	5	40
+	^	1	0
+
+> ~/www/settlement/imgbed/js/jquery.hwLayer.js
+	"	10	0
+	^	1	0
+
+> ~/www/settlement/imgbed/index.html
+	"	1	0
+	^	60	10
+	.	53	35
+	+	7	24
+	+	17	50
+	+	21	90
+	+	34	60
+	+	38	75
+	+	46	123
+	+	49	88
+	+	48	27
+	+	51	198
+	+	53	35
+
+> ~/www/settlement/imgbed/style/main.css
+	"	1	29
+	^	1	0
+	.	1	62
+	+	1	62
+
+> ~/www/settlement/imgbed/uploadp
+	"	1	0
+	^	1	0
 
 > ~/www/settlement/api/getWeekData.php
 	"	9	20
@@ -317,103 +402,3 @@ $
 	^	5	37
 	.	5	26
 	+	5	26
-
-> ~/www/smartfarm/routes/api.js
-	"	1	0
-	^	1	0
-
-> ~/www/wx/.env
-	"	4	25
-	^	4	26
-	.	4	25
-	+	2	52
-	+	3	14
-	+	2	31
-	+	4	25
-
-> ~/www/smartfarm/html/chart-station.html
-	"	70	0
-	^	1	0
-
-> /home/ushio/www/api/img/index.php
-	"	53	49
-	^	117	50
-	.	117	49
-	+	23	137
-	+	117	46
-	+	82	49
-	+	83	53
-	+	64	49
-	+	65	53
-	+	20	9
-	+	30	0
-	+	29	33
-	+	111	60
-	+	117	66
-	+	29	47
-	+	30	12
-	+	30	15
-	+	12	0
-	+	30	0
-	+	111	80
-	+	117	49
-
-> ~/iot/mqtt/smartfarm/mqtt-server.js
-	"	160	0
-	^	160	0
-	.	160	0
-	+	1	0
-	+	1	4
-	+	5	1
-	+	4	14
-	+	6	0
-	+	3	11
-	+	7	40
-	+	9	1
-	+	1	29
-	+	141	41
-	+	142	0
-	+	149	37
-	+	150	60
-	+	151	63
-	+	152	69
-	+	153	68
-	+	155	68
-	+	154	65
-	+	160	0
-
-> /home/ushio/www/oauth/AligenieAuthorize.php
-	"	75	0
-	^	75	0
-	.	75	0
-	+	1	5
-	+	1	5
-	+	16	23
-	+	13	48
-	+	14	22
-	+	15	33
-	+	16	1
-	+	16	1
-	+	76	0
-	+	75	0
-
-> /home/ushio/www/oauth/getResource.php
-	"	9	0
-	^	9	0
-	.	9	0
-	+	40	8
-	+	7	37
-	+	8	0
-	+	9	0
-
-> /home/ushio/www/oauth/AligenieToken.php
-	"	9	0
-	^	3	0
-	.	3	0
-	+	26	75
-	+	1	4
-	+	2	43
-	+	10	17
-	+	11	27
-	+	8	0
-	+	3	0

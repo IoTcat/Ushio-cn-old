@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/ushio/www/oauth/OAuth2'
 let g:netrw_dirhist_2='/home/yimian/www/settlement/func'
 let g:netrw_dirhist_3='/home/yimian/www/settlement/api'
+let g:netrw_dirhist_4='/home/yimian/www/settlement/imgbed/upload'
