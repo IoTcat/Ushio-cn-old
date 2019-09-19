@@ -15,9 +15,9 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-:w
-:q
 :q!
+:q
+:w
 :Q!
 :Wq
 
@@ -32,7 +32,29 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
+""0	LINE	0
+	
+	
+	
+	  $total_arr[$ii]['date']=date('Y-m-d', strtotime('-'.($ii+1).'day'));
+	  $total_arr[$ii]['total']=$tmp;
+	
+	
+	
+	
+	$firstTime = $firstItem['datetime'];
+	$firstDate = substr($firstTime, 0, 10);
+	
+	$datetime_start = date_create($firstDate);
+	$datetime_end = date_create(date('Y-m-d'));
+	$days = date_diff($datetime_start, $datetime_end)->days;
+	
+	for($ii = 0; $ii < (($days < 30) ? $days: 30); $ii ++){
+	
+	$sql = "select * from account where datetime>='".date('Y-m-d',strtotime('-'.($ii+1).' day'))." 00:00:00' and datetime<'".date('Y-m-d', strtotime("-$ii day"))." 00:00:00' order by id DESC limit 1";
+	$result = $conn->query($sql);
+	    
+	$tmp = 0;
 	while($row = $result->fetch_assoc()) {
 	    $tmp = $row['total'];
 	    }
@@ -42,8 +64,17 @@ $
 	
 	}
 	
+	for($i = 0; $i < count($total_arr); $i++){
+	     if($i < count($total_arr) - 1) $total_arr[$i]['val'] = $total_arr[$i]['total'] - $total_arr[$i+1]['total'];
+	    else $total_arr[$i]['val'] = 0;
+	}
 	
-""1	CHAR	0
+	for($i = 0; $i < count($total_arr); $i ++){
+	    if($i < count($total_arr) - 7) $total_arr[$i]['week_val'] = $total_arr[$i]['total'] - $total_arr[$i+7]['total'];
+	    else $total_arr[$i]['week_val'] = 0;
+	}
+	
+"1	CHAR	0
 	
 	
 	
@@ -139,18 +170,35 @@ $
 		
 
 # File marks:
-'0  10  43  ~/www/settlement/api/getAccountEvents.php
-'1  1  0  ~/www/settlement/api/getAccountEvents.php
-'2  17  0  ~/www/settlement/api/getAccountEvents.php
-'3  38  24  ~/www/settlement/api/getWeekData.php
-'4  52  0  ~/www/settlement/api/getWeekData.php
-'5  42  27  ~/www/settlement/api/getWeekData.php
-'6  37  68  ~/www/settlement/api/getWeekData.php
-'7  31  36  ~/www/settlement/api/getWeekData.php
-'8  48  23  ~/www/settlement/api/getWeekData.php
-'9  29  54  ~/www/settlement/api/getWeekData.php
+'0  30  58  ~/www/settlement/imgbed/upload.php
+'1  1  0  ~/www/settlement/imgbed/upload
+'2  16  17  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+'3  52  44  ~/www/settlement/imgbed/js/main.js
+'4  5  4  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+'5  26  17  ~/www/settlement/api/getCurrent.php
+'6  13  57  ~/www/settlement/api/getCurrent.php
+'7  15  0  ~/www/settlement/api/getCurrent.php
+'8  14  32  ~/www/settlement/api/getDetail.php
+'9  1  0  ~/www/settlement/api/get
 
 # Jumplist (newest first):
+-'  30  58  ~/www/settlement/imgbed/upload.php
+-'  27  16  ~/www/settlement/imgbed/upload.php
+-'  1  0  ~/www/settlement/imgbed/upload
+-'  16  17  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+-'  5  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+-'  52  44  ~/www/settlement/imgbed/js/main.js
+-'  1  0  ~/www/settlement/imgbed/js/main.js
+-'  10  4  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+-'  26  17  ~/www/settlement/api/getCurrent.php
+-'  13  0  ~/www/settlement/api/getCurrent.php
+-'  15  0  ~/www/settlement/api/getCurrent.php
+-'  1  0  ~/www/settlement/api/getCurrent.php
+-'  14  32  ~/www/settlement/api/getDetail.php
+-'  1  0  ~/www/settlement/api/getDetail.php
+-'  1  0  ~/www/settlement/api/get
+-'  78  0  ~/www/settlement/api/index.php
+-'  29  0  ~/www/settlement/api/index.php
 -'  10  43  ~/www/settlement/api/getAccountEvents.php
 -'  1  0  ~/www/settlement/api/getAccountEvents.php
 -'  14  13  ~/www/settlement/api/getAccountEvents.php
@@ -171,14 +219,10 @@ $
 -'  46  0  ~/www/settlement/api/getWeekData.php
 -'  14  4  ~/www/settlement/imgbed/index.html
 -'  1  0  ~/www/settlement/imgbed/index.html
--'  10  5  ~/www/settlement/imgbed/js/jquery.imageuploader.js
 -'  18  12  ~/www/settlement/imgbed/js/jquery.imageuploader.js
 -'  9  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
--'  27  16  ~/www/settlement/imgbed/upload.php
 -'  43  0  ~/www/settlement/imgbed/upload.php
--'  1  0  ~/www/settlement/imgbed/upload
 -'  4  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
--'  1  0  ~/www/settlement/imgbed/js/main.js
 -'  5  40  ~/www/settlement/imgbed/js/jquery.min.js
 -'  1  0  ~/www/settlement/imgbed/js/jquery.min.js
 -'  10  0  ~/www/settlement/imgbed/js/jquery.hwLayer.js
@@ -195,7 +239,6 @@ $
 -'  6  0  ~/www/settlement/api/getWeekData.php
 -'  85  0  ~/www/settlement/func/functions.php
 -'  87  0  ~/www/settlement/func/functions.php
--'  29  0  ~/www/settlement/api/index.php
 -'  1  0  ~/www/settlement/api/index.php
 -'  104  0  ~/www/settlement/api/index.php
 -'  1  0  ~/www/settlement/api/getWeekData.php
@@ -237,19 +280,129 @@ $
 -'  4  25  ~/www/wx/.env
 -'  1  0  ~/www/wx/.env
 -'  70  0  ~/www/smartfarm/html/chart-station.html
--'  1  0  ~/www/smartfarm/html/chart-station.html
--'  53  49  /home/ushio/www/api/img/index.php
--'  111  37  /home/ushio/www/api/img/index.php
--'  106  0  /home/ushio/www/api/img/index.php
--'  117  66  /home/ushio/www/api/img/index.php
--'  77  12  /home/ushio/www/api/img/index.php
--'  1  0  /home/ushio/www/api/img/index.php
--'  160  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  1  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
--'  16  12  /home/ushio/www/oauth/AligenieAuthorize.php
 
 # History of marks within files (newest to oldest):
+
+> ~/www/settlement/imgbed/upload.php
+	"	30	58
+	^	30	59
+	.	30	59
+	+	43	0
+	+	42	24
+	+	43	60
+	+	30	54
+	+	23	34
+	+	15	27
+	+	27	0
+	+	42	0
+	+	43	1
+	+	42	2
+	+	30	59
+
+> ~/www/settlement/imgbed/js/jquery.imageuploader.js
+	"	16	17
+	^	10	6
+	.	10	4
+	+	4	412
+	+	9	559
+	+	23	0
+	+	11	47
+	+	12	54
+	+	13	28
+	+	14	35
+	+	15	35
+	+	17	24
+	+	19	33
+	+	20	63
+	+	16	23
+	+	10	52
+	+	11	16
+	+	11	0
+	+	16	23
+	+	18	13
+	+	10	4
+
+> ~/www/settlement/imgbed/js/main.js
+	"	52	44
+	^	52	45
+	.	52	44
+	+	48	58
+	+	49	50
+	+	50	41
+	+	52	63
+	+	48	39
+	+	50	25
+	+	51	31
+	+	52	44
+
+> ~/www/settlement/api/getCurrent.php
+	"	26	17
+	^	26	18
+	.	26	17
+	+	13	59
+	+	22	0
+	+	14	0
+	+	13	57
+	+	17	29
+	+	18	19
+	+	6	29
+	+	7	9
+	+	10	20
+	+	18	61
+	+	19	24
+	+	26	17
+
+> ~/www/settlement/api/getDetail.php
+	"	14	32
+	^	14	33
+	.	10	45
+	+	10	45
+
+> ~/www/settlement/api/get
+	"	1	0
+
+> ~/www/settlement/api/index.php
+	"	78	0
+	^	104	0
+	.	3	37
+	+	6	0
+	+	5	56
+	+	60	14
+	+	48	21
+	+	96	1
+	+	103	1
+	+	96	0
+	+	103	0
+	+	98	0
+	+	110	20
+	+	146	49
+	+	110	0
+	+	116	9
+	+	123	13
+	+	116	8
+	+	117	9
+	+	132	18
+	+	116	9
+	+	115	24
+	+	116	8
+	+	115	9
+	+	116	36
+	+	117	36
+	+	123	12
+	+	8	15
+	+	80	15
+	+	85	0
+	+	86	0
+	+	85	26
+	+	86	1
+	+	87	0
+	+	85	0
+	+	75	21
+	+	74	62
+	+	75	0
+	+	5	0
+	+	2	0
+	+	3	37
 
 > ~/www/settlement/api/getAccountEvents.php
 	"	10	43
@@ -397,53 +550,6 @@ $
 	+	54	35
 	+	14	36
 
-> ~/www/settlement/imgbed/js/jquery.imageuploader.js
-	"	10	5
-	^	10	6
-	.	10	4
-	+	4	412
-	+	9	559
-	+	23	0
-	+	11	47
-	+	12	54
-	+	13	28
-	+	14	35
-	+	15	35
-	+	17	24
-	+	19	33
-	+	20	63
-	+	16	23
-	+	10	52
-	+	11	16
-	+	11	0
-	+	16	23
-	+	18	13
-	+	10	4
-
-> ~/www/settlement/imgbed/upload.php
-	"	27	16
-	.	27	0
-	+	43	0
-	+	42	24
-	+	43	60
-	+	30	54
-	+	23	34
-	+	15	27
-	+	27	0
-
-> ~/www/settlement/imgbed/js/main.js
-	"	1	0
-	^	1	0
-	.	52	44
-	+	48	58
-	+	49	50
-	+	50	41
-	+	52	63
-	+	48	39
-	+	50	25
-	+	51	31
-	+	52	44
-
 > ~/www/settlement/imgbed/js/jquery.min.js
 	"	5	40
 	^	1	0
@@ -468,49 +574,6 @@ $
 	.	8	2
 	+	3	37
 	+	8	2
-
-> ~/www/settlement/api/index.php
-	"	29	0
-	^	104	0
-	.	3	37
-	+	6	0
-	+	5	56
-	+	60	14
-	+	48	21
-	+	96	1
-	+	103	1
-	+	96	0
-	+	103	0
-	+	98	0
-	+	110	20
-	+	146	49
-	+	110	0
-	+	116	9
-	+	123	13
-	+	116	8
-	+	117	9
-	+	132	18
-	+	116	9
-	+	115	24
-	+	116	8
-	+	115	9
-	+	116	36
-	+	117	36
-	+	123	12
-	+	8	15
-	+	80	15
-	+	85	0
-	+	86	0
-	+	85	26
-	+	86	1
-	+	87	0
-	+	85	0
-	+	75	21
-	+	74	62
-	+	75	0
-	+	5	0
-	+	2	0
-	+	3	37
 
 > ~/www/settlement/index.html
 	"	193	29
@@ -542,19 +605,5 @@ $
 	+	2	10
 
 > ~/www/settlement/.config.php
-	"	1	0
-	^	1	0
-
-> /home/ushio/www/api/functions.php
-	"	149	0
-	^	149	0
-	.	149	0
-	+	149	0
-
-> /home/ushio/www/api/mail/index.php
-	"	1	0
-	^	1	0
-
-> /home/ushio/www/api/mail/in
 	"	1	0
 	^	1	0

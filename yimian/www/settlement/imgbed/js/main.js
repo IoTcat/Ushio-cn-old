@@ -49,6 +49,6 @@ function select(){
     	'instructionsCopy':'select or drag one pic here',
     	'submitButtonCopy':'upload',
     	'furtherInstructionsCopy':'',
-    	'secondarySelectButtonCopy':'select more'
+    	'secondarySelectButtonCopy':'Please be Patient'
     });
 }());
