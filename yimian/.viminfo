@@ -15,8 +15,8 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-:q
 :w
+:q
 :q!
 :Q!
 :Wq
@@ -32,54 +32,129 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
-	 if($i < count($total_arr) - 7)
-"1	LINE	0
+"0	CHAR	0
+	while($row = $result->fetch_assoc()) {
+	    $tmp = $row['total'];
+	    }
+	  $total_arr[$ii]['date']=date('Y-m-d', strtotime('-'.($ii+1).'day'));
+	  $total_arr[$ii]['total']=$tmp;
+	
+	
+	}
+	
+	
+""1	CHAR	0
+	
+	
+	
+	  $total_arr[$ii]['date']=date('Y-m-d', strtotime('-'.($ii+1).'day'));
+	  $total_arr[$ii]['total']=$tmp;
+	
+	
+	
+	
+	$firstTime = $firstItem['datetime'];
+	$firstDate = substr($firstTime, 0, 10);
+	
+	$datetime_start = date_create($firstDate);
+	$datetime_end = date_create(date('Y-m-d'));
+	$days = date_diff($datetime_start, $datetime_end)->days;
+	
+	for($ii = 0; $ii < (($days < 30) ? $days: 30); $ii ++){
+	
+	$sql = "select * from account where datetime>='".date('Y-m-d',strtotime('-'.($ii+1).' day'))." 00:00:00' and datetime<'".date('Y-m-d', strtotime("-$ii day"))." 00:00:00' order by id DESC limit 1";
+	$result = $conn->query($sql);
+	    
+	$tmp = 0;
+	while($row = $result->fetch_assoc()) {
+	    $tmp = $row['total'];
+	    }
+	  $total_arr[$ii]['date']=date('Y-m-d', strtotime('-'.($ii+1).'day'));
+	  $total_arr[$ii]['total']=$tmp;
+	
+	
+	}
+	
+	for($i = 0; $i < count($total_arr); $i++){
+	     if($i < count($total_arr) - 1) $total_arr[$i]['val'] = $total_arr[$i]['total'] - $total_arr[$i+1]['total'];
+	    else $total_arr[$i]['val'] = 0;
+	}
+	
+	for($i = 0; $i < count($total_arr); $i ++){
+	    if($i < count($total_arr) - 7) $total_arr[$i]['week_val'] = $total_arr[$i]['total'] - $total_arr[$i+7]['total'];
+	    else $total_arr[$i]['week_val'] = 0;
+	}
+	
 	
 "2	LINE	0
+	    array_push($ = $row['total'];
+	}
+"3	LINE	0
+	$firstItem = $result->fetch_assoc();
+"4	LINE	0
+	}
+"5	CHAR	0
+	$datetime_start = date_create($firstDate);
+	$datetime_end = date_create(date('Y-m-d'));
+	$days = date_diff($datetime_start, $datetime_end)->days;
+	
+	for($ii = 0; $ii < (($days < 30) ? $days: 30); $ii ++){
+	
+	$sql = "select * from account where datetime>='".date('Y-m-d',strtotime('-'.($ii+1).' day'))." 00:00:00' and datetime<'".date('Y-m-d', strtotime("-$ii day"))." 00:00:00' order by id DESC limit 1";
+	$result = $conn->query($sql);
 	    
-"3	CHAR	0
+	$tmp = 0;
+	while($row = $result->fetch_assoc()) {
+	    $tmp = $row['total'];
+	    }
+	  $total_arr[$ii]['date']=date('Y-m-d', strtotime('-'.($ii+1).'day'));
+	  $total_arr[$ii]['total']=$tmp;
+	
+	
+	}
+	
+	for($i = 0; $i < count($total_arr); $i++){
+	     if($i < count($total_arr) - 1) $total_arr[$i]['val'] = $total_arr[$i]['total'] - $total_arr[$i+1]['total'];
+	    else $total_arr[$i]['val'] = 0;
+	}
+	
+	for($i = 0; $i < count($total_arr); $i ++){
+	    if($i < count($total_arr) - 7) $total_arr[$i]['week_val'] = $total_arr[$i]['total'] - $total_arr[$i+7]['total'];
+	    else $total_arr[$i]['week_val'] = 0;
+	}
+	
+	
+"6	LINE	0
+	$firstItem = $result->fetch_assoc();
+"7	LINE	0
+	
+"8	LINE	0
+	    
+"9	CHAR	0
 	  $total_arr[$ii][$i]['date']=date('Y-m-d', strtotime('-'.($ii+1).'day'));
 	      $total_arr[$ii][$i++]['total']=$row['total'];
 	
 	
-"4	LINE	0
-	function 
-"5	LINE	0
-	
-"6	LINE	0
-	    alert(res.val);
-"7	LINE	0
-	    console.log(res);
-"8	LINE	0
-	        echo "kkk";
-"9	LINE	0
-	" ============================================================================
-	" Netrw Directory Listing                                        (netrw v149)
-	"   /home/yimian/www/settlement/imgbed/upload
-	"   Sorted by      name
-	"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
-	"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
-	" ============================================================================
-	../
-	./
-	invoice/
 "-	CHAR	0
 		
 
 # File marks:
-'0  38  24  ~/www/settlement/api/getWeekData.php
-'1  52  0  ~/www/settlement/api/getWeekData.php
-'2  42  27  ~/www/settlement/api/getWeekData.php
-'3  37  68  ~/www/settlement/api/getWeekData.php
-'4  31  36  ~/www/settlement/api/getWeekData.php
-'5  48  23  ~/www/settlement/api/getWeekData.php
-'6  29  54  ~/www/settlement/api/getWeekData.php
-'7  21  40  ~/www/settlement/api/getWeekData.php
-'8  19  51  ~/www/settlement/api/getWeekData.php
-'9  18  37  ~/www/settlement/api/getWeekData.php
+'0  10  43  ~/www/settlement/api/getAccountEvents.php
+'1  1  0  ~/www/settlement/api/getAccountEvents.php
+'2  17  0  ~/www/settlement/api/getAccountEvents.php
+'3  38  24  ~/www/settlement/api/getWeekData.php
+'4  52  0  ~/www/settlement/api/getWeekData.php
+'5  42  27  ~/www/settlement/api/getWeekData.php
+'6  37  68  ~/www/settlement/api/getWeekData.php
+'7  31  36  ~/www/settlement/api/getWeekData.php
+'8  48  23  ~/www/settlement/api/getWeekData.php
+'9  29  54  ~/www/settlement/api/getWeekData.php
 
 # Jumplist (newest first):
+-'  10  43  ~/www/settlement/api/getAccountEvents.php
+-'  1  0  ~/www/settlement/api/getAccountEvents.php
+-'  14  13  ~/www/settlement/api/getAccountEvents.php
+-'  17  0  ~/www/settlement/api/getAccountEvents.php
 -'  38  24  ~/www/settlement/api/getWeekData.php
 -'  52  0  ~/www/settlement/api/getWeekData.php
 -'  42  4  ~/www/settlement/api/getWeekData.php
@@ -173,13 +248,33 @@ $
 -'  1  0  ~/iot/mqtt/smartfarm/mqtt-server.js
 -'  75  0  /home/ushio/www/oauth/AligenieAuthorize.php
 -'  16  12  /home/ushio/www/oauth/AligenieAuthorize.php
--'  8  0  /home/ushio/www/oauth/AligenieAuthorize.php
--'  9  0  /home/ushio/www/oauth/getResource.php
--'  7  15  /home/ushio/www/oauth/getResource.php
--'  9  0  /home/ushio/www/oauth/AligenieToken.php
--'  3  0  /home/ushio/www/oauth/AligenieToken.php
 
 # History of marks within files (newest to oldest):
+
+> ~/www/settlement/api/getAccountEvents.php
+	"	10	43
+	^	10	44
+	.	10	43
+	+	7	7
+	+	10	53
+	+	12	0
+	+	17	1
+	+	17	0
+	+	12	32
+	+	17	0
+	+	13	0
+	+	17	0
+	+	16	0
+	+	12	0
+	+	16	0
+	+	17	0
+	+	14	15
+	+	15	0
+	+	14	31
+	+	17	0
+	+	10	36
+	+	18	0
+	+	10	43
 
 > ~/www/settlement/api/getWeekData.php
 	"	38	24
@@ -463,9 +558,3 @@ $
 > /home/ushio/www/api/mail/in
 	"	1	0
 	^	1	0
-
-> /etc/dnsmasq.d/sola.conf
-	"	5	36
-	^	5	37
-	.	5	26
-	+	5	26
