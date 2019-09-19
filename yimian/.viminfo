@@ -14,8 +14,8 @@
 $
 
 # Command Line History (newest to oldest):
-:wq
 :w
+:wq
 :q
 :q!
 :Q!
@@ -35,8 +35,12 @@ $
 "0	LINE	0
 						<li><a id="ushio-blog" href="https://www.eee.dog/"> <span class="glyphicon glyphicon-home"></span> 博客</a></li>
 ""1	LINE	0
-	        echo "kkk";
+	    alert(res.val);
 "2	LINE	0
+	    console.log(res);
+"3	LINE	0
+	        echo "kkk";
+"4	LINE	0
 	" ============================================================================
 	" Netrw Directory Listing                                        (netrw v149)
 	"   /home/yimian/www/settlement/imgbed/upload
@@ -47,37 +51,34 @@ $
 	../
 	./
 	invoice/
-"3	LINE	0
-						<li><a id="ushio-blog" href="https://www.eee.dog/"> <span class="glyphicon glyphicon-home"></span> 博客</a></li>
-"4	LINE	0
-						<li><a id="ushio-img" href="https://img.yimian.xyz/imgbed.html"> <span class="glyphicon glyphicon-picture"></span> 探索</a></li>
 "5	LINE	0
-	var_dump($fin);
+						<li><a id="ushio-blog" href="https://www.eee.dog/"> <span class="glyphicon glyphicon-home"></span> 博客</a></li>
 "6	LINE	0
-	      //no data
+						<li><a id="ushio-img" href="https://img.yimian.xyz/imgbed.html"> <span class="glyphicon glyphicon-picture"></span> 探索</a></li>
 "7	LINE	0
-	if ($result->num_rows > 0) {}else{return 404;}
+	var_dump($fin);
 "8	LINE	0
-	var_dump($current_item);
+	      //no data
 "9	LINE	0
-	var_dump($current_item);
+	if ($result->num_rows > 0) {}else{return 404;}
 "-	CHAR	0
 		
 
 # File marks:
-'0  10  52  ~/www/settlement/imgbed/js/jquery.imageuploader.js
-'1  27  16  ~/www/settlement/imgbed/upload.php
-'2  43  0  ~/www/settlement/imgbed/upload.php
-'3  1  0  ~/www/settlement/imgbed/upload
-'4  9  455  ~/www/settlement/imgbed/js/jquery.imageuploader.js
-'5  1  0  ~/www/settlement/imgbed/js/main.js
-'6  5  40  ~/www/settlement/imgbed/js/jquery.min.js
-'7  4  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
-'8  10  0  ~/www/settlement/imgbed/js/jquery.hwLayer.js
-'9  1  0  ~/www/settlement/imgbed/index.html
+'0  18  28  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+'1  10  52  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+'2  27  16  ~/www/settlement/imgbed/upload.php
+'3  43  0  ~/www/settlement/imgbed/upload.php
+'4  1  0  ~/www/settlement/imgbed/upload
+'5  9  455  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+'6  1  0  ~/www/settlement/imgbed/js/main.js
+'7  5  40  ~/www/settlement/imgbed/js/jquery.min.js
+'8  4  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+'9  10  0  ~/www/settlement/imgbed/js/jquery.hwLayer.js
 
 # Jumplist (newest first):
--'  10  52  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+-'  18  28  ~/www/settlement/imgbed/js/jquery.imageuploader.js
+-'  10  4  ~/www/settlement/imgbed/js/jquery.imageuploader.js
 -'  9  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
 -'  27  16  ~/www/settlement/imgbed/upload.php
 -'  43  0  ~/www/settlement/imgbed/upload.php
@@ -174,27 +175,30 @@ $
 -'  16  2  /etc/crontab
 -'  1  0  /etc/crontab
 -'  9  0  ~/iot/mqtt/smartfarm/mqtt-server.js
--'  16  2  /etc/crontab
 
 # History of marks within files (newest to oldest):
 
 > ~/www/settlement/imgbed/js/jquery.imageuploader.js
-	"	10	52
-	^	10	53
-	.	10	52
+	"	18	28
+	^	18	29
+	.	18	28
 	+	4	412
 	+	9	559
-	+	22	0
+	+	23	0
 	+	11	47
 	+	12	54
 	+	13	28
 	+	14	35
 	+	15	35
 	+	17	24
-	+	18	33
-	+	19	63
+	+	19	33
+	+	20	63
 	+	16	23
 	+	10	52
+	+	11	16
+	+	11	0
+	+	16	23
+	+	18	28
 
 > ~/www/settlement/imgbed/upload.php
 	"	27	16
