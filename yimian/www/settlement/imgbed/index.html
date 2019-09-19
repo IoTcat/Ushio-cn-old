@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>图床</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://v3.bootcss.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="https://v3.bootcss.com/examples/cover/cover.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/hwLayer.css">
+	<link rel="stylesheet" type="text/css" href="./style/main.css">
+	<link href="./style/styles.imageuploader.css" rel="stylesheet" type="text/css">
+	<script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+  </head>
+  <body class="body">
+	<div class="uploade" id="display"><p id="hide">X关闭</p>
+	  <div class="uploader__box js-uploader__box l-center-box">
+	      <form action="#" method="POST">
+	          <div class="uploader__contents">
+	              <label class="button button--secondary" for="fileinput">请选择文件</label>
+	              <input id="fileinput" class="uploader__file-input" type="file" multiple value="Select Files">
+	          </div>
+	          <input class="button button--big-bottom" type="submit" value="Upload Selected Files">
+	      </form>
+	  </div>
+	  <textarea class="form-control img-url" rows="3" id="text" onclick="select();"></textarea>
+	</div>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner"> 
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">呓喵酱の图床</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+
+					<li><a id="ushio-img" href="https://img.yimian.xyz/imgbed.html"> <span class="glyphicon glyphicon-picture"></span> 探索</a></li>
+					<li><a id="ushio-blog" href="https://www.eee.dog/"> <span class="glyphicon glyphicon-home"></span> 博客</a></li>
+					<li><a id="ushio-iotcatme" href="https://iotcat.me/">关于</a></li>
+
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="inner cover">
+          	<br>
+            <h1 class="cover-heading" style="font-size: 36px;padding-bottom: 15px;">上传分享您的图片</h1>
+            <br/><br>
+            <p class="lead">高速稳定的图片分享，无限制外链，托管于华为云对象存储，10MB/s，快来尝试吧~</p>
+			<p class="lead">不和谐上传删图&amp;账号，且行且珍惜。</p>
+            <p class="lead">
+              <a href="javascript:volid(0)" id="upload" style="background: transparent;color: #FFF;" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-cloud-upload"></span> 开始上传</a>
+            </p>
+            <p>本站已托管<span id="imgNum">☹</span>张图片</p>
+          </div>
+          <div class="mastfoot">
+            <div class="inner bottom">
+              <span class="yright"></span><br>
+              <span>©2018-<script type="text/javascript">document.write((new Date()).getFullYear())</script> iotcat | Powered with <span class="glyphicon glyphicon-heart" style="color: red;"></span> by <a id="ushio-ushio" href="https://ushio.xyz">Ushio</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://v3.bootcss.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./js/jquery.hwLayer.js"></script>
+    <script src="./js/jquery.imageuploader.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+<script type="text/javascript">
+    $.post("https://api.yimian.xyz/getImgNum.php", function(res){
+        $('#imgNum').html(JSON.parse(res).total);
+    });
+</script>
+</body>
+</html>
