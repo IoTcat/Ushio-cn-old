@@ -33,15 +33,25 @@ while($row = $result->fetch_assoc()) {
 
 }
 
+for($i = 0; $i < count($total_arr); $i ++){
+
+    if($total_arr[$i]['total'] == 0){
+       $total_arr[$i]['total'] = getFirstTotal($total_arr);
+    }else{
+        break;
+    }
+}
+
 for($i = 0; $i < count($total_arr); $i++){
      if($i < count($total_arr) - 1) $total_arr[$i]['val'] = $total_arr[$i]['total'] - $total_arr[$i+1]['total'];
     else $total_arr[$i]['val'] = 0;
 }
 
 for($i = 0; $i < count($total_arr); $i ++){
-    if($i < count($total_arr) - 7) $total_arr[$i]['week_val'] = $total_arr[$i]['total'] - $total_arr[$i+7]['total'];
+    if($i < count($total_arr) - 7) $total_arr[$i]['week_val'] = ($total_arr[$i]['total'] - $total_arr[$i+7]['total'])/7;
     else $total_arr[$i]['week_val'] = 0;
 }
+
 
 echo json_encode(array(
     "code" => 200,
@@ -49,4 +59,9 @@ echo json_encode(array(
 ));
 
 
+function getFirstTotal($total_arr){
+    $i = 0;
+    while(!$total_arr[$i++]['total'] && $i < count($total_arr));
 
+    return $total_arr[$i-1]['total'];
+}
