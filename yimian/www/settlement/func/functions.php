@@ -1,6 +1,7 @@
 <?php
 require '/home/yimian/www/settlement/.db.key.php';
 require '/home/yimian/www/settlement/.config.php';
+include '/home/ushio/conf/dbKeys/log.db.key.php';
 /**database connection**/
 
 //connect to database
