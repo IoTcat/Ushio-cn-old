@@ -141,23 +141,46 @@ function setCurrent($tmpItem, $usr_to, $usr_from){
     yimian__mail(
         $GLOBALS['usrMail'][$usr_from], 
         'ERP - Pay £'.$GLOBALS['g_threshold'].' to '.$usr_to, 
-        'Dear '.$usr_from.',\n\n'.
-        'You may need to pay £'.$GLOBALS['g_threshold'].' to '.$usr_to. ' as the public payment is not so balanced now. After the payment, please do ask '.$usr_to.' to CONFIRM your payment in his/her email or on the ERP online platform. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .\n\n'.
-        'If you are confused about this email, please feel free to email i@yimian.xyz, or directly come to me.\n\n'.
-        'Best Regards,\n'.
-        'Yimian LIU (@iotcat)',
+        'Dear '.$usr_from.',
+        <br>
+        <br>
+        '.
+        'You may need to pay £'.$GLOBALS['g_threshold'].' to '.$usr_to. ' as the public payment is not so balanced now. After the payment, please do ask '.$usr_to.' to CONFIRM your payment in his/her email or on the ERP online platform. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .
+        <br>
+        <br>
+        '.
+        'If you are confused about this email, please feel free to email i@yimian.xyz, or directly come to me.
+        <br>
+        <br>
+        '.
+        'Best Regards,
+        <br>'.
+        'Yimian LIU (@<a href="https://iotcat.me">iotcat</a>)',
         'ERP - CP Home'
     );
- 
+    sleep(1); 
     yimian__mail(
         $GLOBALS['usrMail'][$usr_to], 
         'ERP - Receive £'.$GLOBALS['g_threshold'].' from '.$usr_from, 
-        'Dear '.$usr_to.',\n\n'.
-        'You will reveive £'.$GLOBALS['g_threshold'].' from '.$usr_from. ' who will help you to undertake some money of the public payment. Thank you for your Great Contribution to our life. After you receive the money, please do remember to come back to this email or go to the online ERP platform to CONFIRM your firend"s payment. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .\n\n'.
-        'Your CONFIRM LINK: <a href="https://settlement.yimian.xyz/api/?type=confirm&id='.$id.'">https://settlement.yimian.xyz/api/?type=confirm&id='.$id.'</a>\n\n'.
-        'If you are confused about this email, please feel free to email i@yimian.xyz, or directly come to me.\n\n'.
-        'Best Regards,\n'.
-        'Yimian LIU (@iotcat)',
+        'Dear '.$usr_to.',
+        <br>
+        <br>
+        '.
+        'You will reveive £'.$GLOBALS['g_threshold'].' from '.$usr_from. ' who will help you to undertake some money of the public payment. Thank you for your Great Contribution to our life. After you receive the money, please do remember to come back to this email or go to the online ERP platform to CONFIRM your firend"s payment. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .
+        <br>
+        <br>
+        '.
+        'Your CONFIRM LINK: <a href="https://settlement.yimian.xyz/api/?type=confirm&id='.$id.'">https://settlement.yimian.xyz/api/?type=confirm&id='.$id.'</a>
+        <br>
+        <br>
+        '.
+        'If you are confused about this email, please feel free to email i@yimian.xyz, or directly come to me.
+        <br>
+        <br>
+        '.
+        'Best Regards,
+        <br>'.
+        'Yimian LIU (@<a href="https://iotcat.me/">iotcat</a>)',
         'ERP - CP Home'
     );
 

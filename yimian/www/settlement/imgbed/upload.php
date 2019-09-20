@@ -27,7 +27,7 @@ foreach($file['name'] as $key=>$val){
                 break;
 	  }
            
-	  $o["url"].="https://api.yimian.xyz/img/path=invoice/".$imgname."\n\n";
+	  $o["url"].="https://api.yimian.xyz/img?path=invoice/".$imgname."\n\n";
         }
 
    }else{
