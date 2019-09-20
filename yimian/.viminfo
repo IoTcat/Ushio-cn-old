@@ -14,9 +14,9 @@
 $
 
 # Command Line History (newest to oldest):
-:w
-:q
 :wq
+:q
+:w
 :q!
 :Q!
 :Wq
@@ -32,11 +32,28 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	include '/home/ushio/conf/dbKeys/log.db.key.php';
-""1	LINE	0
+""0	CHAR	0
+	 
+	    yimian__mail(
+	        $GLOBALS['usrMail'][$usr_from], 
+	        'ERP - Pay £'.$GLOBALS['g_threshold'].' to '.$usr_to, 
+	        'Dear '.$usr_from.',\n\n'.
+	392
+<        'You may need to pay £'.$GLOBALS['g_threshold'].' to '.$usr_to. ' as the public payment is not so balanced now. After the payment, please do ask '.$usr_to.' to CONFIRM your payment in his/her email or on the ERP online platform. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .\n\n'.
+	        'If you are confused about this email, please feel free to email i@yimian.xyz, or directly come to me.\n\n'.
+	        'Best Regards,\n'.
+	        'Yimian LIU (@iotcat)',
+	        'ERP - CP Home'
+	    );
+	
+	
+"1	LINE	0
+	
+"2	LINE	0
+	                break;
+"3	LINE	0
 	$tmp_total = 0;
-"2	CHAR	0
+"4	CHAR	0
 	
 	
 	
@@ -79,14 +96,14 @@ $
 	}
 	
 	
-"3	LINE	0
+"5	LINE	0
 	    array_push($ = $row['total'];
 	}
-"4	LINE	0
+"6	LINE	0
 	$firstItem = $result->fetch_assoc();
-"5	LINE	0
+"7	LINE	0
 	}
-"6	CHAR	0
+"8	CHAR	0
 	$datetime_start = date_create($firstDate);
 	$datetime_end = date_create(date('Y-m-d'));
 	$days = date_diff($datetime_start, $datetime_end)->days;
@@ -117,282 +134,205 @@ $
 	}
 	
 	
-"7	LINE	0
-	$firstItem = $result->fetch_assoc();
-"8	LINE	0
-	
 "9	LINE	0
-	    
+	$firstItem = $result->fetch_assoc();
 "-	CHAR	0
 		
 
 # File marks:
-'0  26  6  ~/www/settlement/api/getWeekData.php
-'1  19  68  ~/www/settlement/api/index.php
-'2  73  93  ~/www/settlement/func/functions.php
-'3  4  0  ~/www/settlement/api/index.php
-'4  1  7  ~/www/settlement/imgbed/.gitignore
-'5  4  0  ~/www/settlement/func/functions.php
-'6  2  0  /home/ushio/www/api/functions.php
-'7  5  68  ~/www/settlement/api/test.php
-'8  341  0  ~/www/settlement/func/functions.php
-'9  122  0  ~/www/settlement/api/index.php
+'0  140  10  ~/www/settlement/api/index.php
+'1  139  48  ~/www/settlement/api/index.php
+'2  46  0  ~/www/settlement/func/functions.php
+'3  157  152  ~/www/settlement/api/index.php
+'4  40  3  ~/www/settlement/func/functions.php
+'5  129  11  ~/www/settlement/api/index.php
+'6  289  6  ~/www/settlement/index.html
+'7  285  37  ~/www/settlement/index.html
+'8  74  0  ~/www/settlement/api/index.php
+'9  30  54  ~/www/settlement/imgbed/upload.php
 
 # Jumplist (newest first):
--'  26  6  ~/www/settlement/api/getWeekData.php
--'  1  0  ~/www/settlement/api/getWeekData.php
--'  37  43  ~/www/settlement/api/getWeekData.php
--'  38  4  ~/www/settlement/api/getWeekData.php
--'  19  68  ~/www/settlement/api/index.php
--'  4  0  ~/www/settlement/api/index.php
--'  73  93  ~/www/settlement/func/functions.php
--'  70  0  ~/www/settlement/func/functions.php
--'  78  0  ~/www/settlement/func/functions.php
--'  87  0  ~/www/settlement/func/functions.php
--'  117  73  ~/www/settlement/func/functions.php
--'  118  0  ~/www/settlement/func/functions.php
--'  119  0  ~/www/settlement/func/functions.php
--'  121  0  ~/www/settlement/func/functions.php
--'  122  0  ~/www/settlement/func/functions.php
--'  151  66  ~/www/settlement/func/functions.php
--'  120  0  ~/www/settlement/func/functions.php
--'  86  0  ~/www/settlement/func/functions.php
--'  152  0  ~/www/settlement/func/functions.php
--'  157  0  ~/www/settlement/func/functions.php
--'  164  0  ~/www/settlement/func/functions.php
--'  179  0  ~/www/settlement/func/functions.php
--'  184  0  ~/www/settlement/func/functions.php
--'  189  0  ~/www/settlement/func/functions.php
--'  196  0  ~/www/settlement/func/functions.php
--'  199  0  ~/www/settlement/func/functions.php
--'  204  0  ~/www/settlement/func/functions.php
--'  207  0  ~/www/settlement/func/functions.php
--'  211  0  ~/www/settlement/func/functions.php
--'  213  0  ~/www/settlement/func/functions.php
--'  220  0  ~/www/settlement/func/functions.php
--'  222  0  ~/www/settlement/func/functions.php
--'  219  0  ~/www/settlement/func/functions.php
--'  195  0  ~/www/settlement/func/functions.php
--'  188  0  ~/www/settlement/func/functions.php
--'  178  0  ~/www/settlement/func/functions.php
--'  154  0  ~/www/settlement/func/functions.php
--'  59  0  ~/www/settlement/func/functions.php
--'  39  0  ~/www/settlement/func/functions.php
--'  67  28  ~/www/settlement/func/functions.php
--'  60  0  ~/www/settlement/func/functions.php
--'  61  42  ~/www/settlement/func/functions.php
--'  4  0  ~/www/settlement/func/functions.php
--'  122  12  ~/www/settlement/api/index.php
--'  1  7  ~/www/settlement/imgbed/.gitignore
--'  327  0  ~/www/settlement/func/functions.php
--'  341  8  ~/www/settlement/func/functions.php
--'  2  0  /home/ushio/www/api/functions.php
--'  1  0  /home/ushio/www/api/functions.php
--'  5  68  ~/www/settlement/api/test.php
--'  1  0  ~/www/settlement/api/test.php
--'  78  0  ~/www/settlement/api/index.php
--'  30  58  ~/www/settlement/imgbed/upload.php
--'  27  16  ~/www/settlement/imgbed/upload.php
--'  1  0  ~/www/settlement/imgbed/upload
--'  16  17  ~/www/settlement/imgbed/js/jquery.imageuploader.js
--'  5  0  ~/www/settlement/imgbed/js/jquery.imageuploader.js
--'  52  44  ~/www/settlement/imgbed/js/main.js
--'  1  0  ~/www/settlement/imgbed/js/main.js
--'  10  4  ~/www/settlement/imgbed/js/jquery.imageuploader.js
--'  26  17  ~/www/settlement/api/getCurrent.php
--'  13  0  ~/www/settlement/api/getCurrent.php
--'  15  0  ~/www/settlement/api/getCurrent.php
--'  1  0  ~/www/settlement/api/getCurrent.php
--'  73  93  ~/www/settlement/func/functions.php
--'  70  0  ~/www/settlement/func/functions.php
--'  78  0  ~/www/settlement/func/functions.php
--'  87  0  ~/www/settlement/func/functions.php
--'  117  73  ~/www/settlement/func/functions.php
--'  118  0  ~/www/settlement/func/functions.php
--'  119  0  ~/www/settlement/func/functions.php
--'  121  0  ~/www/settlement/func/functions.php
--'  122  0  ~/www/settlement/func/functions.php
--'  151  66  ~/www/settlement/func/functions.php
--'  120  0  ~/www/settlement/func/functions.php
--'  86  0  ~/www/settlement/func/functions.php
--'  152  0  ~/www/settlement/func/functions.php
--'  157  0  ~/www/settlement/func/functions.php
--'  164  0  ~/www/settlement/func/functions.php
--'  179  0  ~/www/settlement/func/functions.php
--'  184  0  ~/www/settlement/func/functions.php
--'  189  0  ~/www/settlement/func/functions.php
--'  196  0  ~/www/settlement/func/functions.php
--'  199  0  ~/www/settlement/func/functions.php
--'  204  0  ~/www/settlement/func/functions.php
--'  207  0  ~/www/settlement/func/functions.php
--'  211  0  ~/www/settlement/func/functions.php
--'  213  0  ~/www/settlement/func/functions.php
--'  220  0  ~/www/settlement/func/functions.php
--'  222  0  ~/www/settlement/func/functions.php
--'  219  0  ~/www/settlement/func/functions.php
--'  195  0  ~/www/settlement/func/functions.php
--'  188  0  ~/www/settlement/func/functions.php
--'  178  0  ~/www/settlement/func/functions.php
--'  154  0  ~/www/settlement/func/functions.php
--'  59  0  ~/www/settlement/func/functions.php
--'  39  0  ~/www/settlement/func/functions.php
--'  67  28  ~/www/settlement/func/functions.php
--'  60  0  ~/www/settlement/func/functions.php
+-'  140  10  ~/www/settlement/api/index.php
+-'  139  4  ~/www/settlement/api/index.php
+-'  46  0  ~/www/settlement/func/functions.php
+-'  157  8  ~/www/settlement/api/index.php
+-'  40  0  ~/www/settlement/func/functions.php
+-'  129  8  ~/www/settlement/api/index.php
+-'  73  1  ~/www/settlement/func/functions.php
+-'  74  0  ~/www/settlement/api/index.php
+-'  289  6  ~/www/settlement/index.html
+-'  285  16  ~/www/settlement/index.html
+-'  293  0  ~/www/settlement/index.html
+-'  277  0  ~/www/settlement/index.html
+-'  273  0  ~/www/settlement/index.html
+-'  258  0  ~/www/settlement/index.html
+-'  255  0  ~/www/settlement/index.html
+-'  252  0  ~/www/settlement/index.html
+-'  242  0  ~/www/settlement/index.html
+-'  226  0  ~/www/settlement/index.html
+-'  220  0  ~/www/settlement/index.html
+-'  161  0  ~/www/settlement/index.html
+-'  102  0  ~/www/settlement/index.html
+-'  93  0  ~/www/settlement/index.html
+-'  90  0  ~/www/settlement/index.html
+-'  77  0  ~/www/settlement/index.html
+-'  74  0  ~/www/settlement/index.html
+-'  68  0  ~/www/settlement/index.html
+-'  63  0  ~/www/settlement/index.html
+-'  36  0  ~/www/settlement/index.html
+-'  34  0  ~/www/settlement/index.html
+-'  30  0  ~/www/settlement/index.html
+-'  307  0  ~/www/settlement/index.html
+-'  314  0  ~/www/settlement/index.html
+-'  317  0  ~/www/settlement/index.html
+-'  321  2  ~/www/settlement/index.html
+-'  19  0  ~/www/settlement/api/index.php
+-'  30  54  ~/www/settlement/imgbed/upload.php
+-'  319  3  ~/www/settlement/index.html
+-'  26  0  ~/www/settlement/index.html
+-'  23  0  ~/www/settlement/index.html
+-'  20  0  ~/www/settlement/index.html
+-'  14  0  ~/www/settlement/index.html
+-'  324  0  ~/www/settlement/index.html
+-'  326  0  ~/www/settlement/index.html
+-'  332  0  ~/www/settlement/index.html
+-'  336  0  ~/www/settlement/index.html
+-'  342  0  ~/www/settlement/index.html
+-'  345  0  ~/www/settlement/index.html
+-'  351  0  ~/www/settlement/index.html
+-'  354  0  ~/www/settlement/index.html
+-'  360  0  ~/www/settlement/index.html
+-'  363  0  ~/www/settlement/index.html
+-'  369  0  ~/www/settlement/index.html
+-'  373  0  ~/www/settlement/index.html
+-'  403  0  ~/www/settlement/index.html
+-'  407  0  ~/www/settlement/index.html
+-'  414  0  ~/www/settlement/index.html
+-'  372  0  ~/www/settlement/index.html
+-'  418  0  ~/www/settlement/index.html
+-'  420  0  ~/www/settlement/index.html
+-'  430  0  ~/www/settlement/index.html
+-'  464  0  ~/www/settlement/index.html
+-'  471  0  ~/www/settlement/index.html
+-'  474  0  ~/www/settlement/index.html
+-'  30  54  ~/www/settlement/imgbed/upload.php
+-'  289  6  ~/www/settlement/index.html
+-'  285  16  ~/www/settlement/index.html
+-'  293  0  ~/www/settlement/index.html
+-'  277  0  ~/www/settlement/index.html
+-'  273  0  ~/www/settlement/index.html
+-'  258  0  ~/www/settlement/index.html
+-'  255  0  ~/www/settlement/index.html
+-'  252  0  ~/www/settlement/index.html
+-'  242  0  ~/www/settlement/index.html
+-'  226  0  ~/www/settlement/index.html
+-'  220  0  ~/www/settlement/index.html
+-'  161  0  ~/www/settlement/index.html
+-'  102  0  ~/www/settlement/index.html
+-'  93  0  ~/www/settlement/index.html
+-'  90  0  ~/www/settlement/index.html
+-'  77  0  ~/www/settlement/index.html
+-'  74  0  ~/www/settlement/index.html
+-'  68  0  ~/www/settlement/index.html
+-'  63  0  ~/www/settlement/index.html
+-'  36  0  ~/www/settlement/index.html
+-'  34  0  ~/www/settlement/index.html
+-'  30  0  ~/www/settlement/index.html
+-'  307  0  ~/www/settlement/index.html
+-'  314  0  ~/www/settlement/index.html
+-'  317  0  ~/www/settlement/index.html
+-'  321  2  ~/www/settlement/index.html
+-'  68  0  ~/www/settlement/api/index.php
+-'  30  54  ~/www/settlement/imgbed/upload.php
+-'  319  3  ~/www/settlement/index.html
+-'  26  0  ~/www/settlement/index.html
+-'  23  0  ~/www/settlement/index.html
+-'  20  0  ~/www/settlement/index.html
+-'  14  0  ~/www/settlement/index.html
+-'  324  0  ~/www/settlement/index.html
 
 # History of marks within files (newest to oldest):
 
-> ~/www/settlement/api/getWeekData.php
-	"	26	6
-	^	26	7
-	.	26	6
-	+	29	4
-	+	29	4
-	+	27	7
-	+	25	8
-	+	25	4
-	+	25	2
-	+	25	2
-	+	25	12
-	+	27	0
-	+	25	10
-	+	25	4
-	+	25	9
-	+	25	0
-	+	24	0
-	+	6	22
-	+	23	122
-	+	23	94
-	+	53	12
-	+	23	54
-	+	21	26
-	+	34	0
-	+	7	14
-	+	30	0
-	+	21	23
-	+	23	94
-	+	29	17
-	+	27	0
-	+	34	0
-	+	53	12
-	+	23	161
-	+	35	0
-	+	46	23
-	+	47	18
-	+	48	17
-	+	53	0
-	+	21	20
-	+	12	0
-	+	10	39
-	+	11	0
-	+	12	36
-	+	14	35
-	+	15	15
-	+	46	1
-	+	47	1
-	+	48	1
-	+	49	1
-	+	15	11
-	+	17	39
-	+	18	33
-	+	19	32
-	+	18	38
-	+	19	7
-	+	21	40
-	+	36	0
-	+	53	8
-	+	29	32
-	+	7	3
-	+	29	34
-	+	7	10
-	+	29	42
-	+	29	4
-	+	29	37
-	+	29	73
-	+	53	0
-	+	46	0
-	+	47	0
-	+	48	0
-	+	49	0
-	+	48	23
-	+	30	0
-	+	31	0
-	+	28	4
-	+	26	8
-	+	28	10
-	+	23	193
-	+	28	22
-	+	31	36
-	+	36	42
-	+	37	4
-	+	36	9
-	+	37	18
-	+	26	0
-	+	30	17
-	+	31	17
-	+	37	67
-	+	36	34
-	+	37	68
-	+	41	47
-	+	42	3
-	+	41	37
-	+	42	32
-	+	43	39
-	+	38	0
-	+	38	0
-	+	41	34
-	+	37	33
-	+	36	34
-	+	38	25
-	+	27	0
-	+	26	6
-
 > ~/www/settlement/api/index.php
-	"	19	68
-	^	19	69
-	.	19	69
+	"	140	10
+	^	140	11
+	.	140	10
 	+	6	0
 	+	5	56
-	+	60	14
-	+	48	21
-	+	96	1
-	+	103	1
-	+	96	0
-	+	103	0
-	+	98	0
-	+	110	20
-	+	146	49
-	+	110	0
-	+	116	9
-	+	123	13
-	+	116	8
-	+	117	9
-	+	132	18
-	+	116	9
-	+	115	24
-	+	116	8
-	+	115	9
-	+	116	36
-	+	117	36
-	+	123	12
+	+	66	14
+	+	54	21
+	+	102	1
+	+	109	1
+	+	102	0
+	+	109	0
+	+	104	0
+	+	116	20
+	+	178	49
+	+	116	0
+	+	122	9
+	+	129	13
+	+	122	8
+	+	123	9
+	+	138	18
+	+	122	9
+	+	121	24
+	+	122	8
+	+	121	9
+	+	122	36
+	+	123	36
+	+	129	12
 	+	8	15
-	+	80	15
-	+	85	0
-	+	86	0
-	+	85	26
-	+	86	1
-	+	87	0
-	+	85	0
-	+	75	21
-	+	74	62
-	+	75	0
+	+	86	15
+	+	91	0
+	+	92	0
+	+	91	26
+	+	92	1
+	+	93	0
+	+	91	0
+	+	81	21
+	+	80	62
+	+	81	0
 	+	5	0
 	+	2	0
 	+	3	37
 	+	19	69
+	+	26	142
+	+	27	29
+	+	28	30
+	+	29	28
+	+	30	29
+	+	136	0
+	+	140	0
+	+	165	3
+	+	141	104
+	+	144	7
+	+	142	40
+	+	144	31
+	+	145	9
+	+	144	31
+	+	145	385
+	+	150	0
+	+	145	389
+	+	146	116
+	+	147	26
+	+	148	31
+	+	149	21
+	+	150	0
+	+	151	0
+	+	153	33
+	+	154	68
+	+	155	22
+	+	156	218
+	+	156	332
+	+	157	140
+	+	139	14
+	+	157	152
+	+	139	49
+	+	140	10
 
 > ~/www/settlement/func/functions.php
-	"	73	93
-	^	73	94
+	"	46	0
+	^	46	1
 	.	73	93
 	+	3	37
 	+	9	2
@@ -402,26 +342,33 @@ $
 	+	72	86
 	+	73	93
 
-> ~/www/settlement/imgbed/.gitignore
-	"	1	7
-	^	1	8
-	.	1	7
-	+	1	7
-
-> /home/ushio/www/api/functions.php
-	"	2	0
-
-> ~/www/settlement/api/test.php
-	"	5	68
-	^	5	69
-	.	5	68
-	+	3	57
-	+	5	68
+> ~/www/settlement/index.html
+	"	289	6
+	^	289	7
+	.	289	6
+	+	6	9
+	+	8	59
+	+	9	77
+	+	318	56
+	+	319	51
+	+	320	163
+	+	321	164
+	+	284	0
+	+	283	58
+	+	284	44
+	+	286	12
+	+	287	3
+	+	287	15
+	+	286	33
+	+	285	37
+	+	287	8
+	+	288	15
+	+	289	6
 
 > ~/www/settlement/imgbed/upload.php
-	"	30	58
-	^	30	59
-	.	30	59
+	"	30	54
+	^	30	55
+	.	30	47
 	+	43	0
 	+	42	24
 	+	43	60
@@ -433,11 +380,14 @@ $
 	+	43	1
 	+	42	2
 	+	30	59
+	+	42	0
+	+	43	0
+	+	30	47
 
 > ~/www/settlement/imgbed/js/jquery.imageuploader.js
-	"	16	17
-	^	10	6
-	.	10	4
+	"	9	451
+	^	9	452
+	.	9	451
 	+	4	412
 	+	9	559
 	+	23	0
@@ -456,6 +406,145 @@ $
 	+	16	23
 	+	18	13
 	+	10	4
+	+	4	421
+	+	9	451
+
+> ~/www/settlement/api/getWeekData.php
+	"	51	64
+	^	51	65
+	.	51	64
+	+	23	161
+	+	35	0
+	+	56	23
+	+	57	18
+	+	58	17
+	+	68	0
+	+	21	20
+	+	12	0
+	+	10	39
+	+	11	0
+	+	12	36
+	+	14	35
+	+	15	15
+	+	56	1
+	+	57	1
+	+	58	1
+	+	59	1
+	+	15	11
+	+	17	39
+	+	18	33
+	+	19	32
+	+	18	38
+	+	19	7
+	+	21	40
+	+	45	0
+	+	68	8
+	+	29	32
+	+	7	3
+	+	29	34
+	+	7	10
+	+	29	42
+	+	29	4
+	+	29	37
+	+	29	73
+	+	68	0
+	+	56	0
+	+	57	0
+	+	58	0
+	+	59	0
+	+	58	23
+	+	30	0
+	+	31	0
+	+	28	4
+	+	26	8
+	+	28	10
+	+	23	193
+	+	28	22
+	+	31	36
+	+	45	42
+	+	46	4
+	+	45	9
+	+	46	18
+	+	26	0
+	+	30	17
+	+	31	17
+	+	46	67
+	+	45	34
+	+	46	68
+	+	50	47
+	+	51	3
+	+	50	37
+	+	51	32
+	+	52	39
+	+	47	0
+	+	47	0
+	+	50	34
+	+	46	33
+	+	45	34
+	+	47	25
+	+	27	0
+	+	26	6
+	+	54	52
+	+	54	61
+	+	54	9
+	+	55	0
+	+	36	6
+	+	37	0
+	+	36	40
+	+	38	37
+	+	39	7
+	+	62	35
+	+	63	47
+	+	63	55
+	+	64	21
+	+	63	10
+	+	64	64
+	+	66	0
+	+	64	36
+	+	65	0
+	+	66	34
+	+	63	9
+	+	64	44
+	+	66	25
+	+	39	37
+	+	39	41
+	+	39	7
+	+	39	30
+	+	40	10
+	+	41	13
+	+	51	64
+
+> ~/www/settlement/imgbed/index.html
+	"	69	8
+	^	14	37
+	.	14	36
+	+	7	24
+	+	18	50
+	+	22	90
+	+	35	60
+	+	39	75
+	+	47	123
+	+	50	88
+	+	49	27
+	+	52	198
+	+	54	35
+	+	14	36
+
+> ~/www/settlement/imgbed/.gitignore
+	"	1	7
+	^	1	8
+	.	1	7
+	+	1	7
+
+> /home/ushio/www/api/functions.php
+	"	2	0
+
+> ~/www/settlement/api/test.php
+	"	5	68
+	^	5	69
+	.	5	68
+	+	3	57
+	+	5	68
 
 > ~/www/settlement/imgbed/js/main.js
 	"	52	44
@@ -521,22 +610,6 @@ $
 	+	18	0
 	+	10	43
 
-> ~/www/settlement/imgbed/index.html
-	"	14	4
-	^	14	37
-	.	14	36
-	+	7	24
-	+	18	50
-	+	22	90
-	+	35	60
-	+	39	75
-	+	47	123
-	+	50	88
-	+	49	27
-	+	52	198
-	+	54	35
-	+	14	36
-
 > ~/www/settlement/imgbed/js/jquery.min.js
 	"	5	40
 	^	1	0
@@ -554,14 +627,6 @@ $
 > ~/www/settlement/imgbed/uploadp
 	"	1	0
 	^	1	0
-
-> ~/www/settlement/index.html
-	"	193	29
-	^	193	30
-	.	9	77
-	+	6	9
-	+	8	59
-	+	9	77
 
 > ~/www/settlement/log.db.key.php
 	"	3	26

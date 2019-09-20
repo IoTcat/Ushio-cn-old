@@ -280,9 +280,14 @@
 		var usr_arr = ['liu', 'yang', 'li', 'jia', 'zheng'];
 		
 		if(cookie.get('usr') == null){
-			usr=prompt("please input your surname","");
-			cookie.set("usr", usr);
-		}else{
+			usr=prompt("please input your surname","").toLowerCase();
+            if(usr_arr.indexOf(usr) == -1) {
+                alert('Wrong surname!!');
+                location.reload();
+			}else{
+                cookie.set("usr", usr);
+		    }
+        }else{
 			usr = cookie.get("usr");
 		}
 
@@ -310,10 +315,10 @@
 		$.post('https://settlement.yimian.xyz/api/getWeekData.php', function(res){
 			res = JSON.parse(res);
 
-			$('#week-avg').html(Number(res.data[0]['week_val']).toFixed(2));
+			$('#week-avg').html(Number(res.data[0]['week_val'] * 7).toFixed(2));
 			$('#total-bar').css('width', (res.data[0]['val'] / res.data[0]['week_val'])*100+'%');
-			if(res.data[0]['week_val'] > res.data[1]['week_val']) $('#week-avg-rate').html(((res.data[0]['week_val'] - res.data[1]['week_val'])/res.data[1]['week_val']).toFixed(2)+'% <i style="color:red;" class="fa fa-arrow-up ml-10"></i>');
-			if(res.data[0]['week_val'] <= res.data[1]['week_val']) $('#week-avg-rate').html(((res.data[0]['week_val'] - res.data[1]['week_val'])/res.data[1]['week_val']).toFixed(2)+'% <i style="color:green;" class="fa fa-arrow-down ml-10"></i>');
+			if(res.data[0]['week_val'] > res.data[1]['week_val']) $('#week-avg-rate').html(((res.data[0]['week_val'] - res.data[1]['week_val'])/res.data[1]['week_val'] * 100).toFixed(2)+'% <i style="color:red;" class="fa fa-arrow-up ml-10"></i>');
+			if(res.data[0]['week_val'] <= res.data[1]['week_val']) $('#week-avg-rate').html(((res.data[0]['week_val'] - res.data[1]['week_val'])/res.data[1]['week_val'] * 100).toFixed(2)+'% <i style="color:green;" class="fa fa-arrow-down ml-10"></i>');
 		});
 
 
