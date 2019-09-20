@@ -23,7 +23,7 @@ for($ii = 0; $ii < (($days < 30) ? $days: 30); $ii ++){
 $sql = "select * from account where datetime>='".date('Y-m-d',strtotime('-'.($ii+1).' day'))." 00:00:00' and datetime<'".date('Y-m-d', strtotime("-$ii day"))." 00:00:00' order by id DESC limit 1";
 $result = $conn->query($sql);
     
-$tmp = 0;
+static $tmp = 0;
 while($row = $result->fetch_assoc()) {
     $tmp = $row['total'];
     }

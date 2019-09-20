@@ -16,7 +16,7 @@ if(isset($_REQUEST['id'])) $id = $_REQUEST['id'];
 
 /* cnt to db */
 $conn = db__connect();
-$lastItem = end(db__getData($conn, "account"));
+$lastItem = end(db__getData($conn, "account","","","","","order by id"));
 $datetime = date('Y-m-d H:i:s');
 $tmpItem = $lastItem;
 $tmpItem['datetime'] = $datetime;

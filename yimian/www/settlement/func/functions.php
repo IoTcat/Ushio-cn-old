@@ -58,7 +58,7 @@ function db__rowNum($conn,$table,$clmnName="",$value="",$clmnName2="",$value2=""
 }
 
 //get row data from database::(data_cnnct var, table name,column name, column value)::(row info)
-function db__getData($conn,$table,$clmnName="",$value="",$clmnName2="",$value2="")
+function db__getData($conn,$table,$clmnName="",$value="",$clmnName2="",$value2="",$sql_plus = "")
 {
 	
 	$table=db__antisql($table);
@@ -68,9 +68,9 @@ function db__getData($conn,$table,$clmnName="",$value="",$clmnName2="",$value2="
 	$value2=db__antisql($value2);
 		
 
-	if($clmnName=="") $sql = "SELECT * FROM $table";
-	elseif($clmnName2=="") $sql = "SELECT * FROM $table where $clmnName='$value'";
-	else $sql = "SELECT * FROM $table where $clmnName='$value' AND $clmnName2='$value2'";
+	if($clmnName=="") $sql = "SELECT * FROM $table $sql_plus";
+	elseif($clmnName2=="") $sql = "SELECT * FROM $table where $clmnName='$value' $sql_plus";
+	else $sql = "SELECT * FROM $table where $clmnName='$value' AND $clmnName2='$value2' $sql_plus";
 		
 	$result = $conn->query($sql);
 	//no data
