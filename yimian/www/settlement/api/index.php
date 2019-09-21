@@ -13,6 +13,8 @@ if(isset($_REQUEST['usr']))$usr = $_REQUEST['usr'];
 if(isset($_REQUEST['val'])) $val = $_REQUEST['val'];
 if(isset($_REQUEST['img'])) $img = $_REQUEST['img'];
 if(isset($_REQUEST['id'])) $id = $_REQUEST['id'];
+if(isset($_REQUEST['isEmail'])) $isEmail = true;
+else $isEmail = false;
 
 /* cnt to db */
 $conn = db__connect();
@@ -79,6 +81,16 @@ if($type == "confirm")
 
     $current_item = db__getData($conn, "current", 'id', $id)[0];
     if($current_item['status'] == 1){
+        echo '
+            <script>alert("Already Confirmed!!");window.location.href="https://settlement.yimian.xyz/"</script>
+        ';
+        die();
+    }
+
+    if($isEmail && substr(md5($id), 5, 8) != $_REQUEST['key']){
+         echo '
+            <script>alert("Unauthorized Visit!!");window.location.href="https://settlement.yimian.xyz/"</script>
+        ';
         die();
     }
 
@@ -96,6 +108,14 @@ if($type == "confirm")
     ), array(
         "id" => $id
     ));
+    
+    if($isEmail){
+        
+        echo '
+            <script>alert("Confirmed successfully!!");window.location.href="https://settlement.yimian.xyz/"</script>
+        ';
+        die();
+    }
 
 }
 
@@ -145,7 +165,7 @@ function setCurrent($tmpItem, $usr_to, $usr_from){
         <br>
         <br>
         '.
-        'You may need to pay £'.$GLOBALS['g_threshold'].' to '.$usr_to. ' as the public payment is not so balanced now. After the payment, please do ask '.$usr_to.' to CONFIRM your payment in his/her email or on the ERP online platform. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .
+        'You may need to pay £'.$GLOBALS['g_threshold'].' to <strong>'.$usr_to. '</strong> as the public payment is not so balanced now. After the payment, please do ask '.$usr_to.' to CONFIRM your payment in his/her email or on the ERP online platform. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .
         <br>
         <br>
         '.
@@ -155,7 +175,9 @@ function setCurrent($tmpItem, $usr_to, $usr_from){
         '.
         'Best Regards,
         <br>'.
-        'Yimian LIU (@<a href="https://iotcat.me">iotcat</a>)',
+        'Yimian LIU (@<a href="https://iotcat.me">iotcat</a>)
+        <br>
+        ',
         'ERP - CP Home'
     );
     sleep(1); 
@@ -166,11 +188,11 @@ function setCurrent($tmpItem, $usr_to, $usr_from){
         <br>
         <br>
         '.
-        'You will reveive £'.$GLOBALS['g_threshold'].' from '.$usr_from. ' who will help you to undertake some money of the public payment. Thank you for your Great Contribution to our life. After you receive the money, please do remember to come back to this email or go to the online ERP platform to CONFIRM your firend"s payment. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .
+        'You will reveive £'.$GLOBALS['g_threshold'].' from <strong>'.$usr_from. '</strong> who will help you to undertake some money of the public payment. Thank you for your Great Contribution to our life. After you receive the money, please do remember to come back to this email or go to the online ERP platform to CONFIRM your friend"s payment. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .
         <br>
         <br>
         '.
-        'Your CONFIRM LINK: <a href="https://settlement.yimian.xyz/api/?type=confirm&id='.$id.'">https://settlement.yimian.xyz/api/?type=confirm&id='.$id.'</a>
+        'Your <strong>CONFIRM LINK</strong>: <a href="https://settlement.yimian.xyz/api/?type=confirm&isEmail=true&id='.$id.'&key='.substr(md5($id), 5, 8).'">https://settlement.yimian.xyz/api/?type=confirm&isEmail=true&id='.$id.'&key='.substr(md5($id), 5, 8).'"</a>
         <br>
         <br>
         '.
@@ -180,7 +202,9 @@ function setCurrent($tmpItem, $usr_to, $usr_from){
         '.
         'Best Regards,
         <br>'.
-        'Yimian LIU (@<a href="https://iotcat.me/">iotcat</a>)',
+        'Yimian LIU (@<a href="https://iotcat.me/">iotcat</a>)
+        <br>
+        ',
         'ERP - CP Home'
     );
 

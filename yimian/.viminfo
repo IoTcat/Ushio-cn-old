@@ -15,8 +15,8 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-:w
 :q
+:w
 :q!
 :Q!
 :Wq
@@ -32,11 +32,19 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	include '/home/ushio/conf/dbKeys/log.db.key.php';
-""1	LINE	0
+""0	CHAR	0
+	 &nbsp;&nbsp;&nbsp;
+"1	LINE	0
+	$s = '';
+"2	LINE	0
+	yimian__mail('i@yimian.xyz', 'Hi~', 'Test from Yimian LIU', 'ERP TEST');
+"3	LINE	0
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+"4	LINE	0
+	        
+"5	LINE	0
 	$tmp_total = 0;
-"2	CHAR	0
+"6	CHAR	0
 	
 	
 	
@@ -79,70 +87,50 @@ $
 	}
 	
 	
-"3	LINE	0
+"7	LINE	0
 	    array_push($ = $row['total'];
 	}
-"4	LINE	0
-	$firstItem = $result->fetch_assoc();
-"5	LINE	0
-	}
-"6	CHAR	0
-	$datetime_start = date_create($firstDate);
-	$datetime_end = date_create(date('Y-m-d'));
-	$days = date_diff($datetime_start, $datetime_end)->days;
-	
-	for($ii = 0; $ii < (($days < 30) ? $days: 30); $ii ++){
-	
-	$sql = "select * from account where datetime>='".date('Y-m-d',strtotime('-'.($ii+1).' day'))." 00:00:00' and datetime<'".date('Y-m-d', strtotime("-$ii day"))." 00:00:00' order by id DESC limit 1";
-	$result = $conn->query($sql);
-	    
-	$tmp = 0;
-	while($row = $result->fetch_assoc()) {
-	    $tmp = $row['total'];
-	    }
-	  $total_arr[$ii]['date']=date('Y-m-d', strtotime('-'.($ii+1).'day'));
-	  $total_arr[$ii]['total']=$tmp;
-	
-	
-	}
-	
-	for($i = 0; $i < count($total_arr); $i++){
-	     if($i < count($total_arr) - 1) $total_arr[$i]['val'] = $total_arr[$i]['total'] - $total_arr[$i+1]['total'];
-	    else $total_arr[$i]['val'] = 0;
-	}
-	
-	for($i = 0; $i < count($total_arr); $i ++){
-	    if($i < count($total_arr) - 7) $total_arr[$i]['week_val'] = $total_arr[$i]['total'] - $total_arr[$i+7]['total'];
-	    else $total_arr[$i]['week_val'] = 0;
-	}
-	
-	
-"7	LINE	0
-	$firstItem = $result->fetch_assoc();
 "8	LINE	0
-	
+	$firstItem = $result->fetch_assoc();
 "9	LINE	0
-	    
+	}
 "-	CHAR	0
 		
 
 # File marks:
-'0  158  59  ~/www/settlement/api/index.php
-'1  189  0  ~/www/settlement/api/index.php
-'2  182  7  ~/www/settlement/api/index.php
-'3  4  423  ~/www/settlement/imgbed/js/jquery.imageuploader.js
-'4  69  8  ~/www/settlement/imgbed/index.html
-'5  26  6  ~/www/settlement/api/getWeekData.php
-'6  19  68  ~/www/settlement/api/index.php
-'7  73  93  ~/www/settlement/func/functions.php
-'8  4  0  ~/www/settlement/api/index.php
-'9  1  7  ~/www/settlement/imgbed/.gitignore
+'0  36  134  ~/www/settlement/api/test.php
+'1  11  3  ~/www/settlement/api/test.php
+'2  33  118  ~/www/settlement/api/test.php
+'3  34  251  ~/www/settlement/api/test.php
+'4  18  7  ~/www/settlement/api/test.php
+'5  50  0  ~/www/settlement/api/test.php
+'6  27  0  ~/www/settlement/api/index.php
+'7  52  0  ~/www/settlement/api/test.php
+'8  13  1  ~/www/settlement/buy-sell.html
+'9  14  127  ~/www/settlement/index.html
 
 # Jumplist (newest first):
--'  158  59  ~/www/settlement/api/index.php
--'  189  0  ~/www/settlement/api/index.php
--'  182  8  ~/www/settlement/api/index.php
--'  140  4  ~/www/settlement/api/index.php
+-'  36  134  ~/www/settlement/api/test.php
+-'  11  4  ~/www/settlement/api/test.php
+-'  33  0  ~/www/settlement/api/test.php
+-'  34  0  ~/www/settlement/api/test.php
+-'  18  4  ~/www/settlement/api/test.php
+-'  50  0  ~/www/settlement/api/test.php
+-'  52  0  ~/www/settlement/api/test.php
+-'  27  0  ~/www/settlement/api/index.php
+-'  90  3  ~/www/settlement/api/index.php
+-'  13  1  ~/www/settlement/buy-sell.html
+-'  1  0  ~/www/settlement/buy-sell.html
+-'  14  127  ~/www/settlement/index.html
+-'  13  127  ~/www/settlement/index.html
+-'  277  9  ~/www/settlement/index.html
+-'  290  6  ~/www/settlement/index.html
+-'  191  8  ~/www/settlement/api/index.php
+-'  161  8  ~/www/settlement/api/index.php
+-'  178  8  ~/www/settlement/api/index.php
+-'  213  0  ~/www/settlement/api/index.php
+-'  204  8  ~/www/settlement/api/index.php
+-'  160  4  ~/www/settlement/api/index.php
 -'  4  423  ~/www/settlement/imgbed/js/jquery.imageuploader.js
 -'  9  452  ~/www/settlement/imgbed/js/jquery.imageuploader.js
 -'  22  4  ~/www/settlement/imgbed/js/jquery.imageuploader.js
@@ -154,7 +142,7 @@ $
 -'  1  0  ~/www/settlement/api/getWeekData.php
 -'  37  43  ~/www/settlement/api/getWeekData.php
 -'  38  4  ~/www/settlement/api/getWeekData.php
--'  19  68  ~/www/settlement/api/index.php
+-'  21  68  ~/www/settlement/api/index.php
 -'  4  0  ~/www/settlement/api/index.php
 -'  73  93  ~/www/settlement/func/functions.php
 -'  70  0  ~/www/settlement/func/functions.php
@@ -193,15 +181,14 @@ $
 -'  60  0  ~/www/settlement/func/functions.php
 -'  61  42  ~/www/settlement/func/functions.php
 -'  4  0  ~/www/settlement/func/functions.php
--'  122  12  ~/www/settlement/api/index.php
+-'  142  12  ~/www/settlement/api/index.php
 -'  1  7  ~/www/settlement/imgbed/.gitignore
 -'  327  0  ~/www/settlement/func/functions.php
 -'  341  8  ~/www/settlement/func/functions.php
 -'  2  0  /home/ushio/www/api/functions.php
 -'  1  0  /home/ushio/www/api/functions.php
--'  5  68  ~/www/settlement/api/test.php
 -'  1  0  ~/www/settlement/api/test.php
--'  78  0  ~/www/settlement/api/index.php
+-'  80  0  ~/www/settlement/api/index.php
 -'  30  58  ~/www/settlement/imgbed/upload.php
 -'  27  16  ~/www/settlement/imgbed/upload.php
 -'  1  0  ~/www/settlement/imgbed/upload
@@ -221,128 +208,207 @@ $
 -'  118  0  ~/www/settlement/func/functions.php
 -'  119  0  ~/www/settlement/func/functions.php
 -'  121  0  ~/www/settlement/func/functions.php
--'  122  0  ~/www/settlement/func/functions.php
--'  151  66  ~/www/settlement/func/functions.php
--'  120  0  ~/www/settlement/func/functions.php
--'  86  0  ~/www/settlement/func/functions.php
--'  152  0  ~/www/settlement/func/functions.php
--'  157  0  ~/www/settlement/func/functions.php
--'  164  0  ~/www/settlement/func/functions.php
--'  179  0  ~/www/settlement/func/functions.php
--'  184  0  ~/www/settlement/func/functions.php
--'  189  0  ~/www/settlement/func/functions.php
--'  196  0  ~/www/settlement/func/functions.php
--'  199  0  ~/www/settlement/func/functions.php
--'  204  0  ~/www/settlement/func/functions.php
--'  207  0  ~/www/settlement/func/functions.php
--'  211  0  ~/www/settlement/func/functions.php
 
 # History of marks within files (newest to oldest):
 
+> ~/www/settlement/api/test.php
+	"	36	134
+	^	36	135
+	.	33	134
+	+	3	57
+	+	52	68
+	+	5	0
+	+	50	0
+	+	50	7
+	+	15	10
+	+	16	3
+	+	15	22
+	+	16	17
+	+	18	22
+	+	41	10
+	+	18	10
+	+	41	30
+	+	18	12
+	+	20	15
+	+	23	7
+	+	21	0
+	+	25	7
+	+	27	4
+	+	29	0
+	+	34	0
+	+	27	0
+	+	28	5
+	+	27	7
+	+	29	8
+	+	32	7
+	+	39	0
+	+	34	0
+	+	24	0
+	+	21	0
+	+	38	3
+	+	41	0
+	+	52	0
+	+	43	0
+	+	44	83
+	+	46	10
+	+	50	0
+	+	17	7
+	+	18	7
+	+	40	3
+	+	26	18
+	+	28	1
+	+	30	1
+	+	26	19
+	+	28	21
+	+	30	1
+	+	28	1
+	+	26	50
+	+	28	106
+	+	35	3
+	+	35	0
+	+	33	123
+	+	8	31
+	+	9	43
+	+	10	31
+	+	11	47
+	+	26	157
+	+	30	163
+	+	33	134
+
 > ~/www/settlement/api/index.php
-	"	158	59
-	^	158	60
-	.	158	59
-	+	66	14
-	+	54	21
-	+	102	1
-	+	109	1
-	+	102	0
-	+	109	0
-	+	104	0
-	+	116	20
-	+	201	49
-	+	116	0
-	+	122	9
-	+	129	13
-	+	122	8
-	+	123	9
-	+	138	18
-	+	122	9
-	+	121	24
-	+	122	8
-	+	121	9
-	+	122	36
-	+	123	36
-	+	129	12
-	+	8	15
-	+	86	15
-	+	91	0
-	+	92	0
-	+	91	26
-	+	92	1
-	+	93	0
-	+	91	0
-	+	81	21
-	+	80	62
-	+	81	0
+	"	27	0
+	^	90	4
+	.	90	39
+	+	103	26
+	+	104	1
+	+	105	0
+	+	103	0
+	+	83	21
+	+	82	62
+	+	83	0
 	+	5	0
 	+	2	0
 	+	3	37
-	+	19	69
-	+	26	142
-	+	27	29
-	+	28	30
-	+	29	28
-	+	30	29
-	+	136	0
-	+	140	0
-	+	188	3
-	+	141	104
-	+	144	7
-	+	142	40
-	+	144	31
-	+	148	9
-	+	144	31
-	+	148	385
+	+	21	69
+	+	28	142
+	+	29	29
+	+	30	30
+	+	31	28
+	+	32	29
+	+	156	0
 	+	160	0
-	+	148	389
-	+	152	116
-	+	156	26
-	+	158	31
-	+	159	21
-	+	160	0
-	+	161	0
-	+	163	33
-	+	164	68
-	+	165	22
-	+	169	218
-	+	169	332
-	+	173	140
-	+	139	14
-	+	173	152
-	+	139	49
-	+	140	10
-	+	144	28
-	+	145	8
-	+	156	22
-	+	148	383
-	+	153	8
-	+	166	8
-	+	170	8
-	+	173	159
-	+	174	8
-	+	178	8
-	+	181	22
-	+	182	10
-	+	178	15
-	+	174	15
-	+	170	15
-	+	166	15
-	+	157	11
-	+	153	15
-	+	145	15
-	+	149	15
-	+	145	12
-	+	161	12
-	+	149	12
-	+	153	12
-	+	166	12
-	+	170	12
-	+	174	12
-	+	178	12
-	+	183	60
-	+	158	59
+	+	212	3
+	+	161	104
+	+	164	7
+	+	162	40
+	+	164	31
+	+	168	9
+	+	164	31
+	+	168	385
+	+	182	0
+	+	168	389
+	+	172	116
+	+	176	26
+	+	178	31
+	+	181	21
+	+	182	0
+	+	183	0
+	+	185	33
+	+	186	68
+	+	187	22
+	+	191	218
+	+	191	332
+	+	195	140
+	+	159	14
+	+	195	152
+	+	159	49
+	+	160	10
+	+	164	28
+	+	165	8
+	+	176	22
+	+	168	383
+	+	173	8
+	+	188	8
+	+	192	8
+	+	195	159
+	+	196	8
+	+	200	8
+	+	203	22
+	+	204	10
+	+	200	15
+	+	196	15
+	+	192	15
+	+	188	15
+	+	177	11
+	+	173	15
+	+	165	15
+	+	169	15
+	+	165	12
+	+	183	12
+	+	169	12
+	+	173	12
+	+	188	12
+	+	192	12
+	+	196	12
+	+	200	12
+	+	205	60
+	+	178	59
+	+	16	48
+	+	17	21
+	+	112	17
+	+	113	8
+	+	117	13
+	+	114	14
+	+	115	27
+	+	87	7
+	+	84	14
+	+	85	100
+	+	115	105
+	+	195	169
+	+	195	42
+	+	191	91
+	+	168	90
+	+	179	11
+	+	206	12
+	+	191	335
+	+	195	153
+	+	90	64
+	+	91	1
+	+	95	0
+	+	92	44
+	+	195	257
+	+	195	152
+	+	90	39
+
+> ~/www/settlement/buy-sell.html
+	"	13	1
+	.	13	0
+	+	13	0
+
+> ~/www/settlement/index.html
+	"	14	127
+	^	14	128
+	.	14	127
+	+	6	9
+	+	8	59
+	+	9	77
+	+	319	56
+	+	320	51
+	+	321	163
+	+	322	164
+	+	285	0
+	+	284	58
+	+	285	44
+	+	287	12
+	+	288	3
+	+	288	15
+	+	287	33
+	+	286	37
+	+	288	8
+	+	289	15
+	+	290	6
+	+	13	78
+	+	14	127
 
 > ~/www/settlement/imgbed/upload.php
 	"	30	3
@@ -399,29 +465,6 @@ $
 	+	71	56
 	+	72	86
 	+	73	93
-
-> ~/www/settlement/index.html
-	"	289	6
-	^	289	7
-	.	289	6
-	+	6	9
-	+	8	59
-	+	9	77
-	+	318	56
-	+	319	51
-	+	320	163
-	+	321	164
-	+	284	0
-	+	283	58
-	+	284	44
-	+	286	12
-	+	287	3
-	+	287	15
-	+	286	33
-	+	285	37
-	+	287	8
-	+	288	15
-	+	289	6
 
 > ~/www/settlement/api/getWeekData.php
 	"	51	64
@@ -553,13 +596,6 @@ $
 > /home/ushio/www/api/functions.php
 	"	2	0
 
-> ~/www/settlement/api/test.php
-	"	5	68
-	^	5	69
-	.	5	68
-	+	3	57
-	+	5	68
-
 > ~/www/settlement/imgbed/js/main.js
 	"	52	44
 	^	52	45
@@ -641,10 +677,3 @@ $
 > ~/www/settlement/imgbed/uploadp
 	"	1	0
 	^	1	0
-
-> ~/www/settlement/log.db.key.php
-	"	3	26
-	^	6	28
-	.	6	24
-	+	4	22
-	+	6	24
