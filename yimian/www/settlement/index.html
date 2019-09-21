@@ -281,10 +281,12 @@
 		var usr_arr = ['liu', 'yang', 'li', 'jia', 'zheng'];
 		
 		if(cookie.get('usr') == null){
-			usr=prompt("please input your surname","").toLowerCase();
+            if('surname' in page.params)
+			usr=page.params.surname.toLowerCase();
             if(usr_arr.indexOf(usr) == -1) {
                 alert('Wrong surname!!');
-                location.reload();
+                window.location.href='/login.html';
+                //location.reload();
 			}else{
                 cookie.set("usr", usr);
 		    }
@@ -533,8 +535,8 @@ function notice(){
 	                            <div class="ml-10">
 	                              <h4 class="coin-name">`;
 
-	            if(item.usr_to == usr) s += `You will Get £50 from `+ item.usr_from + ` <button style="color: green;" onClick="javascript:confirm(`+item.id+`);">Confirm to Recived</button>`;
-	            if(item.usr_from == usr) s += `Please Give £50 to `+ item.usr_to;
+	            if(item.usr_to == usr) s += `You will Get £20 from `+ item.usr_from + ` <button style="color: green;" onClick="javascript:confirm(`+item.id+`);">Confirm to Recived</button>`;
+	            if(item.usr_from == usr) s += `Please Give £20 to `+ item.usr_to;
 
 	            s += `</h4>
 	                              <small class="text-muted">`;
@@ -567,7 +569,7 @@ notice();
 	function logout(){
 		cookie.del('usr');
 		cookie.del('val');
-		location.reload();
+		window.location.href='https://settlement.yimian.xyz/';
 	}
 
 	</script>

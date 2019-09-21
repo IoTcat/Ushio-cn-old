@@ -5,7 +5,7 @@ header("Access-Control-Allow-Origin: *");
 include '/home/yimian/www/settlement/func/functions.php';
 
 /* global const */
-$g_threshold = 50;
+$g_threshold = 20;
 
 /* get URL val */
 if(isset($_REQUEST['type'])) $type = $_REQUEST['type'];
@@ -27,11 +27,12 @@ $tmpItem['datetime'] = $datetime;
 $usrArray = ['liu', 'yang', 'li', 'jia', 'zheng'];
 $usrMail = Array(
     "liu" => "i@yimian.xyz", 
-    "yang" => "i@yimian.xyz", 
-    "li" => "i@yimian.xyz", 
-    "jia" => "i@yimian.xyz", 
-    "zheng" => "i@yimian.xyz"
+    "yang" => "boyao1999@163.com", 
+    "li" => "x.li203@student.liverpool.ac.uk", 
+    "jia" => "mingranjia@163.com", 
+    "zheng" => "hao.zheng17@student.xjtlu.edu.cn"
 );
+
 
 /* total count func */
 function getAvg($array){
@@ -165,7 +166,7 @@ function setCurrent($tmpItem, $usr_to, $usr_from){
         <br>
         <br>
         '.
-        'You may need to pay £'.$GLOBALS['g_threshold'].' to <strong>'.$usr_to. '</strong> as the public payment is not so balanced now. After the payment, please do ask '.$usr_to.' to CONFIRM your payment in his/her email or on the ERP online platform. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .
+        'You may need to pay £'.$GLOBALS['g_threshold'].' to <strong>'.$usr_to. '</strong> as the public payment is not so balanced now. After the payment, please do ask '.$usr_to.' to CONFIRM your payment in his/her email or on the ERP online platform. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/?surname='.$usr_from.'</a> .
         <br>
         <br>
         '.
@@ -188,7 +189,7 @@ function setCurrent($tmpItem, $usr_to, $usr_from){
         <br>
         <br>
         '.
-        'You will reveive £'.$GLOBALS['g_threshold'].' from <strong>'.$usr_from. '</strong> who will help you to undertake some money of the public payment. Thank you for your Great Contribution to our life. After you receive the money, please do remember to come back to this email or go to the online ERP platform to CONFIRM your friend"s payment. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/</a> .
+        'You will reveive £'.$GLOBALS['g_threshold'].' from <strong>'.$usr_from. '</strong> who will help you to undertake some money of the public payment. Thank you for your Great Contribution to our life. After you receive the money, please do remember to come back to this email or go to the online ERP platform to CONFIRM your friend"s payment. More details can be accessed from the ERP online platform, which is <a href="https://settlement.yimian.xyz/">https://settlement.yimian.xyz/?surname='.$usr_to.'</a> .
         <br>
         <br>
         '.
