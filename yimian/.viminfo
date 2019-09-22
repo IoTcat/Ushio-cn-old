@@ -8,21 +8,23 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/api.yimian
+~MSle0~/getImg
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:wq
 :q
+:wq
+:q!
+:!q
 :w
 :s
-:q!
 :Q!
 :Wq
 
 # Search String History (newest to oldest):
+?/getImg
 ?/api.yimian
 ?/echo
 
@@ -33,50 +35,127 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	$usrMail = Array(
-	    "liu" => "i@yimian.xyz", 
-	    "yang" => "boyao1999@163.com", 
-	    "li" => "x.li203@student.liverpool.ac.uk", 
-	    "jia" => "mingranjia@163.com", 
-	    "zheng" => "hao.zheng17@student.xjtlu.edu.cn"
-	);
+""0	CHAR	0
 	
 	
-""1	LINE	0
-	Last name:<br>
-"2	LINE	0
-	<p>如果您点击提交，表单数据会被发送到名为 demo_form.asp 的页面。</p>
-"3	LINE	0
-	<br><br>
-"4	LINE	0
-	<input type="text" name="lastname" value="Mouse">
-"5	LINE	0
-	$s = '';
-"6	LINE	0
-	yimian__mail('i@yimian.xyz', 'Hi~', 'Test from Yimian LIU', 'ERP TEST');
-"7	LINE	0
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-"8	LINE	0
+	/* obs get img */
+	function getImg($path, $time = 300){
+	
+	    return str_replace('yimian-image.obs.cn-east-2.myhuaweicloud.com:443','image.yimian.xyz',trim(exec("obs sign obs://yimian-image/". $path ." -e=". $time)));
+	}
+	
+	
+"1	CHAR	0
+	
+	function getMatchedKeys($str, $arr){
+	    if(!is_array($str)){
+	        $o = array();
+	        foreach($arr as $key=>$val){
+	            if($val >= $str - $GLOBALS['range'] && $val <= $str + $GLOBALS['range']) array_push($o, $key);
+	        }
+	        return $o;
+	    }else{
+	        $o = array();
+	        foreach($arr as $key=>$val){
+	            if($val >= $str[0] - $GLOBALS['range'] && $val <= $str[1] + $GLOBALS['range']) array_push($o, $key);
+	        }
+	        return $o;
+	    }   
+	}
+"2	CHAR	0
+	elseif($type){
+	
+	    $arr = getImgsInfo($type);
+	
+	    if($id){
+	        $pos = array_search($id, $arr[1]);
+	        if($pos) $path = $type. '/' .$arr[0][$pos];
+	    }
+	
+	    if(!$size && !$path){
+	        $path = $type. '/' .$arr[0][array_rand($arr[0])];
+	    }elseif(strpos($size, '-') && !$path){
+	        $arr_size = explode('x',$size);
+	        if(strpos($arr_size[0], '-')) $arr_size_length = explode('-',$arr_size[0]);
+	        else $arr_size_length = $arr_size[0];
+	        if(strpos($arr_size[1], '-')) $arr_size_high = explode('-',$arr_size[1]);
+	        else $arr_size_high = $arr_size[1];
+	        $arr_length = getMatchedKeys($arr_size_length, $arr[2]);
+	        $arr_high = getMatchedKeys($arr_size_high, $arr[3]);
+	        if($arr_size[0] == '*') $arr_keys = $arr_high;
+	        elseif($arr_size[1] == '*') $arr_keys = $arr_length;
+	        else $arr_keys = array_intersect($arr_length, $arr_high);
+	        if(!count($arr_keys)){
+	            header('content-type: application/json');
+	            echo json_encode(array("err"=>"Can not find any images matching Size $size in Type $type!!"));
+	            die();
+	        }
+	        do{
+	  	    $index = array_rand($arr_keys);
+		}while($R18 != true && $arr[6][$arr_keys[$index]] != "normal");
+	        $path = $type. '/' .$arr[0][$arr_keys[$index]];
 	        
+	    }elseif(!$path){
+	        $arr_size = explode('x',$size);
+	        $arr_length = getMatchedKeys($arr_size[0], $arr[2]);
+	        $arr_high = getMatchedKeys($arr_size[1], $arr[3]);
+	        if($arr_size[0] == '*' && $arr_size[1] == '*') $arr_keys = getMatchedKeys(array(0=>0,1=>9999), $arr[2]);
+	        elseif($arr_size[0] == '*') $arr_keys = $arr_high;
+	        elseif($arr_size[1] == '*') $arr_keys = $arr_length;
+	        else $arr_keys = array_intersect($arr_length, $arr_high);
+	        if(!count($arr_keys)){
+	            header('content-type: application/json');
+	            echo json_encode(array("err"=>"Can not find any images matching Size $size in Type $type!!"));
+	            die();
+	        }
+	        do{
+	  	    $index = array_rand($arr_keys);
+		}while($R18 != true && $arr[6][$arr_keys[$index]] != "normal");
+	        $path = $type. '/' .$arr[0][$arr_keys[$index]];
+	        
+"3	LINE	0
+	
+"4	LINE	0
+	
+"5	LINE	0
+	if(isset($range) && $range > 0) $range = $range; else $range = 0;
+"6	LINE	0
+	if($R18 != "true") $R18 = false; else $R18 = true;
+"7	LINE	0
+	if($display != "true") $display = false; else $display = true;
+"8	LINE	0
+	if(!isset($path)) $path = null;
 "9	LINE	0
-	$tmp_total = 0;
+	if(!isset($size)) $size = null;
 "-	CHAR	0
 		
 
 # File marks:
-'0  170  11  ~/www/settlement/api/index.php
-'1  573  1  ~/www/settlement/index.html
-'2  5  105  ~/www/settlement/login.html
-'3  289  17  ~/www/settlement/index.html
-'4  10  37  ~/www/settlement/login.html
-'5  1  0  ~/www/settlement/login.php
-'6  282  1  ~/www/settlement/index.html
-'7  27  49  ~/www/settlement/api/index.php
-'8  6  0  ~/www/settlement/api/test.php
-'9  187  0  ~/www/settlement/api/index.php
+'0  32  0  /home/ushio/www/api/video/index.php
+'1  291  3  /home/ushio/www/api/functions.php
+'2  20  0  /home/ushio/www/api/video/index.php
+'3  29  18  /home/ushio/www/api/video/index.php
+'4  293  0  /home/ushio/www/api/functions.php
+'5  298  128  /home/ushio/www/api/functions.php
+'6  31  0  /home/ushio/www/api/video/index.php
+'7  1  0  /home/ushio/www/api/video/in
+'8  170  11  ~/www/settlement/api/index.php
+'9  573  1  ~/www/settlement/index.html
 
 # Jumplist (newest first):
+-'  32  0  /home/ushio/www/api/video/index.php
+-'  20  0  /home/ushio/www/api/video/index.php
+-'  291  3  /home/ushio/www/api/functions.php
+-'  293  0  /home/ushio/www/api/functions.php
+-'  29  4  /home/ushio/www/api/video/index.php
+-'  31  0  /home/ushio/www/api/video/index.php
+-'  298  4  /home/ushio/www/api/functions.php
+-'  491  0  /home/ushio/www/api/functions.php
+-'  1  0  /home/ushio/www/api/functions.php
+-'  541  0  /home/ushio/www/api/functions.php
+-'  2  0  /home/ushio/www/api/functions.php
+-'  1  0  /home/ushio/www/api/video/index.php
+-'  1  0  /home/ushio/www/api/video/in
 -'  170  11  ~/www/settlement/api/index.php
 -'  27  0  ~/www/settlement/api/index.php
 -'  573  1  ~/www/settlement/index.html
@@ -162,20 +241,43 @@ $
 -'  4  0  ~/www/settlement/api/index.php
 -'  73  93  ~/www/settlement/func/functions.php
 -'  70  0  ~/www/settlement/func/functions.php
--'  78  0  ~/www/settlement/func/functions.php
--'  87  0  ~/www/settlement/func/functions.php
--'  117  73  ~/www/settlement/func/functions.php
--'  118  0  ~/www/settlement/func/functions.php
--'  119  0  ~/www/settlement/func/functions.php
--'  121  0  ~/www/settlement/func/functions.php
--'  122  0  ~/www/settlement/func/functions.php
--'  151  66  ~/www/settlement/func/functions.php
--'  120  0  ~/www/settlement/func/functions.php
--'  86  0  ~/www/settlement/func/functions.php
--'  152  0  ~/www/settlement/func/functions.php
--'  157  0  ~/www/settlement/func/functions.php
 
 # History of marks within files (newest to oldest):
+
+> /home/ushio/www/api/video/index.php
+	"	32	0
+	^	20	0
+	.	29	18
+	+	12	30
+	+	15	0
+	+	16	0
+	+	23	0
+	+	21	0
+	+	23	43
+	+	19	14
+	+	28	19
+	+	30	4
+	+	33	0
+	+	29	18
+
+> /home/ushio/www/api/functions.php
+	"	291	3
+	^	291	4
+	.	291	74
+	+	286	0
+	+	295	15
+	+	296	36
+	+	298	130
+	+	286	0
+	+	288	15
+	+	289	37
+	+	291	130
+	+	294	0
+	+	291	74
+
+> /home/ushio/www/api/video/in
+	"	1	0
+	^	1	0
 
 > ~/www/settlement/api/index.php
 	"	170	11
@@ -590,9 +692,6 @@ $
 	.	1	7
 	+	1	7
 
-> /home/ushio/www/api/functions.php
-	"	2	0
-
 > ~/www/settlement/imgbed/js/main.js
 	"	52	44
 	^	52	45
@@ -656,11 +755,3 @@ $
 	+	10	36
 	+	18	0
 	+	10	43
-
-> ~/www/settlement/imgbed/js/jquery.min.js
-	"	5	40
-	^	1	0
-
-> ~/www/settlement/imgbed/js/jquery.hwLayer.js
-	"	10	0
-	^	1	0

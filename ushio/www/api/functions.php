@@ -285,6 +285,13 @@ function getIp()
 }
 
 
+/* obs get video */
+function getVideo($path, $time = 120*60){
+
+    return trim(exec("obs sign obs://yimian-video/". $path ." -e=". $time));
+}
+
+
 /* obs get img */
 function getImg($path, $time = 300){
 
