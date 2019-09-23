@@ -11,7 +11,7 @@
 include '/home/ushio/www/api/functions.php';
 
 
-if(file_get_contents('/tmp/img_yimian_is_update') != date('Y-m')){
+if(file_get_contents('/tmp/img_yimian_is_update') != date('Y-m-d')){
 
 	$__db= Typecho_Db::get();
 
@@ -19,6 +19,7 @@ if(file_get_contents('/tmp/img_yimian_is_update') != date('Y-m')){
 	$__arr = getImgsInfo('koino');
 	$__content="<!--markdown-->";
 	foreach ($__arr[0] as $key => $value) {
+        if(strpos($value,'R18') === false)
 		$__content.="![".$__arr[1][$key]."](https://api.yimian.xyz/img/?path=koino/".$value.") ";
 	}
 	$__update = $__db->update('table.contents')->rows(array('text'=>$__content))->where('cid=?',1);

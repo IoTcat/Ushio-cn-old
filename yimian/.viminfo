@@ -14,13 +14,16 @@
 $
 
 # Command Line History (newest to oldest):
-:q
-:wq
-:q!
-:!q
 :w
-:s
+:q!
 :Q!
+:q1
+:q
+:!
+:Q
+:wq
+:!q
+:s
 :Wq
 
 # Search String History (newest to oldest):
@@ -131,18 +134,26 @@ $
 		
 
 # File marks:
-'0  32  0  /home/ushio/www/api/video/index.php
-'1  291  3  /home/ushio/www/api/functions.php
-'2  20  0  /home/ushio/www/api/video/index.php
-'3  29  18  /home/ushio/www/api/video/index.php
-'4  293  0  /home/ushio/www/api/functions.php
-'5  298  128  /home/ushio/www/api/functions.php
-'6  31  0  /home/ushio/www/api/video/index.php
-'7  1  0  /home/ushio/www/api/video/in
-'8  170  11  ~/www/settlement/api/index.php
-'9  573  1  ~/www/settlement/index.html
+'0  14  64  /home/ushio/www/img/usr/themes/photograph/index.php
+'1  1  0  /home/ushio/www/imgbed
+'2  1  0  /home/ushio/www/img/usr/themes/photograph/index.
+'3  1  0  /home/lib/php/anti-ddos.php
+'4  1  0  /home/ushio/www/img/index.php
+'5  1  0  /home/ushio/www/img/in
+'6  38  0  /home/ushio/www/img/index.php
+'7  32  0  /home/ushio/www/api/video/index.php
+'8  291  3  /home/ushio/www/api/functions.php
+'9  20  0  /home/ushio/www/api/video/index.php
 
 # Jumplist (newest first):
+-'  14  64  /home/ushio/www/img/usr/themes/photograph/index.php
+-'  1  0  /home/ushio/www/img/usr/themes/photograph/index.php
+-'  1  0  /home/ushio/www/imgbed
+-'  1  0  /home/ushio/www/img/usr/themes/photograph/index.
+-'  1  0  /home/lib/php/anti-ddos.php
+-'  1  0  /home/ushio/www/img/index.php
+-'  38  0  /home/ushio/www/img/index.php
+-'  1  0  /home/ushio/www/img/in
 -'  32  0  /home/ushio/www/api/video/index.php
 -'  20  0  /home/ushio/www/api/video/index.php
 -'  291  3  /home/ushio/www/api/functions.php
@@ -234,15 +245,30 @@ $
 -'  47  4  ~/www/settlement/imgbed/index.html
 -'  14  4  ~/www/settlement/imgbed/index.html
 -'  26  6  ~/www/settlement/api/getWeekData.php
--'  1  0  ~/www/settlement/api/getWeekData.php
--'  37  43  ~/www/settlement/api/getWeekData.php
--'  38  4  ~/www/settlement/api/getWeekData.php
--'  21  68  ~/www/settlement/api/index.php
--'  4  0  ~/www/settlement/api/index.php
--'  73  93  ~/www/settlement/func/functions.php
--'  70  0  ~/www/settlement/func/functions.php
 
 # History of marks within files (newest to oldest):
+
+> /home/ushio/www/img/usr/themes/photograph/index.php
+	"	14	64
+	^	14	64
+	.	14	63
+	+	14	63
+
+> /home/ushio/www/img/usr/themes/photograph/index.
+	"	1	0
+	^	1	0
+
+> /home/lib/php/anti-ddos.php
+	"	1	0
+	^	1	0
+
+> /home/ushio/www/img/index.php
+	"	1	0
+	^	38	0
+
+> /home/ushio/www/img/in
+	"	1	0
+	^	1	0
 
 > /home/ushio/www/api/video/index.php
 	"	32	0
@@ -691,67 +717,3 @@ $
 	^	1	8
 	.	1	7
 	+	1	7
-
-> ~/www/settlement/imgbed/js/main.js
-	"	52	44
-	^	52	45
-	.	52	44
-	+	48	58
-	+	49	50
-	+	50	41
-	+	52	63
-	+	48	39
-	+	50	25
-	+	51	31
-	+	52	44
-
-> ~/www/settlement/api/getCurrent.php
-	"	26	17
-	^	26	18
-	.	26	17
-	+	13	59
-	+	22	0
-	+	14	0
-	+	13	57
-	+	17	29
-	+	18	19
-	+	6	29
-	+	7	9
-	+	10	20
-	+	18	61
-	+	19	24
-	+	26	17
-
-> ~/www/settlement/api/getDetail.php
-	"	14	32
-	^	14	33
-	.	10	45
-	+	10	45
-
-> ~/www/settlement/api/get
-	"	1	0
-
-> ~/www/settlement/api/getAccountEvents.php
-	"	10	43
-	^	10	44
-	.	10	43
-	+	7	7
-	+	10	53
-	+	12	0
-	+	17	1
-	+	17	0
-	+	12	32
-	+	17	0
-	+	13	0
-	+	17	0
-	+	16	0
-	+	12	0
-	+	16	0
-	+	17	0
-	+	14	15
-	+	15	0
-	+	14	31
-	+	17	0
-	+	10	36
-	+	18	0
-	+	10	43
