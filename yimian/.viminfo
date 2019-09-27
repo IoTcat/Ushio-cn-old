@@ -8,25 +8,26 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/getImg
+~MSle0~/imgbed
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:w
 :q!
+:wq
+:w
 :Q!
 :q1
 :q
 :!
 :Q
-:wq
 :!q
 :s
 :Wq
 
 # Search String History (newest to oldest):
+?/imgbed
 ?/getImg
 ?/api.yimian
 ?/echo
@@ -134,18 +135,23 @@ $
 		
 
 # File marks:
-'0  22  28  /home/ushio/www/img/usr/themes/photograph/index.php
-'1  1  0  /home/ushio/www/img/usr/themes/photograph/index.
-'2  1  0  /home/lib/php/anti-ddos.php
-'3  1  0  /home/ushio/www/img/index.php
-'4  1  0  /home/ushio/www/img/in
-'5  38  0  /home/ushio/www/img/index.php
-'6  32  0  /home/ushio/www/api/video/index.php
-'7  291  3  /home/ushio/www/api/functions.php
-'8  20  0  /home/ushio/www/api/video/index.php
-'9  29  18  /home/ushio/www/api/video/index.php
+'0  14  32  ~/conf/nginx/settlement.yimian.xyz.conf
+'1  308  60  ~/www/settlement/index.html
+'2  22  28  /home/ushio/www/img/usr/themes/photograph/index.php
+'3  1  0  /home/ushio/www/img/usr/themes/photograph/index.
+'4  1  0  /home/lib/php/anti-ddos.php
+'5  1  0  /home/ushio/www/img/index.php
+'6  1  0  /home/ushio/www/img/in
+'7  38  0  /home/ushio/www/img/index.php
+'8  32  0  /home/ushio/www/api/video/index.php
+'9  291  3  /home/ushio/www/api/functions.php
 
 # Jumplist (newest first):
+-'  14  32  ~/conf/nginx/settlement.yimian.xyz.conf
+-'  1  0  ~/conf/nginx/settlement.yimian.xyz.conf
+-'  308  60  ~/www/settlement/index.html
+-'  456  4  ~/www/settlement/index.html
+-'  573  1  ~/www/settlement/index.html
 -'  22  28  /home/ushio/www/img/usr/themes/photograph/index.php
 -'  1  0  /home/ushio/www/img/usr/themes/photograph/index.php
 -'  1  0  /home/ushio/www/img/usr/themes/photograph/index.
@@ -168,7 +174,6 @@ $
 -'  1  0  /home/ushio/www/api/video/in
 -'  170  11  ~/www/settlement/api/index.php
 -'  27  0  ~/www/settlement/api/index.php
--'  573  1  ~/www/settlement/index.html
 -'  294  24  ~/www/settlement/index.html
 -'  289  16  ~/www/settlement/index.html
 -'  5  105  ~/www/settlement/login.html
@@ -241,12 +246,54 @@ $
 -'  22  4  ~/www/settlement/imgbed/js/jquery.imageuploader.js
 -'  16  12  ~/www/settlement/imgbed/js/jquery.imageuploader.js
 -'  69  8  ~/www/settlement/imgbed/index.html
--'  47  4  ~/www/settlement/imgbed/index.html
--'  14  4  ~/www/settlement/imgbed/index.html
--'  26  6  ~/www/settlement/api/getWeekData.php
--'  1  0  ~/www/settlement/api/getWeekData.php
 
 # History of marks within files (newest to oldest):
+
+> ~/conf/nginx/settlement.yimian.xyz.conf
+	"	14	32
+	^	14	33
+	.	14	32
+	+	4	32
+	+	14	32
+
+> ~/www/settlement/index.html
+	"	308	60
+	^	308	61
+	.	308	61
+	+	6	9
+	+	8	59
+	+	9	77
+	+	321	56
+	+	322	51
+	+	323	163
+	+	324	164
+	+	286	0
+	+	285	58
+	+	286	44
+	+	289	12
+	+	290	3
+	+	290	15
+	+	289	33
+	+	287	37
+	+	290	8
+	+	291	15
+	+	292	6
+	+	13	78
+	+	14	127
+	+	539	58
+	+	538	57
+	+	283	31
+	+	285	0
+	+	284	22
+	+	285	25
+	+	284	40
+	+	285	8
+	+	284	0
+	+	288	48
+	+	289	17
+	+	572	53
+	+	456	0
+	+	308	61
 
 > /home/ushio/www/img/usr/themes/photograph/index.php
 	"	22	28
@@ -409,43 +456,6 @@ $
 	+	28	0
 	+	192	507
 	+	169	413
-
-> ~/www/settlement/index.html
-	"	573	1
-	^	572	54
-	.	572	53
-	+	6	9
-	+	8	59
-	+	9	77
-	+	321	56
-	+	322	51
-	+	323	163
-	+	324	164
-	+	286	0
-	+	285	58
-	+	286	44
-	+	289	12
-	+	290	3
-	+	290	15
-	+	289	33
-	+	287	37
-	+	290	8
-	+	291	15
-	+	292	6
-	+	13	78
-	+	14	127
-	+	539	58
-	+	538	57
-	+	283	31
-	+	285	0
-	+	284	22
-	+	285	25
-	+	284	40
-	+	285	8
-	+	284	0
-	+	288	48
-	+	289	17
-	+	572	53
 
 > ~/www/settlement/login.html
 	"	5	105
@@ -711,9 +721,3 @@ $
 	+	52	198
 	+	54	35
 	+	14	36
-
-> ~/www/settlement/imgbed/.gitignore
-	"	1	7
-	^	1	8
-	.	1	7
-	+	1	7
