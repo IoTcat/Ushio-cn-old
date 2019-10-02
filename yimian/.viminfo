@@ -14,10 +14,10 @@
 $
 
 # Command Line History (newest to oldest):
+:w
 :q
 :wq
 :Wq
-:w
 :q!
 :Q!
 :q1
@@ -135,18 +135,23 @@ $
 		
 
 # File marks:
-'0  3  0  ~/www/shorturl/index.php
-'1  5  0  ~/www/shorturl/index.php
-'2  6  21  ~/www/shorturl/.db.key.php
-'3  2  33  ~/www/shorturl/functions.php
-'4  14  32  ~/conf/nginx/settlement.yimian.xyz.conf
-'5  308  60  ~/www/settlement/index.html
-'6  22  28  /home/ushio/www/img/usr/themes/photograph/index.php
-'7  1  0  /home/ushio/www/img/usr/themes/photograph/index.
-'8  1  0  /home/lib/php/anti-ddos.php
-'9  1  0  /home/ushio/www/img/index.php
+'0  10  154  ~/www/blog/usr/themes/handsome/component/footer.php
+'1  112  4  ~/www/blog/usr/themes/handsome/index.php
+'2  3  0  ~/www/shorturl/index.php
+'3  5  0  ~/www/shorturl/index.php
+'4  6  21  ~/www/shorturl/.db.key.php
+'5  2  33  ~/www/shorturl/functions.php
+'6  14  32  ~/conf/nginx/settlement.yimian.xyz.conf
+'7  308  60  ~/www/settlement/index.html
+'8  22  28  /home/ushio/www/img/usr/themes/photograph/index.php
+'9  1  0  /home/ushio/www/img/usr/themes/photograph/index.
 
 # Jumplist (newest first):
+-'  10  154  ~/www/blog/usr/themes/handsome/component/footer.php
+-'  8  201  ~/www/blog/usr/themes/handsome/component/footer.php
+-'  1  0  ~/www/blog/usr/themes/handsome/component/footer.php
+-'  112  4  ~/www/blog/usr/themes/handsome/index.php
+-'  1  0  ~/www/blog/usr/themes/handsome/index.php
 -'  3  0  ~/www/shorturl/index.php
 -'  5  0  ~/www/shorturl/index.php
 -'  6  21  ~/www/shorturl/.db.key.php
@@ -235,17 +240,21 @@ $
 -'  33  0  ~/www/settlement/api/test.php
 -'  34  0  ~/www/settlement/api/test.php
 -'  18  4  ~/www/settlement/api/test.php
--'  50  0  ~/www/settlement/api/test.php
--'  52  0  ~/www/settlement/api/test.php
--'  91  3  ~/www/settlement/api/index.php
--'  13  1  ~/www/settlement/buy-sell.html
--'  1  0  ~/www/settlement/buy-sell.html
--'  13  127  ~/www/settlement/index.html
--'  277  9  ~/www/settlement/index.html
--'  192  8  ~/www/settlement/api/index.php
--'  162  8  ~/www/settlement/api/index.php
 
 # History of marks within files (newest to oldest):
+
+> ~/www/blog/usr/themes/handsome/component/footer.php
+	"	10	154
+	^	10	155
+	.	10	154
+	+	8	64
+	+	8	193
+	+	8	37
+	+	10	154
+
+> ~/www/blog/usr/themes/handsome/index.php
+	"	112	4
+	^	1	0
 
 > ~/www/shorturl/index.php
 	"	3	0
@@ -563,27 +572,3 @@ $
 	+	26	157
 	+	30	163
 	+	33	134
-
-> ~/www/settlement/buy-sell.html
-	"	13	1
-	.	13	0
-	+	13	0
-
-> ~/www/settlement/imgbed/upload.php
-	"	30	3
-	^	30	42
-	.	30	41
-	+	43	0
-	+	42	24
-	+	43	60
-	+	30	54
-	+	23	34
-	+	15	27
-	+	27	0
-	+	42	0
-	+	43	1
-	+	42	2
-	+	30	59
-	+	42	0
-	+	43	0
-	+	30	41
