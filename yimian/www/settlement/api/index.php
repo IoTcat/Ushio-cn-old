@@ -193,7 +193,7 @@ function setCurrent($tmpItem, $usr_to, $usr_from){
         <br>
         <br>
         '.
-        'Your <strong>CONFIRM LINK</strong>: <a href="https://settlement.yimian.xyz/api/?type=confirm&isEmail=true&id='.$id.'&key='.substr(md5($id), 5, 8).'">https://settlement.yimian.xyz/api/?type=confirm&isEmail=true&id='.$id.'&key='.substr(md5($id), 5, 8).'"</a>
+        'Your <strong>CONFIRM LINK</strong>: <a href="https://settlement-china.yimian.xyz/api/?type=confirm&isEmail=true&id='.$id.'&key='.substr(md5($id), 5, 8).'">https://settlement.yimian.xyz/api/?type=confirm&isEmail=true&id='.$id.'&key='.substr(md5($id), 5, 8).'"</a>
         <br>
         <br>
         '.

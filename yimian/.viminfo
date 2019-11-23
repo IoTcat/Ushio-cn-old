@@ -14,9 +14,9 @@
 $
 
 # Command Line History (newest to oldest):
+:wq
 :w
 :q
-:wq
 :Wq
 :q!
 :Q!
@@ -135,18 +135,20 @@ $
 		
 
 # File marks:
-'0  10  154  ~/www/blog/usr/themes/handsome/component/footer.php
-'1  112  4  ~/www/blog/usr/themes/handsome/index.php
-'2  3  0  ~/www/shorturl/index.php
-'3  5  0  ~/www/shorturl/index.php
-'4  6  21  ~/www/shorturl/.db.key.php
-'5  2  33  ~/www/shorturl/functions.php
-'6  14  32  ~/conf/nginx/settlement.yimian.xyz.conf
-'7  308  60  ~/www/settlement/index.html
-'8  22  28  /home/ushio/www/img/usr/themes/photograph/index.php
-'9  1  0  /home/ushio/www/img/usr/themes/photograph/index.
+'0  196  77  ~/www/settlement/api/index.php
+'1  10  154  ~/www/blog/usr/themes/handsome/component/footer.php
+'2  112  4  ~/www/blog/usr/themes/handsome/index.php
+'3  3  0  ~/www/shorturl/index.php
+'4  5  0  ~/www/shorturl/index.php
+'5  6  21  ~/www/shorturl/.db.key.php
+'6  2  33  ~/www/shorturl/functions.php
+'7  14  32  ~/conf/nginx/settlement.yimian.xyz.conf
+'8  308  60  ~/www/settlement/index.html
+'9  22  28  /home/ushio/www/img/usr/themes/photograph/index.php
 
 # Jumplist (newest first):
+-'  196  77  ~/www/settlement/api/index.php
+-'  170  8  ~/www/settlement/api/index.php
 -'  10  154  ~/www/blog/usr/themes/handsome/component/footer.php
 -'  8  201  ~/www/blog/usr/themes/handsome/component/footer.php
 -'  1  0  ~/www/blog/usr/themes/handsome/component/footer.php
@@ -184,7 +186,6 @@ $
 -'  2  0  /home/ushio/www/api/functions.php
 -'  1  0  /home/ushio/www/api/video/index.php
 -'  1  0  /home/ushio/www/api/video/in
--'  170  11  ~/www/settlement/api/index.php
 -'  27  0  ~/www/settlement/api/index.php
 -'  294  24  ~/www/settlement/index.html
 -'  289  16  ~/www/settlement/index.html
@@ -240,8 +241,117 @@ $
 -'  33  0  ~/www/settlement/api/test.php
 -'  34  0  ~/www/settlement/api/test.php
 -'  18  4  ~/www/settlement/api/test.php
+-'  10  154  ~/www/blog/usr/themes/handsome/component/footer.php
+-'  8  201  ~/www/blog/usr/themes/handsome/component/footer.php
+-'  1  0  ~/www/blog/usr/themes/handsome/component/footer.php
+-'  112  4  ~/www/blog/usr/themes/handsome/index.php
 
 # History of marks within files (newest to oldest):
+
+> ~/www/settlement/api/index.php
+	"	196	77
+	^	196	78
+	.	196	77
+	+	84	0
+	+	5	0
+	+	2	0
+	+	3	37
+	+	21	69
+	+	27	192
+	+	27	96
+	+	27	126
+	+	27	154
+	+	27	183
+	+	157	0
+	+	161	0
+	+	213	3
+	+	162	104
+	+	165	7
+	+	163	40
+	+	165	31
+	+	169	9
+	+	165	31
+	+	169	385
+	+	183	0
+	+	169	389
+	+	173	116
+	+	177	26
+	+	179	31
+	+	182	21
+	+	183	0
+	+	184	0
+	+	186	33
+	+	187	68
+	+	188	22
+	+	192	218
+	+	192	332
+	+	196	140
+	+	160	14
+	+	196	152
+	+	160	49
+	+	161	10
+	+	165	28
+	+	166	8
+	+	177	22
+	+	169	383
+	+	174	8
+	+	189	8
+	+	193	8
+	+	196	159
+	+	197	8
+	+	201	8
+	+	204	22
+	+	205	10
+	+	201	15
+	+	197	15
+	+	193	15
+	+	189	15
+	+	178	11
+	+	174	15
+	+	166	15
+	+	170	15
+	+	166	12
+	+	184	12
+	+	170	12
+	+	174	12
+	+	189	12
+	+	193	12
+	+	197	12
+	+	201	12
+	+	206	60
+	+	179	59
+	+	16	48
+	+	17	21
+	+	113	17
+	+	114	8
+	+	118	13
+	+	115	14
+	+	116	27
+	+	88	7
+	+	85	14
+	+	86	100
+	+	116	105
+	+	196	169
+	+	196	42
+	+	192	91
+	+	169	90
+	+	180	11
+	+	207	12
+	+	192	335
+	+	196	153
+	+	91	64
+	+	92	1
+	+	96	0
+	+	93	44
+	+	196	257
+	+	196	152
+	+	91	39
+	+	8	15
+	+	28	0
+	+	28	0
+	+	192	507
+	+	169	413
+	+	196	77
 
 > ~/www/blog/usr/themes/handsome/component/footer.php
 	"	10	154
@@ -384,111 +494,6 @@ $
 > /home/ushio/www/api/video/in
 	"	1	0
 	^	1	0
-
-> ~/www/settlement/api/index.php
-	"	170	11
-	^	170	12
-	.	169	413
-	+	83	62
-	+	84	0
-	+	5	0
-	+	2	0
-	+	3	37
-	+	21	69
-	+	27	192
-	+	27	96
-	+	27	126
-	+	27	154
-	+	27	183
-	+	157	0
-	+	161	0
-	+	213	3
-	+	162	104
-	+	165	7
-	+	163	40
-	+	165	31
-	+	169	9
-	+	165	31
-	+	169	385
-	+	183	0
-	+	169	389
-	+	173	116
-	+	177	26
-	+	179	31
-	+	182	21
-	+	183	0
-	+	184	0
-	+	186	33
-	+	187	68
-	+	188	22
-	+	192	218
-	+	192	332
-	+	196	140
-	+	160	14
-	+	196	152
-	+	160	49
-	+	161	10
-	+	165	28
-	+	166	8
-	+	177	22
-	+	169	383
-	+	174	8
-	+	189	8
-	+	193	8
-	+	196	159
-	+	197	8
-	+	201	8
-	+	204	22
-	+	205	10
-	+	201	15
-	+	197	15
-	+	193	15
-	+	189	15
-	+	178	11
-	+	174	15
-	+	166	15
-	+	170	15
-	+	166	12
-	+	184	12
-	+	170	12
-	+	174	12
-	+	189	12
-	+	193	12
-	+	197	12
-	+	201	12
-	+	206	60
-	+	179	59
-	+	16	48
-	+	17	21
-	+	113	17
-	+	114	8
-	+	118	13
-	+	115	14
-	+	116	27
-	+	88	7
-	+	85	14
-	+	86	100
-	+	116	105
-	+	196	169
-	+	196	42
-	+	192	91
-	+	169	90
-	+	180	11
-	+	207	12
-	+	192	335
-	+	196	153
-	+	91	64
-	+	92	1
-	+	96	0
-	+	93	44
-	+	196	257
-	+	196	152
-	+	91	39
-	+	8	15
-	+	28	0
-	+	28	0
-	+	192	507
-	+	169	413
 
 > ~/www/settlement/login.html
 	"	5	105
