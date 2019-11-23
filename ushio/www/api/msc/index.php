@@ -98,7 +98,7 @@ if($type == "single"){
 
 if($type == "playlist"){
 	/* 7.18 events */
-	$id="2889727316";
+	//$id="2889727316";
 	if(!isset($id)){
 		echo json_encode(array("code"=>500, "err"=>"You need to provide an id!!"));
 		die();

@@ -135,18 +135,20 @@ $
 		
 
 # File marks:
-'0  196  77  ~/www/settlement/api/index.php
-'1  10  154  ~/www/blog/usr/themes/handsome/component/footer.php
-'2  112  4  ~/www/blog/usr/themes/handsome/index.php
-'3  3  0  ~/www/shorturl/index.php
-'4  5  0  ~/www/shorturl/index.php
-'5  6  21  ~/www/shorturl/.db.key.php
-'6  2  33  ~/www/shorturl/functions.php
-'7  14  32  ~/conf/nginx/settlement.yimian.xyz.conf
-'8  308  60  ~/www/settlement/index.html
-'9  22  28  /home/ushio/www/img/usr/themes/photograph/index.php
+'0  101  2  /home/ushio/www/api/msc/index.php
+'1  196  77  ~/www/settlement/api/index.php
+'2  10  154  ~/www/blog/usr/themes/handsome/component/footer.php
+'3  112  4  ~/www/blog/usr/themes/handsome/index.php
+'4  3  0  ~/www/shorturl/index.php
+'5  5  0  ~/www/shorturl/index.php
+'6  6  21  ~/www/shorturl/.db.key.php
+'7  2  33  ~/www/shorturl/functions.php
+'8  14  32  ~/conf/nginx/settlement.yimian.xyz.conf
+'9  308  60  ~/www/settlement/index.html
 
 # Jumplist (newest first):
+-'  101  2  /home/ushio/www/api/msc/index.php
+-'  1  0  /home/ushio/www/api/msc/index.php
 -'  196  77  ~/www/settlement/api/index.php
 -'  170  8  ~/www/settlement/api/index.php
 -'  10  154  ~/www/blog/usr/themes/handsome/component/footer.php
@@ -244,9 +246,14 @@ $
 -'  10  154  ~/www/blog/usr/themes/handsome/component/footer.php
 -'  8  201  ~/www/blog/usr/themes/handsome/component/footer.php
 -'  1  0  ~/www/blog/usr/themes/handsome/component/footer.php
--'  112  4  ~/www/blog/usr/themes/handsome/index.php
 
 # History of marks within files (newest to oldest):
+
+> /home/ushio/www/api/msc/index.php
+	"	101	2
+	^	101	3
+	.	101	2
+	+	101	2
 
 > ~/www/settlement/api/index.php
 	"	196	77
@@ -513,67 +520,3 @@ $
 > ~/www/settlement/login.php
 	"	1	0
 	^	1	0
-
-> ~/www/settlement/api/test.php
-	"	6	0
-	^	36	0
-	.	33	134
-	+	3	57
-	+	52	68
-	+	5	0
-	+	50	0
-	+	50	7
-	+	15	10
-	+	16	3
-	+	15	22
-	+	16	17
-	+	18	22
-	+	41	10
-	+	18	10
-	+	41	30
-	+	18	12
-	+	20	15
-	+	23	7
-	+	21	0
-	+	25	7
-	+	27	4
-	+	29	0
-	+	34	0
-	+	27	0
-	+	28	5
-	+	27	7
-	+	29	8
-	+	32	7
-	+	39	0
-	+	34	0
-	+	24	0
-	+	21	0
-	+	38	3
-	+	41	0
-	+	52	0
-	+	43	0
-	+	44	83
-	+	46	10
-	+	50	0
-	+	17	7
-	+	18	7
-	+	40	3
-	+	26	18
-	+	28	1
-	+	30	1
-	+	26	19
-	+	28	21
-	+	30	1
-	+	28	1
-	+	26	50
-	+	28	106
-	+	35	3
-	+	35	0
-	+	33	123
-	+	8	31
-	+	9	43
-	+	10	31
-	+	11	47
-	+	26	157
-	+	30	163
-	+	33	134
