@@ -1,5 +1,6 @@
 <?php
 include '/home/ushio/conf/dbKeys/log.db.key.php';
+include '/home/ushio/conf/dbKeys/auth.db.key.php';
 include '/home/ushio/www/api/config.php';
 /**database connection**/
 
@@ -571,9 +572,11 @@ function yimian__sms($to, $tpl, $msg1, $msg2, $msg3){
         $result = $ssender->sendWithParam("86", $to, $templateId,
                 $params, $smsSign, "", "");  /* 签名参数未提供或者为空时，会使用默认签名发送短信*/
         $rsp = json_decode($result);
-        echo $result;
+
+    yimian__log("log_sms",array("timestamp" => date('Y-m-d H:i:s', time()), "to_" => $to, "template" => $templateId, "body" => json_encode($msg), "return_" => $result));
+        return $result;
     } catch(\Exception $e) {
-        echo var_dump($e);
+        return var_dump($e);
     }
 
 }

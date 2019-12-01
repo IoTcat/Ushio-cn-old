@@ -14,8 +14,8 @@
 $
 
 # Command Line History (newest to oldest):
-:q!
 :q
+:q!
 :wq
 :w
 :Wq
@@ -136,18 +136,20 @@ $
 	<
 
 # File marks:
-'0  1  0  /home/ushio/www/api/functions.php
-'1  4  21  /home/ushio/conf/dbKeys/auth.db.key.php
-'2  1  0  /home/ushio/conf/dbKeys/log.db.key.php
-'3  1  0  /home/ushio/www/login/functions.php
-'4  1  0  /home/ushio/www/login/config.php
-'5  3  9  /home/ushio/www/login/checkPhone.php
-'6  1  0  /home/ushio/www/login/index.html
-'7  5  1  /home/ushio/www/api/sms/index.php
-'8  536  19  /home/ushio/www/api/functions.php
-'9  1  0  /home/ushio/www/api/config.php
+'0  162  0  ~/www/settlement/api/index.php
+'1  1  0  /home/ushio/www/api/functions.php
+'2  4  21  /home/ushio/conf/dbKeys/auth.db.key.php
+'3  1  0  /home/ushio/conf/dbKeys/log.db.key.php
+'4  1  0  /home/ushio/www/login/functions.php
+'5  1  0  /home/ushio/www/login/config.php
+'6  3  9  /home/ushio/www/login/checkPhone.php
+'7  1  0  /home/ushio/www/login/index.html
+'8  5  1  /home/ushio/www/api/sms/index.php
+'9  536  19  /home/ushio/www/api/functions.php
 
 # Jumplist (newest first):
+-'  162  0  ~/www/settlement/api/index.php
+-'  1  0  ~/www/settlement/api/index.php
 -'  1  0  /home/ushio/www/api/functions.php
 -'  536  0  /home/ushio/www/api/functions.php
 -'  4  21  /home/ushio/conf/dbKeys/auth.db.key.php
@@ -244,8 +246,12 @@ $
 -'  5  105  ~/www/settlement/login.html
 -'  10  0  ~/www/settlement/login.html
 -'  285  6  ~/www/settlement/index.html
+-'  1  0  /home/ushio/www/api/functions.php
 
 # History of marks within files (newest to oldest):
+
+> ~/www/settlement/api/index.php
+	"	162	0
 
 > /home/ushio/www/api/functions.php
 	"	1	0
@@ -417,8 +423,4 @@ $
 
 > ~/www/blog/usr/plugins/Pio/static/l2d.js
 	"	1	1
-	^	1	0
-
-> ~/www/blog/usr/plugins/Pio/models/pio/model.moc
-	"	1	0
 	^	1	0
