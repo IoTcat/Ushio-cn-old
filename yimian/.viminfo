@@ -8,15 +8,15 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/exportPayForAuthors
+~MSle0~/**sms**
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
+:wq
 :q
 :w
-:wq
 :q!
 :Wq
 :Q!
@@ -27,6 +27,8 @@ $
 :s
 
 # Search String History (newest to oldest):
+?/**sms**/
+?/sms
 ?/exportPayForAuthors
 ?/imgbed
 ?/getImg
@@ -134,18 +136,25 @@ $
 	<
 
 # File marks:
-'0  104  87  /home/ushio/www/api/img/index.php
-'1  473  50  ~/www/blog/usr/themes/handsome/libs/Content.php
-'2  1  0  ~/www/blog/usr/themes/handsome/libs/Handsome.php
-'3  1  0  ~/www/blog/usr/themes/handsome/functions.php
-'4  63  3  ~/www/blog/usr/themes/handsome/post.php
-'5  44  8  ~/www/blog/usr/themes/handsome/page.php
-'6  139  10  ~/www/blog/usr/themes/handsome/component/sidebar.php
-'7  89  58  ~/www/blog/usr/themes/handsome/component/sidebar.php
-'8  451  51  ~/www/blog/usr/themes/handsome/component/footer.php
-'9  72  33  ~/www/blog/usr/themes/handsome/component/sidebar.php
+'0  5  53  /home/ushio/www/api/sms/index.php
+'1  536  19  /home/ushio/www/api/functions.php
+'2  1  0  /home/ushio/www/api/config.php
+'3  37  0  /home/ushio/www/api/functions.php
+'4  104  87  /home/ushio/www/api/img/index.php
+'5  473  50  ~/www/blog/usr/themes/handsome/libs/Content.php
+'6  1  0  ~/www/blog/usr/themes/handsome/libs/Handsome.php
+'7  1  0  ~/www/blog/usr/themes/handsome/functions.php
+'8  63  3  ~/www/blog/usr/themes/handsome/post.php
+'9  44  8  ~/www/blog/usr/themes/handsome/page.php
 
 # Jumplist (newest first):
+-'  5  53  /home/ushio/www/api/sms/index.php
+-'  1  0  /home/ushio/www/api/sms/index.php
+-'  536  19  /home/ushio/www/api/functions.php
+-'  363  3  /home/ushio/www/api/functions.php
+-'  1  0  /home/ushio/www/api/functions.php
+-'  37  0  /home/ushio/www/api/functions.php
+-'  1  0  /home/ushio/www/api/config.php
 -'  104  87  /home/ushio/www/api/img/index.php
 -'  1  0  /home/ushio/www/api/img/index.php
 -'  473  50  ~/www/blog/usr/themes/handsome/libs/Content.php
@@ -217,8 +226,7 @@ $
 -'  31  0  /home/ushio/www/api/video/index.php
 -'  298  4  /home/ushio/www/api/functions.php
 -'  491  0  /home/ushio/www/api/functions.php
--'  1  0  /home/ushio/www/api/functions.php
--'  541  0  /home/ushio/www/api/functions.php
+-'  588  0  /home/ushio/www/api/functions.php
 -'  2  0  /home/ushio/www/api/functions.php
 -'  1  0  /home/ushio/www/api/video/index.php
 -'  1  0  /home/ushio/www/api/video/in
@@ -235,18 +243,35 @@ $
 -'  296  0  ~/www/settlement/index.html
 -'  310  0  ~/www/settlement/index.html
 -'  317  0  ~/www/settlement/index.html
--'  320  0  ~/www/settlement/index.html
--'  327  0  ~/www/settlement/index.html
--'  329  0  ~/www/settlement/index.html
--'  335  0  ~/www/settlement/index.html
--'  339  0  ~/www/settlement/index.html
--'  345  0  ~/www/settlement/index.html
--'  348  0  ~/www/settlement/index.html
--'  354  0  ~/www/settlement/index.html
--'  357  0  ~/www/settlement/index.html
--'  363  0  ~/www/settlement/index.html
+-'  536  19  /home/ushio/www/api/functions.php
+-'  363  3  /home/ushio/www/api/functions.php
 
 # History of marks within files (newest to oldest):
+
+> /home/ushio/www/api/sms/index.php
+	"	5	53
+	^	5	54
+	.	5	52
+	+	3	27
+	+	4	0
+	+	5	52
+
+> /home/ushio/www/api/functions.php
+	"	536	19
+	^	536	20
+	.	536	19
+	+	536	0
+	+	536	9
+	+	536	44
+	+	580	0
+	+	535	8
+	+	536	6
+	+	553	0
+	+	536	19
+
+> /home/ushio/www/api/config.php
+	"	1	0
+	^	1	0
 
 > /home/ushio/www/api/img/index.php
 	"	104	87
@@ -415,121 +440,3 @@ $
 	^	101	3
 	.	101	2
 	+	101	2
-
-> ~/www/settlement/api/index.php
-	"	196	77
-	^	196	78
-	.	196	77
-	+	84	0
-	+	5	0
-	+	2	0
-	+	3	37
-	+	21	69
-	+	27	192
-	+	27	96
-	+	27	126
-	+	27	154
-	+	27	183
-	+	157	0
-	+	161	0
-	+	213	3
-	+	162	104
-	+	165	7
-	+	163	40
-	+	165	31
-	+	169	9
-	+	165	31
-	+	169	385
-	+	183	0
-	+	169	389
-	+	173	116
-	+	177	26
-	+	179	31
-	+	182	21
-	+	183	0
-	+	184	0
-	+	186	33
-	+	187	68
-	+	188	22
-	+	192	218
-	+	192	332
-	+	196	140
-	+	160	14
-	+	196	152
-	+	160	49
-	+	161	10
-	+	165	28
-	+	166	8
-	+	177	22
-	+	169	383
-	+	174	8
-	+	189	8
-	+	193	8
-	+	196	159
-	+	197	8
-	+	201	8
-	+	204	22
-	+	205	10
-	+	201	15
-	+	197	15
-	+	193	15
-	+	189	15
-	+	178	11
-	+	174	15
-	+	166	15
-	+	170	15
-	+	166	12
-	+	184	12
-	+	170	12
-	+	174	12
-	+	189	12
-	+	193	12
-	+	197	12
-	+	201	12
-	+	206	60
-	+	179	59
-	+	16	48
-	+	17	21
-	+	113	17
-	+	114	8
-	+	118	13
-	+	115	14
-	+	116	27
-	+	88	7
-	+	85	14
-	+	86	100
-	+	116	105
-	+	196	169
-	+	196	42
-	+	192	91
-	+	169	90
-	+	180	11
-	+	207	12
-	+	192	335
-	+	196	153
-	+	91	64
-	+	92	1
-	+	96	0
-	+	93	44
-	+	196	257
-	+	196	152
-	+	91	39
-	+	8	15
-	+	28	0
-	+	28	0
-	+	192	507
-	+	169	413
-	+	196	77
-
-> ~/www/blog/usr/themes/handsome/index.php
-	"	112	4
-	^	1	0
-
-> ~/www/shorturl/index.php
-	"	3	0
-	^	3	0
-	.	3	44
-	+	2	0
-	+	3	50
-	+	4	0
-	+	3	44

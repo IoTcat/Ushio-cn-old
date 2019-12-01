@@ -531,3 +531,50 @@ function getPostHttpBody($param)
     return substr($str, 0, -1);
 }
 
+
+/* sms */
+require __DIR__ . "/../../lib/qcloudsms/src/index.php";
+
+use Qcloud\Sms\SmsSingleSender;
+use Qcloud\Sms\SmsMultiSender;
+use Qcloud\Sms\SmsVoiceVerifyCodeSender;
+use Qcloud\Sms\SmsVoicePromptSender;
+use Qcloud\Sms\SmsStatusPuller;
+use Qcloud\Sms\SmsMobileStatusPuller;
+
+use Qcloud\Sms\VoiceFileUploader;
+use Qcloud\Sms\FileVoiceSender;
+use Qcloud\Sms\TtsVoiceSender;
+
+
+function yimian__sms($to, $tpl, $msg1, $msg2, $msg3){
+
+    $msg = array();
+    if($tpl == 3) array_push($msg, $msg1, $msg2, $msg3);
+    else array_push($msg, $msg1, $msg2);
+
+    $appid = $GLOBALS['sms_appid']; 
+
+    $appkey = $GLOBALS['sms_appkey'];
+
+    $smsSign = $GLOBALS['sms_smsSign']; 
+
+    if($tpl == 1) $templateId = 287129; /*由于{1}，本站{2}。给您带来不便深表歉意！*/
+    if($tpl == 2) $templateId = 300726; /*您好！您收到一条来自{1}的消息，内容是{2}。感谢您使用本站的服务！*/
+    if($tpl == 3) $templateId = 205311; /*您{1}的{2}为{3}，请于5分钟内填写。如非本人操作，请忽略本短信。祝好！*/
+    if($tpl == 4) $templateId = 244004; /*{1}已解决，本站{2}服务已恢复！给您带来不便深表歉意！特此告知！*/
+    if($tpl == 5) $templateId = 300722; /*你好呀，你收到了一条来自访客{1}的评论，内容是{2}。感谢你使用本站的服务啦 ~*/
+
+    try {
+        $ssender = new SmsSingleSender($appid, $appkey);
+        $params = $msg;
+        $result = $ssender->sendWithParam("86", $to, $templateId,
+                $params, $smsSign, "", "");  /* 签名参数未提供或者为空时，会使用默认签名发送短信*/
+        $rsp = json_decode($result);
+        echo $result;
+    } catch(\Exception $e) {
+        echo var_dump($e);
+    }
+
+}
+
