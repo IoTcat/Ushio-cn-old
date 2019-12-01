@@ -20,7 +20,7 @@ $R18 = $_REQUEST['R18'];
 $range = $_REQUEST['range'];
 
 
-if(!isset($type) || !($type == "moe" || $type == "koino" || $type == "head" || $type == "wallpaper" || $type == "blog" || $type == "imgbed")) $type = "moe";
+if(!isset($type) || !($type == "moe" || $type == "koino" || $type == "head" || $type == "wallpaper" || $type == "blog" || $type == "imgbed" || $type == "easyver")) $type = "moe";
 if(!isset($id)) $id = null;
 if(!isset($size)) $size = null;
 if(!isset($path)) $path = null;

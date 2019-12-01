@@ -134,18 +134,20 @@ $
 	<
 
 # File marks:
-'0  473  50  ~/www/blog/usr/themes/handsome/libs/Content.php
-'1  1  0  ~/www/blog/usr/themes/handsome/libs/Handsome.php
-'2  1  0  ~/www/blog/usr/themes/handsome/functions.php
-'3  63  3  ~/www/blog/usr/themes/handsome/post.php
-'4  44  8  ~/www/blog/usr/themes/handsome/page.php
-'5  139  10  ~/www/blog/usr/themes/handsome/component/sidebar.php
-'6  89  58  ~/www/blog/usr/themes/handsome/component/sidebar.php
-'7  451  51  ~/www/blog/usr/themes/handsome/component/footer.php
-'8  72  33  ~/www/blog/usr/themes/handsome/component/sidebar.php
-'9  99  19  ~/www/blog/usr/themes/handsome/post.php
+'0  104  87  /home/ushio/www/api/img/index.php
+'1  473  50  ~/www/blog/usr/themes/handsome/libs/Content.php
+'2  1  0  ~/www/blog/usr/themes/handsome/libs/Handsome.php
+'3  1  0  ~/www/blog/usr/themes/handsome/functions.php
+'4  63  3  ~/www/blog/usr/themes/handsome/post.php
+'5  44  8  ~/www/blog/usr/themes/handsome/page.php
+'6  139  10  ~/www/blog/usr/themes/handsome/component/sidebar.php
+'7  89  58  ~/www/blog/usr/themes/handsome/component/sidebar.php
+'8  451  51  ~/www/blog/usr/themes/handsome/component/footer.php
+'9  72  33  ~/www/blog/usr/themes/handsome/component/sidebar.php
 
 # Jumplist (newest first):
+-'  104  87  /home/ushio/www/api/img/index.php
+-'  1  0  /home/ushio/www/api/img/index.php
 -'  473  50  ~/www/blog/usr/themes/handsome/libs/Content.php
 -'  478  108  ~/www/blog/usr/themes/handsome/libs/Content.php
 -'  3  0  ~/www/blog/usr/themes/handsome/libs/Content.php
@@ -243,10 +245,14 @@ $
 -'  354  0  ~/www/settlement/index.html
 -'  357  0  ~/www/settlement/index.html
 -'  363  0  ~/www/settlement/index.html
--'  366  0  ~/www/settlement/index.html
--'  372  0  ~/www/settlement/index.html
 
 # History of marks within files (newest to oldest):
+
+> /home/ushio/www/api/img/index.php
+	"	104	87
+	^	23	160
+	.	23	158
+	+	23	158
 
 > ~/www/blog/usr/themes/handsome/libs/Content.php
 	"	473	50
@@ -527,7 +533,3 @@ $
 	+	3	50
 	+	4	0
 	+	3	44
-
-> ~/conf/nginx/eee.dog.conf
-	"	15	37
-	^	15	38
