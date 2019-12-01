@@ -472,20 +472,22 @@ break;
                      <div class="modal-content">
                          <div class="modal-header">
                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                             <h4 class="modal-title">'._mt("赞赏作者").'</h4>
+                             <h4 class="modal-title">'._mt("养活呓喵，从我做起！").'</h4>
                          </div>
                          <div class="modal-body">
                              <p class="text-center article__reward"> <strong class="article__reward-text">'._mt("扫一扫支付").'</strong> </p>
-                             <div class="tab-content">
+                             <a href="https://pay.yimian.xyz/"><div class="tab-content">
                                  <img noGallery aria-labelledby="alipay-tab" class="pay-img tab-pane fade in active" id="alipay_author" role="tabpanel" src="'.$options->AlipayPic.'" />
-                                 <img noGallery aria-labelledby="wechatpay-tab" class="pay-img tab-pane fade" id="wechatpay_author" role="tabpanel" src="'.$options->WechatPic.'" />
-                             </div>
+                                 '//.'<img noGallery aria-labelledby="wechatpay-tab" class="pay-img tab-pane fade" id="wechatpay_author" role="tabpanel" src="'.$options->WechatPic.'" />
+                             .'</div></a>
                              <div class="article__reward-border mb20 mt10"></div>
 
                              <div class="text-center" role="tablist">
-                                 <div class="pay-button" role="presentation" class="active"><button  href="#alipay_author" id="alipay-tab" aria-controls="alipay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-info"><i class="iconfont icon-alipay" aria-hidden="true"></i><span>&nbsp;'._mt("支付宝支付").'</span></button>
-                                 </div>
-                                 <div class="pay-button" role="presentation"><button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信支付").'</span></button>
+                                 <div class="pay-button" role="presentation" class="active"><button  href="#alipay_author" id="alipay-tab" aria-controls="alipay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-info"><i class="iconfont icon-alipay" aria-hidden="true"></i><span>&nbsp;'._mt("支付宝").'</span></button>
+                                <button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信").'</span></button>
+                                 <button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-primary"><i class="iconfont icon-qzone" aria-hidden="true"></i><span>&nbsp;'._mt("QQ支付").'</span></button>
+                                <button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-warning"><i class="glyphicon glyphicon-bitcoin" aria-hidden="true"></i><span>&nbsp;'._mt("比特币").'</span></button>
+                                <button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-danger"><i class="glyphicon glyphicon-gbp" aria-hidden="true"></i><span>&nbsp;'._mt("Paypal").'</span></button>
                                  </div>
                              </div>
                          </div>

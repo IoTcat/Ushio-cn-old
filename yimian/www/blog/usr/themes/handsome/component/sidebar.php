@@ -86,7 +86,7 @@
            <li class="list-group-item"> <i class="glyphicon glyphicon-comment text-muted"></i> <span class="badge
            pull-right"><?php $stat->publishedCommentsNum() ?></span><?php _me("评论数目") ?></li>
            <li class="list-group-item"> <i class="glyphicon glyphicon-equalizer text-muted"></i> <span class="badge
-           pull-right"><?php echo Utils::getOpenDays(); ?></span><?php _me("运行天数") ?></li>
+           pull-right" id="lasting_time" style="color:green"><?php //echo Utils::getOpenDays(); ?></span><?php _me("运行") ?></li>
            <li class="list-group-item"> <i class="glyphicon glyphicon-refresh text-muted"></i> <span class="badge
            pull-right"><?php echo Utils::getLatestTime($this); ?></span><?php _me("最后更新") ?></li>
        </ul>

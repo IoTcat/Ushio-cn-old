@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/imgbed
+~MSle0~/exportPayForAuthors
 
 # Last Substitute String:
 $
@@ -16,8 +16,8 @@ $
 # Command Line History (newest to oldest):
 :q
 :w
-:q!
 :wq
+:q!
 :Wq
 :Q!
 :q1
@@ -27,6 +27,7 @@ $
 :s
 
 # Search String History (newest to oldest):
+?/exportPayForAuthors
 ?/imgbed
 ?/getImg
 ?/api.yimian
@@ -39,17 +40,29 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	
-	
-	/* obs get img */
-	function getImg($path, $time = 300){
-	
-	    return str_replace('yimian-image.obs.cn-east-2.myhuaweicloud.com:443','image.yimian.xyz',trim(exec("obs sign obs://yimian-image/". $path ." -e=". $time)));
-	}
-	
-	
-"1	CHAR	0
+"0	LINE	0
+	332
+<                                 <div class="pay-button" role="presentation" class="active"><button  href="#alipay_author" id="alipay-tab" aria-controls="alipay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-info"><i class="iconfont icon-alipay" aria-hidden="true"></i><span>&nbsp;'._mt("支付宝").'</span></button>
+""1	LINE	0
+	283
+<                                <button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信").'</span></button>
+"2	LINE	0
+	328
+<                                 <div class="pay-button" role="presentation"><button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信").'</span></button>
+"3	LINE	0
+	328
+<                                 <div class="pay-button" role="presentation"><button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信").'</span></button>
+"4	LINE	0
+	328
+<                                 <div class="pay-button" role="presentation"><button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信").'</span></button>
+"5	LINE	0
+	332
+<                                 <div class="pay-button" role="presentation" class="active"><button  href="#alipay_author" id="alipay-tab" aria-controls="alipay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-info"><i class="iconfont icon-alipay" aria-hidden="true"></i><span>&nbsp;'._mt("支付宝").'</span></button>
+"6	LINE	0
+	                                 </div>
+"7	LINE	0
+	                                 </div>
+"8	CHAR	0
 	
 	function getMatchedKeys($str, $arr){
 	    if(!is_array($str)){
@@ -66,7 +79,7 @@ $
 	        return $o;
 	    }   
 	}
-"2	CHAR	0
+"9	CHAR	0
 	elseif($type){
 	
 	    $arr = getImgsInfo($type);
@@ -117,39 +130,41 @@ $
 		}while($R18 != true && $arr[6][$arr_keys[$index]] != "normal");
 	        $path = $type. '/' .$arr[0][$arr_keys[$index]];
 	        
-"3	LINE	0
-	
-"4	LINE	0
-	
-"5	LINE	0
-	if(isset($range) && $range > 0) $range = $range; else $range = 0;
-"6	LINE	0
-	if($R18 != "true") $R18 = false; else $R18 = true;
-"7	LINE	0
-	if($display != "true") $display = false; else $display = true;
-"8	LINE	0
-	if(!isset($path)) $path = null;
-"9	LINE	0
-	if(!isset($size)) $size = null;
-""-	CHAR	0
-	)
+"-	CHAR	0
+	<
 
 # File marks:
-'0  99  19  ~/www/blog/usr/themes/handsome/post.php
-'1  26  0  ~/www/blog/usr/themes/handsome/page.php
-'2  26  85  ~/www/blog/usr/plugins/Pio/static/pio.js
-'3  1  1  ~/www/blog/usr/plugins/Pio/static/l2d.js
-'4  1  0  ~/www/blog/usr/plugins/Pio/models/pio/model.moc
-'5  1  0  ~/www/blog/usr/plugins/Pio/models/pio/model.json
-'6  49  0  ~/www/blog/usr/plugins/Pio/Plugin.php
-'7  1  0  ~/www/blog/usr/plugins/Pio/Plugin.php
-'8  141  53  ~/www/blog/usr/themes/handsome/component/aside.php
-'9  59  166  ~/www/mikutap/index.html
+'0  473  50  ~/www/blog/usr/themes/handsome/libs/Content.php
+'1  1  0  ~/www/blog/usr/themes/handsome/libs/Handsome.php
+'2  1  0  ~/www/blog/usr/themes/handsome/functions.php
+'3  63  3  ~/www/blog/usr/themes/handsome/post.php
+'4  44  8  ~/www/blog/usr/themes/handsome/page.php
+'5  139  10  ~/www/blog/usr/themes/handsome/component/sidebar.php
+'6  89  58  ~/www/blog/usr/themes/handsome/component/sidebar.php
+'7  451  51  ~/www/blog/usr/themes/handsome/component/footer.php
+'8  72  33  ~/www/blog/usr/themes/handsome/component/sidebar.php
+'9  99  19  ~/www/blog/usr/themes/handsome/post.php
 
 # Jumplist (newest first):
--'  99  19  ~/www/blog/usr/themes/handsome/post.php
+-'  473  50  ~/www/blog/usr/themes/handsome/libs/Content.php
+-'  478  108  ~/www/blog/usr/themes/handsome/libs/Content.php
+-'  3  0  ~/www/blog/usr/themes/handsome/libs/Content.php
+-'  1  0  ~/www/blog/usr/themes/handsome/libs/Content.php
+-'  1  0  ~/www/blog/usr/themes/handsome/libs/Handsome.php
+-'  1  0  ~/www/blog/usr/themes/handsome/functions.php
+-'  63  3  ~/www/blog/usr/themes/handsome/post.php
+-'  99  3  ~/www/blog/usr/themes/handsome/post.php
+-'  44  8  ~/www/blog/usr/themes/handsome/page.php
+-'  26  10  ~/www/blog/usr/themes/handsome/page.php
+-'  139  10  ~/www/blog/usr/themes/handsome/component/sidebar.php
+-'  89  11  ~/www/blog/usr/themes/handsome/component/sidebar.php
+-'  72  12  ~/www/blog/usr/themes/handsome/component/sidebar.php
+-'  451  51  ~/www/blog/usr/themes/handsome/component/footer.php
+-'  418  20  ~/www/blog/usr/themes/handsome/component/footer.php
+-'  453  50  ~/www/blog/usr/themes/handsome/component/footer.php
+-'  407  12  ~/www/blog/usr/themes/handsome/component/footer.php
+-'  1  2  ~/www/blog/usr/themes/handsome/component/sidebar.php
 -'  1  0  ~/www/blog/usr/themes/handsome/post.php
--'  26  0  ~/www/blog/usr/themes/handsome/page.php
 -'  1  0  ~/www/blog/usr/themes/handsome/page.php
 -'  26  85  ~/www/blog/usr/plugins/Pio/static/pio.js
 -'  1  0  ~/www/blog/usr/plugins/Pio/static/pio.js
@@ -162,7 +177,6 @@ $
 -'  1  2  ~/www/blog/usr/themes/handsome/component/aside.php
 -'  59  166  ~/www/mikutap/index.html
 -'  1  0  ~/www/mikutap/index.html
--'  407  26  ~/www/blog/usr/themes/handsome/component/footer.php
 -'  10  2  ~/www/blog/usr/themes/handsome/component/footer.php
 -'  217  27  ~/www/blog/var/PasswordHash.php
 -'  1  0  ~/www/blog/var/PasswordHash.php
@@ -231,31 +245,117 @@ $
 -'  363  0  ~/www/settlement/index.html
 -'  366  0  ~/www/settlement/index.html
 -'  372  0  ~/www/settlement/index.html
--'  376  0  ~/www/settlement/index.html
--'  406  0  ~/www/settlement/index.html
--'  410  0  ~/www/settlement/index.html
--'  417  0  ~/www/settlement/index.html
--'  421  0  ~/www/settlement/index.html
--'  423  0  ~/www/settlement/index.html
--'  433  0  ~/www/settlement/index.html
--'  467  0  ~/www/settlement/index.html
--'  474  0  ~/www/settlement/index.html
--'  477  0  ~/www/settlement/index.html
--'  481  0  ~/www/settlement/index.html
--'  502  0  ~/www/settlement/index.html
--'  509  0  ~/www/settlement/index.html
--'  519  0  ~/www/settlement/index.html
--'  528  0  ~/www/settlement/index.html
 
 # History of marks within files (newest to oldest):
 
-> ~/www/blog/usr/themes/handsome/post.php
-	"	99	19
+> ~/www/blog/usr/themes/handsome/libs/Content.php
+	"	473	50
+	^	482	41
+	.	482	40
+	+	475	87
+	+	478	109
+	+	478	0
+	+	478	125
+	+	481	36
+	+	481	185
+	+	482	29
+	+	488	0
+	+	488	219
+	+	488	300
+	+	489	0
+	+	489	217
+	+	488	213
+	+	489	305
+	+	490	0
+	+	490	218
+	+	490	303
+	+	486	309
+	+	488	305
+	+	488	0
+	+	488	0
+	+	488	0
+	+	488	0
+	+	490	0
+	+	489	0
+	+	488	33
+	+	489	32
+	+	489	32
+	+	490	32
+	+	489	0
+	+	487	0
+	+	488	203
+	+	489	207
+	+	490	205
+	+	489	199
+	+	490	208
+	+	488	206
+	+	479	62
+	+	482	40
+
+> ~/www/blog/usr/themes/handsome/libs/Handsome.php
+	"	1	0
 	^	1	0
 
-> ~/www/blog/usr/themes/handsome/page.php
-	"	26	0
+> ~/www/blog/usr/themes/handsome/functions.php
+	"	1	0
 	^	1	0
+
+> ~/www/blog/usr/themes/handsome/post.php
+	"	63	3
+	^	99	3
+
+> ~/www/blog/usr/themes/handsome/page.php
+	"	44	8
+	^	26	10
+
+> ~/www/blog/usr/themes/handsome/component/sidebar.php
+	"	139	10
+	^	89	11
+	.	89	58
+	+	89	58
+
+> ~/www/blog/usr/themes/handsome/component/footer.php
+	"	451	51
+	^	451	52
+	.	451	51
+	+	8	64
+	+	8	193
+	+	8	37
+	+	10	154
+	+	403	88
+	+	407	26
+	+	417	26
+	+	418	20
+	+	418	20
+	+	448	67
+	+	456	0
+	+	455	0
+	+	453	56
+	+	454	31
+	+	455	0
+	+	453	0
+	+	452	0
+	+	451	0
+	+	452	0
+	+	450	0
+	+	453	0
+	+	446	0
+	+	418	31
+	+	418	31
+	+	419	6
+	+	424	0
+	+	429	26
+	+	432	24
+	+	433	21
+	+	436	24
+	+	437	27
+	+	440	32
+	+	441	25
+	+	444	28
+	+	445	5
+	+	428	34
+	+	424	1
+	+	451	51
 
 > ~/www/blog/usr/plugins/Pio/static/pio.js
 	"	26	85
@@ -291,17 +391,6 @@ $
 	^	59	167
 	.	59	161
 	+	59	161
-
-> ~/www/blog/usr/themes/handsome/component/footer.php
-	"	407	26
-	^	407	25
-	.	407	26
-	+	8	64
-	+	8	193
-	+	8	37
-	+	10	154
-	+	403	88
-	+	407	26
 
 > ~/www/blog/var/PasswordHash.php
 	"	217	27
@@ -442,62 +531,3 @@ $
 > ~/conf/nginx/eee.dog.conf
 	"	15	37
 	^	15	38
-
-> ~/www/shorturl/.db.key.php
-	"	6	21
-	^	6	22
-	.	6	20
-	+	4	22
-	+	6	20
-
-> ~/www/shorturl/functions.php
-	"	2	33
-	^	2	34
-	.	2	33
-	+	2	33
-
-> ~/conf/nginx/settlement.yimian.xyz.conf
-	"	14	32
-	^	14	33
-	.	14	32
-	+	4	32
-	+	14	32
-
-> ~/www/settlement/index.html
-	"	308	60
-	^	308	61
-	.	308	61
-	+	6	9
-	+	8	59
-	+	9	77
-	+	321	56
-	+	322	51
-	+	323	163
-	+	324	164
-	+	286	0
-	+	285	58
-	+	286	44
-	+	289	12
-	+	290	3
-	+	290	15
-	+	289	33
-	+	287	37
-	+	290	8
-	+	291	15
-	+	292	6
-	+	13	78
-	+	14	127
-	+	539	58
-	+	538	57
-	+	283	31
-	+	285	0
-	+	284	22
-	+	285	25
-	+	284	40
-	+	285	8
-	+	284	0
-	+	288	48
-	+	289	17
-	+	572	53
-	+	456	0
-	+	308	61
