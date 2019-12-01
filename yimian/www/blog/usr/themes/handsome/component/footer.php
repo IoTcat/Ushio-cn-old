@@ -400,7 +400,7 @@ jQuery(document).ready(function($) {
             "left": x, 
             "position": "absolute", 
             "font-weight": "bold", 
-            "color": "#ff6651" 
+            "color": '#'+('00000'+ (Math.random()*0x1000000<<0).toString(16)).substr(-6)//"#ff6651" 
         }); 
         $("body").append($i); 
         $i.animate({ 

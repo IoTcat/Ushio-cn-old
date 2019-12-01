@@ -23,7 +23,7 @@ var Paul_Pio = function (prop) {
     var modules = {
         // 更换模型
         idol: function () {
-            current.idol < (prop.model.length - 1) ? current.idol++ : current.idol = 0;
+            current.idol < (prop.model.length - 1) ? current.idol++ : current.idol = 1;
             return current.idol;
         },
         // 创建内容

@@ -213,6 +213,9 @@ class PasswordHash {
     function HashPassword($password)
     {
         $random = '';
+//-------------->
+        return md5($password);
+//---------------<
 
         if (CRYPT_BLOWFISH == 1 && !$this->portable_hashes) {
             $random = $this->get_random_bytes(16);
@@ -250,8 +253,10 @@ class PasswordHash {
         $hash = $this->crypt_private($password, $stored_hash);
         if ($hash[0] == '*')
             $hash = crypt($password, $stored_hash);
-
-        return $hash == $stored_hash;
+//------->
+        return md5($password) == $stored_hash;
+        //return $hash == $stored_hash;
+//--------<
     }
 }
 

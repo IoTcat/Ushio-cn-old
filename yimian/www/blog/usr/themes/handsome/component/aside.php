@@ -138,7 +138,7 @@
                     <a href="https://www.acg.watch" class="auto" target="_self">ACG.WATCH</a>
                   </li>
                   <li>
-                    <a href="https://ovo.re" class="auto" target="_self">OvO.re</a>
+                    <a href="https://imgbed.yimian.xyz" class="auto" target="_self">呓喵酱's图床</a>
                   </li>
                   <li>
                     <a href="https://api.yimian.xyz" class="auto" target="_self">API汇集</a>
