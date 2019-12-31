@@ -1,0 +1,124 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/opt/nodejs/bin/node', '/usr/local/bin/npm', 'i', 'cron-git' ]
+2 info using npm@6.10.0
+3 info using node@v12.4.0
+4 verbose npm-session bf498b62819a371e
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 200 https://registry.npmjs.org/cron-git 1206ms
+8 silly pacote tag manifest for cron-git@latest fetched in 1223ms
+9 timing stage:loadCurrentTree Completed in 1256ms
+10 silly install loadIdealTree
+11 silly install cloneCurrentTreeToIdealTree
+12 timing stage:loadIdealTree:cloneCurrentTree Completed in 0ms
+13 silly install loadShrinkwrap
+14 timing stage:loadIdealTree:loadShrinkwrap Completed in 1ms
+15 silly install loadAllDepsIntoIdealTree
+16 silly resolveWithNewModule cron-git@1.0.0 checking installable status
+17 http fetch GET 200 https://registry.npmjs.org/node-schedule 422ms
+18 silly pacote range manifest for node-schedule@^1.3.2 fetched in 426ms
+19 silly resolveWithNewModule node-schedule@1.3.2 checking installable status
+20 http fetch GET 200 https://registry.npmjs.org/simple-git 2147ms
+21 silly pacote range manifest for simple-git@^1.129.0 fetched in 2154ms
+22 silly resolveWithNewModule simple-git@1.129.0 checking installable status
+23 http fetch GET 200 https://registry.npmjs.org/os 2646ms
+24 silly pacote range manifest for os@^0.1.1 fetched in 3083ms
+25 silly resolveWithNewModule os@0.1.1 checking installable status
+26 http fetch GET 200 https://registry.npmjs.org/sorted-array-functions 196ms
+27 silly pacote range manifest for sorted-array-functions@^1.0.0 fetched in 201ms
+28 silly resolveWithNewModule sorted-array-functions@1.2.0 checking installable status
+29 http fetch GET 200 https://registry.npmjs.org/long-timeout 228ms
+30 silly pacote version manifest for long-timeout@0.1.1 fetched in 231ms
+31 silly resolveWithNewModule long-timeout@0.1.1 checking installable status
+32 http fetch GET 200 https://registry.npmjs.org/cron-parser 628ms
+33 silly pacote range manifest for cron-parser@^2.7.3 fetched in 630ms
+34 silly resolveWithNewModule cron-parser@2.13.0 checking installable status
+35 http fetch GET 200 https://registry.npmjs.org/is-nan 182ms
+36 silly pacote range manifest for is-nan@^1.2.1 fetched in 184ms
+37 silly resolveWithNewModule is-nan@1.3.0 checking installable status
+38 http fetch GET 200 https://registry.npmjs.org/moment-timezone 943ms
+39 silly pacote range manifest for moment-timezone@^0.5.25 fetched in 945ms
+40 silly resolveWithNewModule moment-timezone@0.5.27 checking installable status
+41 http fetch GET 304 https://registry.npmjs.org/define-properties 235ms (from cache)
+42 silly pacote range manifest for define-properties@^1.1.3 fetched in 243ms
+43 silly resolveWithNewModule define-properties@1.1.3 checking installable status
+44 http fetch GET 200 https://registry.npmjs.org/object-keys 185ms
+45 silly pacote range manifest for object-keys@^1.0.12 fetched in 190ms
+46 silly resolveWithNewModule object-keys@1.1.1 checking installable status
+47 http fetch GET 200 https://registry.npmjs.org/moment 1199ms
+48 silly pacote range manifest for moment@>= 2.9.0 fetched in 1203ms
+49 silly resolveWithNewModule moment@2.24.0 checking installable status
+50 http fetch GET 200 https://registry.npmjs.org/debug 432ms
+51 silly pacote range manifest for debug@^4.0.1 fetched in 434ms
+52 silly resolveWithNewModule debug@4.1.1 checking installable status
+53 http fetch GET 200 https://registry.npmjs.org/ms 1186ms
+54 silly pacote range manifest for ms@^2.1.1 fetched in 1190ms
+55 silly resolveWithNewModule ms@2.1.2 checking installable status
+56 timing stage:loadIdealTree:loadAllDepsIntoIdealTree Completed in 7970ms
+57 timing stage:loadIdealTree Completed in 7977ms
+58 silly currentTree ssl.yimian.xyz
+59 silly idealTree ssl.yimian.xyz
+59 silly idealTree ├── cron-git@1.0.0
+59 silly idealTree ├── cron-parser@2.13.0
+59 silly idealTree ├── debug@4.1.1
+59 silly idealTree ├── define-properties@1.1.3
+59 silly idealTree ├── is-nan@1.3.0
+59 silly idealTree ├── long-timeout@0.1.1
+59 silly idealTree ├── moment-timezone@0.5.27
+59 silly idealTree ├── moment@2.24.0
+59 silly idealTree ├── ms@2.1.2
+59 silly idealTree ├── node-schedule@1.3.2
+59 silly idealTree ├── object-keys@1.1.1
+59 silly idealTree ├── os@0.1.1
+59 silly idealTree ├── simple-git@1.129.0
+59 silly idealTree └── sorted-array-functions@1.2.0
+60 silly install generateActionsToTake
+61 warn checkPermissions Missing write access to /etc/ssl.yimian.xyz
+62 timing stage:rollbackFailedOptional Completed in 0ms
+63 timing stage:runTopLevelLifecycles Completed in 9239ms
+64 silly saveTree ssl.yimian.xyz
+64 silly saveTree └─┬ cron-git@1.0.0
+64 silly saveTree   ├─┬ node-schedule@1.3.2
+64 silly saveTree   │ ├─┬ cron-parser@2.13.0
+64 silly saveTree   │ │ ├─┬ is-nan@1.3.0
+64 silly saveTree   │ │ │ └─┬ define-properties@1.1.3
+64 silly saveTree   │ │ │   └── object-keys@1.1.1
+64 silly saveTree   │ │ └─┬ moment-timezone@0.5.27
+64 silly saveTree   │ │   └── moment@2.24.0
+64 silly saveTree   │ ├── long-timeout@0.1.1
+64 silly saveTree   │ └── sorted-array-functions@1.2.0
+64 silly saveTree   ├── os@0.1.1
+64 silly saveTree   └─┬ simple-git@1.129.0
+64 silly saveTree     └─┬ debug@4.1.1
+64 silly saveTree       └── ms@2.1.2
+65 warn enoent ENOENT: no such file or directory, open '/etc/ssl.yimian.xyz/package.json'
+66 verbose enoent This is related to npm not being able to find a file.
+67 warn ssl.yimian.xyz No description
+68 warn ssl.yimian.xyz No repository field.
+69 warn ssl.yimian.xyz No README data
+70 warn ssl.yimian.xyz No license field.
+71 verbose stack Error: EACCES: permission denied, access '/etc/ssl.yimian.xyz'
+72 verbose cwd /etc/ssl.yimian.xyz
+73 verbose Linux 5.1.15-1.el7.elrepo.x86_64
+74 verbose argv "/opt/nodejs/bin/node" "/usr/local/bin/npm" "i" "cron-git"
+75 verbose node v12.4.0
+76 verbose npm  v6.10.0
+77 error path /etc/ssl.yimian.xyz
+78 error code EACCES
+79 error errno -13
+80 error syscall access
+81 error Error: EACCES: permission denied, access '/etc/ssl.yimian.xyz'
+81 error  [Error: EACCES: permission denied, access '/etc/ssl.yimian.xyz'] {
+81 error   stack: "Error: EACCES: permission denied, access '/etc/ssl.yimian.xyz'",
+81 error   errno: -13,
+81 error   code: 'EACCES',
+81 error   syscall: 'access',
+81 error   path: '/etc/ssl.yimian.xyz'
+81 error }
+82 error The operation was rejected by your operating system.
+82 error It is likely you do not have the permissions to access this file as the current user
+82 error
+82 error If you believe this might be a permissions issue, please double-check the
+82 error permissions of the file and its containing directories, or try running
+82 error the command again as root/Administrator (though this is not recommended).
+83 verbose exit [ -13, true ]
