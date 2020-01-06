@@ -136,7 +136,7 @@ $
 	<
 
 # File marks:
-'0  1  0  /etc/ssl.yimian.xyz/update.js
+'0  1  33  /etc/ssl.yimian.xyz/update.js
 '1  1  0  /home/ushio/www/auth/vercode/checkCode.php
 '2  162  0  ~/www/settlement/api/index.php
 '3  1  0  /home/ushio/www/api/functions.php
@@ -148,7 +148,7 @@ $
 '9  1  0  /home/ushio/www/login/index.html
 
 # Jumplist (newest first):
--'  1  0  /etc/ssl.yimian.xyz/update.js
+-'  1  33  /etc/ssl.yimian.xyz/update.js
 -'  1  0  /home/ushio/www/auth/vercode/checkCode.php
 -'  162  0  ~/www/settlement/api/index.php
 -'  1  0  ~/www/settlement/api/index.php
@@ -245,12 +245,11 @@ $
 -'  27  0  ~/www/settlement/api/index.php
 -'  294  24  ~/www/settlement/index.html
 -'  289  16  ~/www/settlement/index.html
--'  5  105  ~/www/settlement/login.html
 
 # History of marks within files (newest to oldest):
 
 > /etc/ssl.yimian.xyz/update.js
-	"	1	0
+	"	1	33
 	^	1	0
 
 > /home/ushio/www/auth/vercode/checkCode.php
