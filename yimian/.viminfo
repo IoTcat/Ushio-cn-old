@@ -14,9 +14,9 @@
 $
 
 # Command Line History (newest to oldest):
-:q
 :q!
 :wq
+:q
 :w
 :Wq
 :Q!
@@ -136,18 +136,21 @@ $
 	<
 
 # File marks:
-'0  1  33  /etc/ssl.yimian.xyz/update.js
-'1  1  0  /home/ushio/www/auth/vercode/checkCode.php
-'2  162  0  ~/www/settlement/api/index.php
-'3  1  0  /home/ushio/www/api/functions.php
-'4  4  21  /home/ushio/conf/dbKeys/auth.db.key.php
-'5  1  0  /home/ushio/conf/dbKeys/log.db.key.php
-'6  1  0  /home/ushio/www/login/functions.php
-'7  1  0  /home/ushio/www/login/config.php
-'8  3  9  /home/ushio/www/login/checkPhone.php
-'9  1  0  /home/ushio/www/login/index.html
+'0  17  2  /home/ushio/opt/exrate/index.js
+'1  10  0  /home/ushio/opt/exrate/index.js
+'2  1  33  /etc/ssl.yimian.xyz/update.js
+'3  1  0  /home/ushio/www/auth/vercode/checkCode.php
+'4  162  0  ~/www/settlement/api/index.php
+'5  1  0  /home/ushio/www/api/functions.php
+'6  4  21  /home/ushio/conf/dbKeys/auth.db.key.php
+'7  1  0  /home/ushio/conf/dbKeys/log.db.key.php
+'8  1  0  /home/ushio/www/login/functions.php
+'9  1  0  /home/ushio/www/login/config.php
 
 # Jumplist (newest first):
+-'  17  2  /home/ushio/opt/exrate/index.js
+-'  10  0  /home/ushio/opt/exrate/index.js
+-'  1  0  /home/ushio/opt/exrate/index.js
 -'  1  33  /etc/ssl.yimian.xyz/update.js
 -'  1  0  /home/ushio/www/auth/vercode/checkCode.php
 -'  162  0  ~/www/settlement/api/index.php
@@ -242,11 +245,15 @@ $
 -'  2  0  /home/ushio/www/api/functions.php
 -'  1  0  /home/ushio/www/api/video/index.php
 -'  1  0  /home/ushio/www/api/video/in
--'  27  0  ~/www/settlement/api/index.php
--'  294  24  ~/www/settlement/index.html
--'  289  16  ~/www/settlement/index.html
 
 # History of marks within files (newest to oldest):
+
+> /home/ushio/opt/exrate/index.js
+	"	17	2
+	^	17	3
+	.	17	3
+	+	8	26
+	+	17	3
 
 > /etc/ssl.yimian.xyz/update.js
 	"	1	33
@@ -376,46 +383,3 @@ $
 	^	89	11
 	.	89	58
 	+	89	58
-
-> ~/www/blog/usr/themes/handsome/component/footer.php
-	"	451	51
-	^	451	52
-	.	451	51
-	+	8	64
-	+	8	193
-	+	8	37
-	+	10	154
-	+	403	88
-	+	407	26
-	+	417	26
-	+	418	20
-	+	418	20
-	+	448	67
-	+	456	0
-	+	455	0
-	+	453	56
-	+	454	31
-	+	455	0
-	+	453	0
-	+	452	0
-	+	451	0
-	+	452	0
-	+	450	0
-	+	453	0
-	+	446	0
-	+	418	31
-	+	418	31
-	+	419	6
-	+	424	0
-	+	429	26
-	+	432	24
-	+	433	21
-	+	436	24
-	+	437	27
-	+	440	32
-	+	441	25
-	+	444	28
-	+	445	5
-	+	428	34
-	+	424	1
-	+	451	51
