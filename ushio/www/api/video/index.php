@@ -2,6 +2,8 @@
 
 include '../functions.php';
 
+header('Access-Control-Allow-Origin:*');
+
 /* anti ddos */
 /*if(!isset($_COOKIE['_token__']) || $_COOKIE['_token__'] != md5(date('Y-m-d-H'))) {
     setcookie("_token__",md5(date('Y-m-d-H')),time()+1*3600);
