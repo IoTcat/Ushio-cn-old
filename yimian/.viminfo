@@ -14,8 +14,8 @@
 $
 
 # Command Line History (newest to oldest):
-:q!
 :wq
+:q!
 :q
 :w
 :Wq
@@ -136,18 +136,22 @@ $
 	<
 
 # File marks:
-'0  17  2  /home/ushio/opt/exrate/index.js
-'1  10  0  /home/ushio/opt/exrate/index.js
-'2  1  33  /etc/ssl.yimian.xyz/update.js
-'3  1  0  /home/ushio/www/auth/vercode/checkCode.php
-'4  162  0  ~/www/settlement/api/index.php
-'5  1  0  /home/ushio/www/api/functions.php
-'6  4  21  /home/ushio/conf/dbKeys/auth.db.key.php
-'7  1  0  /home/ushio/conf/dbKeys/log.db.key.php
-'8  1  0  /home/ushio/www/login/functions.php
-'9  1  0  /home/ushio/www/login/config.php
+'0  2  0  /mnt/onedrive/git/fdc/README.md
+'1  2  0  /etc/fuse.conf
+'2  17  2  /home/ushio/opt/exrate/index.js
+'3  10  0  /home/ushio/opt/exrate/index.js
+'4  1  33  /etc/ssl.yimian.xyz/update.js
+'5  1  0  /home/ushio/www/auth/vercode/checkCode.php
+'6  162  0  ~/www/settlement/api/index.php
+'7  1  0  /home/ushio/www/api/functions.php
+'8  4  21  /home/ushio/conf/dbKeys/auth.db.key.php
+'9  1  0  /home/ushio/conf/dbKeys/log.db.key.php
 
 # Jumplist (newest first):
+-'  2  0  /mnt/onedrive/git/fdc/README.md
+-'  1  0  /mnt/onedrive/git/fdc/README.md
+-'  2  0  /etc/fuse.conf
+-'  1  0  /etc/fuse.conf
 -'  17  2  /home/ushio/opt/exrate/index.js
 -'  10  0  /home/ushio/opt/exrate/index.js
 -'  1  0  /home/ushio/opt/exrate/index.js
@@ -243,10 +247,20 @@ $
 -'  491  0  /home/ushio/www/api/functions.php
 -'  588  0  /home/ushio/www/api/functions.php
 -'  2  0  /home/ushio/www/api/functions.php
--'  1  0  /home/ushio/www/api/video/index.php
--'  1  0  /home/ushio/www/api/video/in
 
 # History of marks within files (newest to oldest):
+
+> /mnt/onedrive/git/fdc/README.md
+	"	2	0
+	^	2	0
+	.	2	0
+	+	2	0
+
+> /etc/fuse.conf
+	"	2	0
+	^	2	0
+	.	2	0
+	+	2	0
 
 > /home/ushio/opt/exrate/index.js
 	"	17	2
@@ -373,13 +387,3 @@ $
 > ~/www/blog/usr/themes/handsome/post.php
 	"	63	3
 	^	99	3
-
-> ~/www/blog/usr/themes/handsome/page.php
-	"	44	8
-	^	26	10
-
-> ~/www/blog/usr/themes/handsome/component/sidebar.php
-	"	139	10
-	^	89	11
-	.	89	58
-	+	89	58
