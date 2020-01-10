@@ -14,10 +14,10 @@
 $
 
 # Command Line History (newest to oldest):
-:wq
-:q!
 :q
 :w
+:wq
+:q!
 :Wq
 :Q!
 :q1
@@ -46,11 +46,10 @@ $
 	332
 <                                 <div class="pay-button" role="presentation" class="active"><button  href="#alipay_author" id="alipay-tab" aria-controls="alipay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-info"><i class="iconfont icon-alipay" aria-hidden="true"></i><span>&nbsp;'._mt("支付宝").'</span></button>
 ""1	LINE	0
+	hi ACG.WATCHls
+"2	LINE	0
 	283
 <                                <button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信").'</span></button>
-"2	LINE	0
-	328
-<                                 <div class="pay-button" role="presentation"><button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信").'</span></button>
 "3	LINE	0
 	328
 <                                 <div class="pay-button" role="presentation"><button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信").'</span></button>
@@ -58,13 +57,16 @@ $
 	328
 <                                 <div class="pay-button" role="presentation"><button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信").'</span></button>
 "5	LINE	0
+	328
+<                                 <div class="pay-button" role="presentation"><button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;'._mt("微信").'</span></button>
+"6	LINE	0
 	332
 <                                 <div class="pay-button" role="presentation" class="active"><button  href="#alipay_author" id="alipay-tab" aria-controls="alipay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-info"><i class="iconfont icon-alipay" aria-hidden="true"></i><span>&nbsp;'._mt("支付宝").'</span></button>
-"6	LINE	0
-	                                 </div>
 "7	LINE	0
 	                                 </div>
-"8	CHAR	0
+"8	LINE	0
+	                                 </div>
+"9	CHAR	0
 	
 	function getMatchedKeys($str, $arr){
 	    if(!is_array($str)){
@@ -81,73 +83,30 @@ $
 	        return $o;
 	    }   
 	}
-"9	CHAR	0
-	elseif($type){
-	
-	    $arr = getImgsInfo($type);
-	
-	    if($id){
-	        $pos = array_search($id, $arr[1]);
-	        if($pos) $path = $type. '/' .$arr[0][$pos];
-	    }
-	
-	    if(!$size && !$path){
-	        $path = $type. '/' .$arr[0][array_rand($arr[0])];
-	    }elseif(strpos($size, '-') && !$path){
-	        $arr_size = explode('x',$size);
-	        if(strpos($arr_size[0], '-')) $arr_size_length = explode('-',$arr_size[0]);
-	        else $arr_size_length = $arr_size[0];
-	        if(strpos($arr_size[1], '-')) $arr_size_high = explode('-',$arr_size[1]);
-	        else $arr_size_high = $arr_size[1];
-	        $arr_length = getMatchedKeys($arr_size_length, $arr[2]);
-	        $arr_high = getMatchedKeys($arr_size_high, $arr[3]);
-	        if($arr_size[0] == '*') $arr_keys = $arr_high;
-	        elseif($arr_size[1] == '*') $arr_keys = $arr_length;
-	        else $arr_keys = array_intersect($arr_length, $arr_high);
-	        if(!count($arr_keys)){
-	            header('content-type: application/json');
-	            echo json_encode(array("err"=>"Can not find any images matching Size $size in Type $type!!"));
-	            die();
-	        }
-	        do{
-	  	    $index = array_rand($arr_keys);
-		}while($R18 != true && $arr[6][$arr_keys[$index]] != "normal");
-	        $path = $type. '/' .$arr[0][$arr_keys[$index]];
-	        
-	    }elseif(!$path){
-	        $arr_size = explode('x',$size);
-	        $arr_length = getMatchedKeys($arr_size[0], $arr[2]);
-	        $arr_high = getMatchedKeys($arr_size[1], $arr[3]);
-	        if($arr_size[0] == '*' && $arr_size[1] == '*') $arr_keys = getMatchedKeys(array(0=>0,1=>9999), $arr[2]);
-	        elseif($arr_size[0] == '*') $arr_keys = $arr_high;
-	        elseif($arr_size[1] == '*') $arr_keys = $arr_length;
-	        else $arr_keys = array_intersect($arr_length, $arr_high);
-	        if(!count($arr_keys)){
-	            header('content-type: application/json');
-	            echo json_encode(array("err"=>"Can not find any images matching Size $size in Type $type!!"));
-	            die();
-	        }
-	        do{
-	  	    $index = array_rand($arr_keys);
-		}while($R18 != true && $arr[6][$arr_keys[$index]] != "normal");
-	        $path = $type. '/' .$arr[0][$arr_keys[$index]];
-	        
 "-	CHAR	0
-	<
+	a
 
 # File marks:
-'0  2  0  /mnt/onedrive/git/fdc/README.md
-'1  2  0  /etc/fuse.conf
-'2  17  2  /home/ushio/opt/exrate/index.js
-'3  10  0  /home/ushio/opt/exrate/index.js
-'4  1  33  /etc/ssl.yimian.xyz/update.js
-'5  1  0  /home/ushio/www/auth/vercode/checkCode.php
-'6  162  0  ~/www/settlement/api/index.php
-'7  1  0  /home/ushio/www/api/functions.php
-'8  4  21  /home/ushio/conf/dbKeys/auth.db.key.php
-'9  1  0  /home/ushio/conf/dbKeys/log.db.key.php
+'0  15  12  ~/www/acg.watch/player/index.html
+'1  1  12  ~/www/acg.watch/index.php
+'2  5  29  ~/www/acg.watch/.db.key.php
+'3  2  34  ~/www/acg.watch/functions.php
+'4  27  42  ~/www/acg.watch/player/index.html
+'5  2  0  /mnt/onedrive/git/fdc/README.md
+'6  2  0  /etc/fuse.conf
+'7  17  2  /home/ushio/opt/exrate/index.js
+'8  10  0  /home/ushio/opt/exrate/index.js
+'9  1  33  /etc/ssl.yimian.xyz/update.js
 
 # Jumplist (newest first):
+-'  15  12  ~/www/acg.watch/player/index.html
+-'  27  10  ~/www/acg.watch/player/index.html
+-'  1  12  ~/www/acg.watch/index.php
+-'  5  29  ~/www/acg.watch/.db.key.php
+-'  1  0  ~/www/acg.watch/.db.key.php
+-'  2  34  ~/www/acg.watch/functions.php
+-'  1  0  ~/www/acg.watch/functions.php
+-'  1  0  ~/www/acg.watch/player/index.html
 -'  2  0  /mnt/onedrive/git/fdc/README.md
 -'  1  0  /mnt/onedrive/git/fdc/README.md
 -'  2  0  /etc/fuse.conf
@@ -238,17 +197,37 @@ $
 -'  38  0  /home/ushio/www/img/index.php
 -'  1  0  /home/ushio/www/img/in
 -'  32  0  /home/ushio/www/api/video/index.php
--'  20  0  /home/ushio/www/api/video/index.php
--'  291  3  /home/ushio/www/api/functions.php
--'  293  0  /home/ushio/www/api/functions.php
--'  29  4  /home/ushio/www/api/video/index.php
--'  31  0  /home/ushio/www/api/video/index.php
--'  298  4  /home/ushio/www/api/functions.php
--'  491  0  /home/ushio/www/api/functions.php
--'  588  0  /home/ushio/www/api/functions.php
--'  2  0  /home/ushio/www/api/functions.php
 
 # History of marks within files (newest to oldest):
+
+> ~/www/acg.watch/player/index.html
+	"	15	12
+	^	27	10
+	.	27	42
+	+	24	7
+	+	33	7
+	+	26	53
+	+	27	42
+
+> ~/www/acg.watch/index.php
+	"	1	12
+	^	1	13
+	.	1	12
+	+	1	12
+
+> ~/www/acg.watch/.db.key.php
+	"	5	29
+	^	5	30
+	.	5	29
+	+	4	23
+	+	6	22
+	+	5	29
+
+> ~/www/acg.watch/functions.php
+	"	2	34
+	^	2	35
+	.	2	34
+	+	2	34
 
 > /mnt/onedrive/git/fdc/README.md
 	"	2	0
@@ -331,59 +310,3 @@ $
 	^	23	160
 	.	23	158
 	+	23	158
-
-> ~/www/blog/usr/themes/handsome/libs/Content.php
-	"	473	50
-	^	482	41
-	.	482	40
-	+	475	87
-	+	478	109
-	+	478	0
-	+	478	125
-	+	481	36
-	+	481	185
-	+	482	29
-	+	488	0
-	+	488	219
-	+	488	300
-	+	489	0
-	+	489	217
-	+	488	213
-	+	489	305
-	+	490	0
-	+	490	218
-	+	490	303
-	+	486	309
-	+	488	305
-	+	488	0
-	+	488	0
-	+	488	0
-	+	488	0
-	+	490	0
-	+	489	0
-	+	488	33
-	+	489	32
-	+	489	32
-	+	490	32
-	+	489	0
-	+	487	0
-	+	488	203
-	+	489	207
-	+	490	205
-	+	489	199
-	+	490	208
-	+	488	206
-	+	479	62
-	+	482	40
-
-> ~/www/blog/usr/themes/handsome/libs/Handsome.php
-	"	1	0
-	^	1	0
-
-> ~/www/blog/usr/themes/handsome/functions.php
-	"	1	0
-	^	1	0
-
-> ~/www/blog/usr/themes/handsome/post.php
-	"	63	3
-	^	99	3
