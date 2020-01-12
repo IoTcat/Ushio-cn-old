@@ -9,7 +9,7 @@ $conn = db__connect();
 
 if(!db__rowNum($conn, "video", "url", $url)) {
     echo json_encode(array(
-        name => "首选路线",
+        name => "首选",
         url => $url
     ));
     die();
@@ -21,7 +21,7 @@ $res = db__getData($conn, "video", "url", $url);
 $arr = Array();
 
 array_push($arr, array(
-    name => "首选路线",
+    name => "首选",
     url => $url
 
 ));
