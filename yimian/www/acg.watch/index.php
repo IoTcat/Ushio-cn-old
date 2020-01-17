@@ -3,10 +3,10 @@ include './functions.php';
 
 $res = db__getData(db__connect(), 'video');
 
-function getKeys($arr, $word){
+function getKeys($arr, $word, $index = "", $indexVal = ""){
 	$arr_word = [];
 	foreach($arr as $i){
-		if(!in_array($i[$word], $arr_word)){
+		if(($index == "" || $i[$index] == $indexVal) && !in_array($i[$word], $arr_word)){
 			array_push($arr_word, $i[$word]);
 		}
 	}
@@ -53,7 +53,7 @@ $classes = getKeys($res, "class");
 		echo "
 			<section>
 				<h2>".$class."</h2>";				
-		foreach(getKeys($res, "series") as $i){
+		foreach(getKeys($res, "series", "class", $class) as $i){
 			echo "
 				<details>
 					<summary>".$i."</summary>
