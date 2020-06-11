@@ -33,6 +33,10 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - docker1.13.1
  - nodeJS
  - python 2.7.5
+ - python 3.6
+ - java
+ - php
+ - go
  
 ## 注册服务
  - ushio
@@ -45,6 +49,10 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - cnpm
  - yarn
  - pm2
+
+## PYTHON工具
+ - pip
+ - pip3
 
 ## iis服务列表
 
@@ -73,4 +81,9 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - 链接.vimrc
  - 链接.ssh公钥
  - 链接黑名单白名单
-
+ - 安装配置php
+ - 安装php-fpm
+ - 安装go
+ - 安装pip
+ - 安装python3
+ - 安装pip3
