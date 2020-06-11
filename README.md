@@ -41,6 +41,7 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 ## 注册服务
  - ushio
  - rclone
+ - nginx(ushio)
 
 ### NODEJS工具
  - npm
@@ -87,3 +88,4 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - 安装pip
  - 安装python3
  - 安装pip3
+ - 安装nginx(ushio)
