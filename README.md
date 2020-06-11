@@ -8,8 +8,43 @@
 
 ## ip地址
  - ipv4: `114.116.85.132`
+ 
+## iptables策略
+```iptables
+# default
+iptables -A OUTPUT -j ACCEPT
+iptables -A INPUT -j REJECT
+iptables -A FORWARD -j REJECT
+iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A OUTPUT -o lo -j ACCEPT
+
+# ssh
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
+# http & https
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+
+```
 
 ## 工具集环境
+ - docker1.13.1
+ - nodeJS
+ - python 2.7.5
+ 
+## 注册服务
+ - ushio
+ - rclone
+
+### NODEJS工具
+ - npm
+ - npx
+ - n
+ - cnpm
+ - yarn
+ - pm2
 
 ## iis服务列表
 
@@ -21,5 +56,21 @@
  - 提交华为工单重装系统为CentOS7.6，不受理
  - 通过[MeowLove/Network-Reinstall-System-Modify](https://github.com/MeowLove/Network-Reinstall-System-Modify)网络安装CentOS7.6，遇到无限重启，失败
  - 通过[dansnow](https://zhujiwiki.com/13350/)的脚本重装，报错，失败
- - 放弃重装，直接使用原有系统市场镜像
- 
+ - 放弃重装，直接使用原有系统市场镜像并重置
+ - 更改主机名为`cn.yimian.xyz`
+ - yum更新
+ - yum安装企业库
+ - yum安装工具`wget git vim unzip zip openssl make gcc gcc-c++ screen fuse fuse-devel`
+ - 安装并配置 git
+ - 配置docker
+ - 安装docker-compose
+ - 配置ushio集群为服务
+ - 安装配置nodeJS
+ - 清除防火墙
+ - 关闭SELINUX
+ - 安装配置iptables
+ - 挂载onedrive
+ - 链接.vimrc
+ - 链接.ssh公钥
+ - 链接黑名单白名单
+
