@@ -58,6 +58,11 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 ## iis服务列表
 
 
+## dokcer集群
+ - redis
+ - emqx
+
+
 ## 操作日志
 ---------------------------------
 **2020-6-11**   
@@ -89,3 +94,5 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - 安装python3
  - 安装pip3
  - 安装nginx(ushio)
+ - 链接docker集群
+ - 配置泛域名证书自动续期[acme.sh](https://github.com/acmesh-official/acme.sh)
