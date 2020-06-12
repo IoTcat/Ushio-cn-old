@@ -94,5 +94,12 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - 安装python3
  - 安装pip3
  - 安装nginx(ushio)
+ 
+ ----------------------------------------------
+ **2020-6-12**   
  - 链接docker集群
  - 配置泛域名证书自动续期[acme.sh](https://github.com/acmesh-official/acme.sh)
+ - 配置华为云存储obsutil
+ - ~~挂载obsfs~~
+ - 解决github的dns污染(将`199.232.69.194 assets-cdn.github.com`加入`/etc/hosts)
+ - 
