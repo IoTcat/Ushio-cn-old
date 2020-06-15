@@ -9,6 +9,15 @@
 ## ip地址
  - ipv4: `114.116.85.132`
  
+## 端口占用
+ - `22`: ssh
+ - `80`: http
+ - `443`: https
+ - `6379`: redis
+ - `9000`: php-fpm
+ - `13233`: todo-ddl
+ - `17676`: coro-api
+ 
 ## iptables策略
 ```iptables
 # default
@@ -56,12 +65,29 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - pip3
 
 ## iis服务列表
-
+ - api.yimian.xyz
+ - img.yimian.xyz
 
 ## dokcer集群
  - redis
  - emqx
 
+
+## 文件结构
+```
+|
+|---home
+|   |---lib
+|   |   |---anti-ddos(iotcat/anti-ddos)
+|   |   |---qcloudsms(qcloudsms/qcloudsms_php)
+|   |
+|   |---opt
+|   |
+|   |---www
+|   |   |---api(iotcat/ushio-api)
+|   |   |---img(iotcat/ushio-img)
+
+```
 
 ## 操作日志
 ---------------------------------
@@ -102,4 +128,9 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - 配置华为云存储obsutil
  - ~~挂载obsfs~~
  - 解决github的dns污染(将`199.232.69.194 assets-cdn.github.com`加入`/etc/hosts)
+ ----------------------------------
+ **2020-6-15**
+ - 部署api.yimian.xyz
+ - 部署img.yimian.xyz
+ - 解决php的pdo_mysql无法找到问题
  - 
