@@ -80,6 +80,7 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 |   |---lib
 |   |   |---anti-ddos(iotcat/anti-ddos)
 |   |   |---qcloudsms(qcloudsms/qcloudsms_php)
+|   |   |---huaweicloud-sdk-php-obs(iotcat/huaweicloud-sdk-php-obs)
 |   |
 |   |---opt
 |   |
@@ -133,4 +134,5 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - 部署api.yimian.xyz
  - 部署img.yimian.xyz
  - 解决php的pdo_mysql无法找到问题
- - 
+ - 卸载nginx，使用docker架构
+ - 转换ushio-img到php-sdk
