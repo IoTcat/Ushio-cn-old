@@ -65,6 +65,7 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 ## iis服务列表
  - api.yimian.xyz
  - img.yimian.xyz
+ - log.yimian.xyz
 
 ## dokcer集群
  - redis
@@ -85,6 +86,7 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 |   |---www
 |   |   |---api(iotcat/ushio-api)
 |   |   |---img(iotcat/ushio-img)
+|   |   |---log(iotcat/ushio-log)
 
 ```
 
@@ -139,3 +141,4 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - 调试upload-api
  - 部署imgbed
  - 部署filebed
+ - 接入log
