@@ -13,10 +13,7 @@
  - `22`: ssh
  - `80`: http
  - `443`: https
- - `6379`: redis
- - `9000`: php-fpm
- - `13233`: todo-ddl
- - `17676`: coro-api
+
  
 ## iptables策略
 ```iptables
@@ -59,6 +56,7 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - cnpm
  - yarn
  - pm2
+ - todo-ddl
 
 ## PYTHON工具
  - pip
@@ -136,3 +134,8 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - 解决php的pdo_mysql无法找到问题
  - 卸载nginx，使用docker架构
  - 转换ushio-img到php-sdk
+------------------------------
+**2020-6-18**
+ - 调试upload-api
+ - 部署imgbed
+ - 部署filebed
