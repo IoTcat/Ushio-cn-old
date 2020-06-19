@@ -12,7 +12,8 @@
 ## 端口占用
  - `22`: ssh
  - `80`: http
- - `443`: https
+ - `443`: https/wss
+ - '1688': kms
 
  
 ## iptables策略
@@ -66,6 +67,9 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - api.yimian.xyz
  - img.yimian.xyz
  - log.yimian.xyz
+ - onedrive.yimian.xyz
+ - session.yimian.xyz
+ - kms.yimian.xyz
 
 ## dokcer集群
  - redis
@@ -142,3 +146,7 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  - 部署imgbed
  - 部署filebed
  - 接入log
+ - 接入session
+**2020-6-19**
+ - 接入oneindex
+ - 接入kms
